@@ -4,7 +4,10 @@ import SlidingMenu from '../component/SlidingMenu'
 
 export default function HomePage() {
     return(
-        <div className="bg-red-300 py-[25px]">
+        <div 
+            id='HomePage'
+            className="bg-red-300 py-[25px]"
+        >
             <Hero />
 
             <HeroCta />

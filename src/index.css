@@ -5,6 +5,10 @@
     gap: clamp(1rem, 5vw, 10rem);
 }
 
+.even-columns {
+    columns: 2;
+}
+
 /* 
 * {
      height:auto;

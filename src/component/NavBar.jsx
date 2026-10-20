@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavBar({ addOrderSubmit }) {
@@ -8,24 +8,38 @@ export default function NavBar({ addOrderSubmit }) {
 
     const [orderOneItem, setOrderOneItem] = useState("");
     const [orderOneQuantity, setOrderOneQuantity] = useState("1");
-    const [orderOnePrice, setOrderOnePrice] = useState("");
+    const [orderOnePrice, setOrderOnePrice] = useState("")
 
     const [orderTwoItem, setOrderTwoItem] = useState("");
     const [orderTwoQuantity, setOrderTwoQuantity] = useState("1");
-    const [orderTwoPrice, setOrderTwoPrice] = useState("");
+    const [orderTwoPrice, setOrderTwoPrice] = useState("")
 
     const [orderThreeItem, setOrderThreeItem] = useState("");
     const [orderThreeQuantity, setOrderThreeQuantity] = useState("1");
-    const [orderThreePrice, setOrderThreePrice] = useState("");
+    const [orderThreePrice, setOrderThreePrice] = useState("")
 
     const [orderFourItem, setOrderFourItem] = useState("");
     const [orderFourQuantity, setOrderFourQuantity] = useState("1");
-    const [orderFourPrice, setOrderFourPrice] = useState("");
+    const [orderFourPrice, setOrderFourPrice] = useState("")
 
     const [orderFiveItem, setOrderFiveItem] = useState("");
     const [orderFiveQuantity, setOrderFiveQuantity] = useState("1");
-    const [orderFivePrice, setOrderFivePrice] = useState("");
-    
+    const [orderFivePrice, setOrderFivePrice] = useState("")
+
+    let orderOnePriceBox = document.getElementById("order-one-price-box");
+    let orderTwoPriceBox = document.getElementById("order-two-price-box");
+    let orderThreePriceBox = document.getElementById("order-three-price-box");
+    let orderFourPriceBox = document.getElementById("order-four-price-box");
+    let orderFivePriceBox = document.getElementById("order-five-price-box");
+
+    useEffect(() => {
+        orderOnePriceBox = document.getElementById("order-one-price-box");
+        orderTwoPriceBox = document.getElementById("order-two-price-box");
+        orderThreePriceBox = document.getElementById("order-three-price-box");
+        orderFourPriceBox = document.getElementById("order-four-price-box");
+        orderFivePriceBox = document.getElementById("order-five-price-box");
+    }, [])
+
     const navigate = useNavigate();
 
     function Order() {
@@ -44,7 +58,19 @@ export default function NavBar({ addOrderSubmit }) {
             address : customerAddress,
             orderOneItem,
             orderOneQuantity,
-            orderOnePrice
+            orderOnePrice,
+            orderTwoItem,
+            orderTwoQuantity,
+            orderTwoPrice,
+            orderThreeItem,
+            orderThreeQuantity,
+            orderThreePrice,
+            orderFourItem,
+            orderFourQuantity,
+            orderFourPrice,
+            orderFiveItem,
+            orderFiveQuantity,
+            orderFivePrice
         }
 
         addOrderSubmit(newOrder)
@@ -116,6 +142,7 @@ export default function NavBar({ addOrderSubmit }) {
                         </li>
                     </ul>
 
+
                     <div id="Order">
                             <input type="checkbox" className="ml-[50px] mr-[7.5px] "/>Manual
 
@@ -125,8 +152,14 @@ export default function NavBar({ addOrderSubmit }) {
                                     id='order-one-item'
                                     name="order-one-item"
                                     value={ orderOneItem }
-                                    onChange={ (e) => { setOrderOneItem(e.target.value) } }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderOneItem(e.target.value)
+                                            orderOnePriceBox.textContent = orderOneQuantity * 250 ;
+                                        }
+                                    }
                                 >
+                                    <option value="Choose Your Order"> Choose Your Order </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
@@ -139,7 +172,12 @@ export default function NavBar({ addOrderSubmit }) {
                                     id="quantity-order-one" 
                                     name="quantity-order-one"
                                     value={ orderOneQuantity }
-                                    onChange={ (e) => {setOrderOneQuantity(e.target.value)} }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderOneQuantity(e.target.value)
+                                            orderOnePriceBox.textContent = e.target.value * 250 ;
+                                        } 
+                                    }
                                 >
                                         <option value="1"> 1 </option>
                                         <option value="2"> 2 </option>
@@ -150,10 +188,8 @@ export default function NavBar({ addOrderSubmit }) {
 
                                 <div className="border border-black px-[5px] py-[2px] rounded">
                                     <p 
-                                        id="order-one-price"
+                                        id="order-one-price-box"
                                         className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                        value={ orderOnePrice }
-                                        onChange={ (e) => { setOrderOnePrice(e.target.value) } }
                                     >
                                         
                                     </p>
@@ -166,8 +202,14 @@ export default function NavBar({ addOrderSubmit }) {
                                     id='order-two-item'
                                     name="order-two-item"
                                     value={ orderTwoItem }
-                                    onChange={ (e) => { setOrderTwoItem(e.target.value) } }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderTwoItem(e.target.value)
+                                            orderTwoPriceBox.textContent = orderTwoQuantity * 250 ;
+                                        }
+                                    }
                                 >
+                                    <option value="Choose Your Order"> Choose Your Order </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
@@ -180,7 +222,12 @@ export default function NavBar({ addOrderSubmit }) {
                                     id="quantity-order-two" 
                                     name="quantity-order-two"
                                     value={ orderTwoQuantity }
-                                    onChange={ (e) => {setOrderTwoQuantity(e.target.value)} }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderTwoQuantity(e.target.value)
+                                            orderTwoPriceBox.textContent = e.target.value * 250 ;
+                                        } 
+                                    }
                                 >
                                         <option value="1"> 1 </option>
                                         <option value="2"> 2 </option>
@@ -191,7 +238,7 @@ export default function NavBar({ addOrderSubmit }) {
 
                                 <div className="border border-black px-[5px] py-[2px] rounded">
                                     <p 
-                                        id="order-two-price"
+                                        id="order-two-price-box"
                                         className="totalPrice min-w-[50px] px-[5px] p-[2px] "
                                         value={ orderTwoPrice }
                                         onChange={ (e) => { setOrderTwoPrice(e.target.value) } }
@@ -207,8 +254,14 @@ export default function NavBar({ addOrderSubmit }) {
                                     id='order-three-item'
                                     name="order-three-item"
                                     value={ orderThreeItem }
-                                    onChange={ (e) => { setOrderThreeItem(e.target.value) } }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderThreeItem(e.target.value)
+                                            orderThreePriceBox.textContent = orderThreeQuantity * 250 ;
+                                        }
+                                    }
                                 >
+                                    <option value="Choose Your Order"> Choose Your Order </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
@@ -221,7 +274,12 @@ export default function NavBar({ addOrderSubmit }) {
                                     id="quantity-order-three" 
                                     name="quantity-order-three"
                                     value={ orderThreeQuantity }
-                                    onChange={ (e) => {setOrderThreeQuantity(e.target.value)} }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderThreeQuantity(e.target.value)
+                                            orderThreePriceBox.textContent = e.target.value * 250 ;
+                                        } 
+                                    }
                                 >
                                         <option value="1"> 1 </option>
                                         <option value="2"> 2 </option>
@@ -232,7 +290,7 @@ export default function NavBar({ addOrderSubmit }) {
 
                                 <div className="border border-black px-[5px] py-[2px] rounded">
                                     <p 
-                                        id="order-three-price"
+                                        id="order-three-price-box"
                                         className="totalPrice min-w-[50px] px-[5px] p-[2px] "
                                         value={ orderThreePrice }
                                         onChange={ (e) => { setOrderThreePrice(e.target.value) } }
@@ -248,8 +306,14 @@ export default function NavBar({ addOrderSubmit }) {
                                     id='order-four-item'
                                     name="order-four-item"
                                     value={ orderFourItem }
-                                    onChange={ (e) => { setOrderFourItem(e.target.value) } }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderFourItem(e.target.value)
+                                            orderFourPriceBox.textContent = orderFourQuantity * 250 ;
+                                        }
+                                    }
                                 >
+                                    <option value="Choose Your Order"> Choose Your Order </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
@@ -262,7 +326,12 @@ export default function NavBar({ addOrderSubmit }) {
                                     id="quantity-order-four" 
                                     name="quantity-order-four"
                                     value={ orderFourQuantity }
-                                    onChange={ (e) => {setOrderFourQuantity(e.target.value)} }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderFourQuantity(e.target.value)
+                                            orderFourPriceBox.textContent = e.target.value * 250 ;
+                                        } 
+                                    }
                                 >
                                         <option value="1"> 1 </option>
                                         <option value="2"> 2 </option>
@@ -273,7 +342,7 @@ export default function NavBar({ addOrderSubmit }) {
 
                                 <div className="border border-black px-[5px] py-[2px] rounded">
                                     <p 
-                                        id="order-four-price"
+                                        id="order-four-price-box"
                                         className="totalPrice min-w-[50px] px-[5px] p-[2px] "
                                         value={ orderFourPrice }
                                         onChange={ (e) => { setOrderFourPrice(e.target.value) } }
@@ -289,8 +358,14 @@ export default function NavBar({ addOrderSubmit }) {
                                     id='order-five-item'
                                     name="order-five-item"
                                     value={ orderFiveItem }
-                                    onChange={ (e) => { setOrderFiveItem(e.target.value) } }
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderFiveItem(e.target.value)
+                                            orderFivePriceBox.textContent = orderFiveQuantity * 250 ;
+                                        }
+                                    }
                                 >
+                                    <option value="Choose Your Order"> Choose Your Order </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
                                     <option value="#"> # </option>
@@ -303,8 +378,12 @@ export default function NavBar({ addOrderSubmit }) {
                                     id="quantity-order-five" 
                                     name="quantity-order-five"
                                     value={ orderFiveQuantity }
-                                    onChange={ (e) => {setOrderFiveQuantity(e.target.value)} }
-                                >
+                                    onChange={ 
+                                        (e) => { 
+                                            setOrderFiveQuantity(e.target.value)
+                                            orderFivePriceBox.textContent = e.target.value * 250 ;
+                                        } 
+                                    }                                >
                                         <option value="1"> 1 </option>
                                         <option value="2"> 2 </option>
                                         <option value="3"> 3 </option>
@@ -314,7 +393,7 @@ export default function NavBar({ addOrderSubmit }) {
 
                                 <div className="border border-black px-[5px] py-[2px] rounded">
                                     <p 
-                                        id="order-five-price"
+                                        id="order-five-price-box"
                                         className="totalPrice min-w-[50px] px-[5px] p-[2px] "
                                         value={ orderFivePrice }
                                         onChange={ (e) => { setOrderFivePrice(e.target.value) } }

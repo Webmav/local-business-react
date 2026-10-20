@@ -1,29 +1,6 @@
 {
   "orders": [
-    {
-      "name": "munawar",
-      "phone": "270938290",
-      "address": "vetti",
-      "id": "ZFlPe_pWgXI"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "address": "",
-      "orderOneItem": "",
-      "orderOneQuantity": "1",
-      "orderOnePrice": "",
-      "id": "hppJoiIoBX4"
-    },
-    {
-      "name": "Munna",
-      "phone": "20394785469",
-      "address": "afsgdhjg",
-      "orderOneItem": "#",
-      "orderOneQuantity": "4",
-      "orderOnePrice": "",
-      "id": "OCLKIOcKWRQ"
-    }
+   
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

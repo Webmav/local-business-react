@@ -1,6 +1,14 @@
 {
   "orders": [
-   
+    {
+      "name": "afsdg",
+      "phone": "agsf",
+      "address": "asgf",
+      "orderOneItem": "loadedFries",
+      "orderOneQuantity": 2,
+      "orderOnePrice": "",
+      "id": "IX9I_CNg6iw"
+    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

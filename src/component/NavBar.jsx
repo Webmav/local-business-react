@@ -2,21 +2,27 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavBar({ addOrderSubmit }) {
+
+//Hides button until all required field is filled
+const inputs = document.querySelectorAll("input");
+const submits = document.querySelectorAll("select");
+
+useEffect(() => {
+    const confirmOrderButton = document.getElementById("confirm-order");
+
+    ( 
+        (!customerName == "") && 
+        (!customerPhone == "") &&
+        (!customerAddress == "")
+    ) ? confirmOrderButton.style.display = "block" : confirmOrderButton.style.display = "none";
+}, [ inputs, submits])
+
 //Menu
-    const burger = 'burger';
     const burgerPrice = 140;
-
-    const LoadedFries = 'LoadedFries';
-    const LoadedFriesPrice = 180;
-
-    const Shawaya = 'Shawaya';
-    const ShawayaPrice = 120;
-
-    const Mandhi = 'Mandhi';
-    const MandhiPrice = 220;
-
-    const Pepsi1l = 'Pepsi1l';
-    const Pepsi1lPrice = 40;
+    const loadedFriesPrice = 180;
+    const shawayaPrice = 120;
+    const mandhiPrice = 220;
+    const pepsi1lPrice = 40;
 
 //Form Details
     const [customerName, setCustomerName] = useState("");
@@ -25,23 +31,8 @@ export default function NavBar({ addOrderSubmit }) {
 
     const [orderOneItem, setOrderOneItem] = useState("");
     const [orderOneQuantity, setOrderOneQuantity] = useState("1");
+    const [orderOneSmallQuantity, setOrderOneSmallQuantity] = useState("0");
     const [orderOnePrice, setOrderOnePrice] = useState("")
-
-    const [orderTwoItem, setOrderTwoItem] = useState("");
-    const [orderTwoQuantity, setOrderTwoQuantity] = useState("1");
-    const [orderTwoPrice, setOrderTwoPrice] = useState("")
-
-    const [orderThreeItem, setOrderThreeItem] = useState("");
-    const [orderThreeQuantity, setOrderThreeQuantity] = useState("1");
-    const [orderThreePrice, setOrderThreePrice] = useState("")
-
-    const [orderFourItem, setOrderFourItem] = useState("");
-    const [orderFourQuantity, setOrderFourQuantity] = useState("1");
-    const [orderFourPrice, setOrderFourPrice] = useState("")
-
-    const [orderFiveItem, setOrderFiveItem] = useState("");
-    const [orderFiveQuantity, setOrderFiveQuantity] = useState("1");
-    const [orderFivePrice, setOrderFivePrice] = useState("")
 
 //For setting price upon deciding order 
     useEffect(() => {
@@ -74,34 +65,116 @@ export default function NavBar({ addOrderSubmit }) {
     function submitForm(e) {
         e.preventDefault()
 
+        const numberedOrderOneQuantity = Number(orderOneQuantity) + Number(orderOneSmallQuantity);
+        const numberedOrderTwoQuantity = Number(orderTwoQuantity) + Number(orderTwoSmallQuantity);
+        const numberedOrderThreeQuantity = Number(orderThreeQuantity) + Number(orderThreeSmallQuantity);
+        const numberedOrderFourQuantity = Number(orderFourQuantity) + Number(orderFourSmallQuantity);
+        const numberedOrderFiveQuantity = Number(orderFiveQuantity) + Number(orderFiveSmallQuantity);
+        const numberedOrderSixQuantity = Number(orderSixQuantity) + Number(orderSixSmallQuantity);
+        const numberedOrderSevenQuantity = Number(orderSevenQuantity) + Number(orderSevenSmallQuantity);
+        const numberedOrderEightQuantity = Number(orderEightQuantity) + Number(orderEightSmallQuantity);
+        const numberedOrderNineQuantity = Number(orderNineQuantity) + Number(orderNineSmallQuantity);
+        const numberedOrderTenQuantity = Number(orderTenQuantity) + Number(orderTenSmallQuantity);
+
         const newOrder = {
             name : customerName,
             phone : customerPhone,
             address : customerAddress,
             orderOneItem,
-            orderOneQuantity,
+            orderOneQuantity: numberedOrderOneQuantity,
             orderOnePrice,
-            orderTwoItem,
-            orderTwoQuantity,
-            orderTwoPrice,
-            orderThreeItem,
-            orderThreeQuantity,
-            orderThreePrice,
-            orderFourItem,
-            orderFourQuantity,
-            orderFourPrice,
-            orderFiveItem,
-            orderFiveQuantity,
-            orderFivePrice
         }
 
         addOrderSubmit(newOrder)
+        navigate("/")
     }
 
+//Function on order item changes
+    //Order One item
+    function orderOneItemChanged(e) {
+        if ((e.target.value == "burger")) {
+            setOrderOneItem(e.target.value)
+            orderOnePriceBox.textContent = orderOneQuantity * burgerPrice ;
+        }
+        else if ((e.target.value == "loadedFries")) {
+            setOrderOneItem(e.target.value)
+            orderOnePriceBox.textContent = orderOneQuantity * loadedFriesPrice ;
+        }
+        else if ((e.target.value == "shawaya")) {
+            setOrderOneItem(e.target.value)
+            orderOnePriceBox.textContent = orderOneQuantity * shawayaPrice ;
+        }
+        else if ((e.target.value == "mandhi")) {
+            setOrderOneItem(e.target.value)
+            orderOnePriceBox.textContent = orderOneQuantity * mandhiPrice ;
+        }
+        else if ((e.target.value == "pepsi1l")) {
+            setOrderOneItem(e.target.value)
+            orderOnePriceBox.textContent = orderOneQuantity * pepsi1lPrice ;
 
+            const smallQuantityOrderOneBox = document.getElementById("small-quantity-order-one");
+            smallQuantityOrderOneBox.style.display = "none";
+        }
+    }
 
+//Function to perform on Order quantity changes
+    //Order One quantity
+    function orderOneQuantityChanged(e) {
+        if (orderOneItem == "burger") {
+            setOrderOneQuantity(e.target.value)
+            orderOnePriceBox.textContent = e.target.value * burgerPrice ;
+        }
+        else if (orderOneItem == "loadedFries") {
+            setOrderOneQuantity(e.target.value)
+            orderOnePriceBox.textContent = e.target.value * loadedFriesPrice ;
+        }
+        else if (orderOneItem == "shawaya") {
+            setOrderOneQuantity(e.target.value)
+            orderOnePriceBox.textContent = e.target.value * shawayaPrice ;
+        }
+        else if (orderOneItem == "mandhi") {
+            setOrderOneQuantity(e.target.value)
+            orderOnePriceBox.textContent = e.target.value * mandhiPrice ;
+        }
+        else if (orderOneItem == "pepsi1l") {
+            setOrderOneQuantity(e.target.value)
+            orderOnePriceBox.textContent = e.target.value * pepsi1lPrice ;
+        }
+    }
 
-    
+//Function to perform on Order small quantity changes
+    //Order One small quantity
+    function orderOneSmallQuantityChanged(e) {
+        console.log(orderOneQuantity)
+        console.log(e.target.value)
+        
+        if (orderOneItem == "burger") {
+            setOrderOneSmallQuantity(e.target.value)
+            let sum = orderOneQuantity + e.target.value;
+            orderOnePriceBox.textContent = sum * burgerPrice ;
+        }
+        else if (orderOneItem == "loadedFries") {
+            setOrderOneSmallQuantity(e.target.value)
+            let sum = orderOneQuantity + e.target.value;
+            orderOnePriceBox.textContent = sum * loadedFriesPrice ;
+        }
+        else if (orderOneItem == "shawaya") {
+            setOrderOneSmallQuantity(e.target.value)
+            let sum = orderOneQuantity + e.target.value;
+            orderOnePriceBox.textContent = sum * shawayaPrice ;
+        }
+        else if (orderOneItem == "mandhi") {
+            setOrderOneSmallQuantity(e.target.value)
+            let sum = orderOneQuantity + e.target.value;
+            orderOnePriceBox.textContent = sum * mandhiPrice ;
+        }
+        else if (orderOneItem == "pepsi1l") {
+            setOrderOneSmallQuantity(e.target.value)
+            let sum = orderOneQuantity + e.target.value;
+            orderOnePriceBox.textContent = sum * pepsi1lPrice ;
+        }
+    }
+
     return(
         <div>
             <nav
@@ -128,13 +201,15 @@ export default function NavBar({ addOrderSubmit }) {
             
             <div
                 id="order-menu"
-                className = "absolute justify-self-center top-[100px] border border-black drop-shadow-xl rounded-[25px] bg-red-500"
+                className = "absolute justify-self-center top-[100px] border border-black drop-shadow-xl rounded-[25px] bg-red-500 hidden"
             >
                 <form 
                     onSubmit={submitForm}
                     className="mx-[25px] my-[50px]"
                 >
                     <h1 className="justify-self-center my-[25px]">Order</h1>
+
+                    <h2 className='justify-self-center text-[7.5px] text-yellow-100'>You can only order if you have filled Name, Phone and Address field !</h2>
 
                     <ul>
                         <li className="mx-[20px] my-[20px]">
@@ -143,7 +218,7 @@ export default function NavBar({ addOrderSubmit }) {
                                 type="text" 
                                 name="name"
                                 value={ customerName }
-                                onChange={ (e) => { setCustomerName(e.target.value) } }
+                                onChange={ (e) => { setCustomerName(e.target.value) } }   
                             />
                         </li>
 
@@ -178,19 +253,14 @@ export default function NavBar({ addOrderSubmit }) {
                                     id='order-one-item'
                                     name="order-one-item"
                                     value={ orderOneItem }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderOneItem(e.target.value)
-                                            orderOnePriceBox.textContent = orderOneQuantity * 250 ;
-                                        }
-                                    }
+                                    onChange={ orderOneItemChanged }
                                 >
                                     <option value="Choose Your Order"> Choose Your Order </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
                                 </select>
 
                                 <select
@@ -198,231 +268,38 @@ export default function NavBar({ addOrderSubmit }) {
                                     id="quantity-order-one" 
                                     name="quantity-order-one"
                                     value={ orderOneQuantity }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderOneQuantity(e.target.value)
-                                            orderOnePriceBox.textContent = e.target.value * 250 ;
-                                        } 
-                                    }
+                                    onChange={ orderOneQuantityChanged }
                                 >
+                                        <option value="0"> 0 </option>
                                         <option value="1"> 1 </option>
                                         <option value="2"> 2 </option>
                                         <option value="3"> 3 </option>
                                         <option value="4"> 4 </option>
                                         <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                        <option value="7"> 7 </option>
+                                        <option value="8"> 8 </option>
+                                        <option value="9"> 9 </option>
+                                        <option value="10"> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                    id="small-quantity-order-one" 
+                                    name="small-quantity-order-one"
+                                    value={ orderOneSmallQuantity }
+                                    onChange={ orderOneSmallQuantityChanged }
+                                >
+                                        <option value="0"> Null </option>
+                                        <option value=".25"> Quarter (1/4) </option>
+                                        <option value=".5"> Half (1/2) </option>
+                                        <option value=".75"> Three quarter (3/4)  </option>
                                 </select>
 
                                 <div className="border border-black px-[5px] py-[2px] rounded">
                                     <p 
                                         id="order-one-price-box"
                                         className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                    >
-                                        
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
-                                Order #2 : <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                    id='order-two-item'
-                                    name="order-two-item"
-                                    value={ orderTwoItem }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderTwoItem(e.target.value)
-                                            orderTwoPriceBox.textContent = orderTwoQuantity * 250 ;
-                                        }
-                                    }
-                                >
-                                    <option value="Choose Your Order"> Choose Your Order </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                </select>
-
-                                <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                    id="quantity-order-two" 
-                                    name="quantity-order-two"
-                                    value={ orderTwoQuantity }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderTwoQuantity(e.target.value)
-                                            orderTwoPriceBox.textContent = e.target.value * 250 ;
-                                        } 
-                                    }
-                                >
-                                        <option value="1"> 1 </option>
-                                        <option value="2"> 2 </option>
-                                        <option value="3"> 3 </option>
-                                        <option value="4"> 4 </option>
-                                        <option value="5"> 5 </option>
-                                </select>
-
-                                <div className="border border-black px-[5px] py-[2px] rounded">
-                                    <p 
-                                        id="order-two-price-box"
-                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                        value={ orderTwoPrice }
-                                        onChange={ (e) => { setOrderTwoPrice(e.target.value) } }
-                                    >
-                                        
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div id="div-order-three" className="flex gap-[10px] mx-[20px] my-[20px]">
-                                Order #3 : <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                    id='order-three-item'
-                                    name="order-three-item"
-                                    value={ orderThreeItem }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderThreeItem(e.target.value)
-                                            orderThreePriceBox.textContent = orderThreeQuantity * 250 ;
-                                        }
-                                    }
-                                >
-                                    <option value="Choose Your Order"> Choose Your Order </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                </select>
-
-                                <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                    id="quantity-order-three" 
-                                    name="quantity-order-three"
-                                    value={ orderThreeQuantity }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderThreeQuantity(e.target.value)
-                                            orderThreePriceBox.textContent = e.target.value * 250 ;
-                                        } 
-                                    }
-                                >
-                                        <option value="1"> 1 </option>
-                                        <option value="2"> 2 </option>
-                                        <option value="3"> 3 </option>
-                                        <option value="4"> 4 </option>
-                                        <option value="5"> 5 </option>
-                                </select>
-
-                                <div className="border border-black px-[5px] py-[2px] rounded">
-                                    <p 
-                                        id="order-three-price-box"
-                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                        value={ orderThreePrice }
-                                        onChange={ (e) => { setOrderThreePrice(e.target.value) } }
-                                    >
-                                        
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div id="div-order-four" className="flex gap-[10px] mx-[20px] my-[20px]">
-                                Order #4 : <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                    id='order-four-item'
-                                    name="order-four-item"
-                                    value={ orderFourItem }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderFourItem(e.target.value)
-                                            orderFourPriceBox.textContent = orderFourQuantity * 250 ;
-                                        }
-                                    }
-                                >
-                                    <option value="Choose Your Order"> Choose Your Order </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                </select>
-
-                                <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                    id="quantity-order-four" 
-                                    name="quantity-order-four"
-                                    value={ orderFourQuantity }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderFourQuantity(e.target.value)
-                                            orderFourPriceBox.textContent = e.target.value * 250 ;
-                                        } 
-                                    }
-                                >
-                                        <option value="1"> 1 </option>
-                                        <option value="2"> 2 </option>
-                                        <option value="3"> 3 </option>
-                                        <option value="4"> 4 </option>
-                                        <option value="5"> 5 </option>
-                                </select>
-
-                                <div className="border border-black px-[5px] py-[2px] rounded">
-                                    <p 
-                                        id="order-four-price-box"
-                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                        value={ orderFourPrice }
-                                        onChange={ (e) => { setOrderFourPrice(e.target.value) } }
-                                    >
-                                        
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div id="div-order-five" className="flex gap-[10px] mx-[20px] my-[20px]">
-                                Order #5 : <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                    id='order-five-item'
-                                    name="order-five-item"
-                                    value={ orderFiveItem }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderFiveItem(e.target.value)
-                                            orderFivePriceBox.textContent = orderFiveQuantity * 250 ;
-                                        }
-                                    }
-                                >
-                                    <option value="Choose Your Order"> Choose Your Order </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                    <option value="#"> # </option>
-                                </select>
-
-                                <select
-                                    className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                    id="quantity-order-five" 
-                                    name="quantity-order-five"
-                                    value={ orderFiveQuantity }
-                                    onChange={ 
-                                        (e) => { 
-                                            setOrderFiveQuantity(e.target.value)
-                                            orderFivePriceBox.textContent = e.target.value * 250 ;
-                                        } 
-                                    }                                >
-                                        <option value="1"> 1 </option>
-                                        <option value="2"> 2 </option>
-                                        <option value="3"> 3 </option>
-                                        <option value="4"> 4 </option>
-                                        <option value="5"> 5 </option>
-                                </select>
-
-                                <div className="border border-black px-[5px] py-[2px] rounded">
-                                    <p 
-                                        id="order-five-price-box"
-                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                        value={ orderFivePrice }
-                                        onChange={ (e) => { setOrderFivePrice(e.target.value) } }
                                     >
                                         
                                     </p>
@@ -446,6 +323,7 @@ export default function NavBar({ addOrderSubmit }) {
 
                     <div className="flex justify-center">
                         <button 
+                            id='confirm-order'
                             className="rounded border border-black px-[7.5px] py-[2.5px] hover:bg-red-600 hover:text-yellow-100"
                         >
                             Confirm Order

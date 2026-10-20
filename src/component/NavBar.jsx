@@ -2,6 +2,23 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavBar({ addOrderSubmit }) {
+//Menu
+    const burger = 'burger';
+    const burgerPrice = 140;
+
+    const LoadedFries = 'LoadedFries';
+    const LoadedFriesPrice = 180;
+
+    const Shawaya = 'Shawaya';
+    const ShawayaPrice = 120;
+
+    const Mandhi = 'Mandhi';
+    const MandhiPrice = 220;
+
+    const Pepsi1l = 'Pepsi1l';
+    const Pepsi1lPrice = 40;
+
+//Form Details
     const [customerName, setCustomerName] = useState("");
     const [customerPhone, setCustomerPhone] = useState("");
     const [customerAddress, setCustomerAddress] = useState("");
@@ -26,12 +43,7 @@ export default function NavBar({ addOrderSubmit }) {
     const [orderFiveQuantity, setOrderFiveQuantity] = useState("1");
     const [orderFivePrice, setOrderFivePrice] = useState("")
 
-    let orderOnePriceBox = document.getElementById("order-one-price-box");
-    let orderTwoPriceBox = document.getElementById("order-two-price-box");
-    let orderThreePriceBox = document.getElementById("order-three-price-box");
-    let orderFourPriceBox = document.getElementById("order-four-price-box");
-    let orderFivePriceBox = document.getElementById("order-five-price-box");
-
+//For setting price upon deciding order 
     useEffect(() => {
         orderOnePriceBox = document.getElementById("order-one-price-box");
         orderTwoPriceBox = document.getElementById("order-two-price-box");
@@ -40,8 +52,17 @@ export default function NavBar({ addOrderSubmit }) {
         orderFivePriceBox = document.getElementById("order-five-price-box");
     }, [])
 
+//For setting price upon deciding quantity of order 
+    let orderOnePriceBox = document.getElementById("order-one-price-box");
+    let orderTwoPriceBox = document.getElementById("order-two-price-box");
+    let orderThreePriceBox = document.getElementById("order-three-price-box");
+    let orderFourPriceBox = document.getElementById("order-four-price-box");
+    let orderFivePriceBox = document.getElementById("order-five-price-box");
+
+//Initialized for navigating after submitting form
     const navigate = useNavigate();
 
+//Function to perform upon clicking order button in the navigation
     function Order() {
         const orderMenu = document.getElementById("order-menu")
         orderMenu.classList.toggle("hidden")
@@ -49,6 +70,7 @@ export default function NavBar({ addOrderSubmit }) {
         console.log("Clicked")
     }
 
+//Function to perform upon form submition
     function submitForm(e) {
         e.preventDefault()
 
@@ -76,6 +98,10 @@ export default function NavBar({ addOrderSubmit }) {
         addOrderSubmit(newOrder)
     }
 
+
+
+
+    
     return(
         <div>
             <nav

@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-
 #menu-list {
     gap: clamp(1rem, 5vw, 10rem);
 }
@@ -9,9 +8,6 @@
     columns: 2;
 }
 
-* {
-    color: rgb(255, 255, 68);
-}
 
 /* 
 * {

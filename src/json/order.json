@@ -8,6 +8,15 @@
       "orderOneQuantity": 2,
       "orderOnePrice": "",
       "id": "IX9I_CNg6iw"
+    },
+    {
+      "name": "hkbl",
+      "phone": "oiugugcy",
+      "address": "iygl",
+      "orderOneItem": "loadedFries",
+      "orderOneQuantity": 4.75,
+      "orderOnePrice": "",
+      "id": "Au_7mWCpZB4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

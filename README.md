@@ -1,8 +1,8 @@
-#Fine Food Landing Page
+# Fine Food Landing Page
 
 A responsive landing page for a local food business, built with React. It is designed to showcase the business, highlight its menu and offerings, and turn visitors into customers.
 
-#Features
+# Features
 
 * Responsive layout that works on mobile, tablet, and desktop
 * Hero section with a clear call to action
@@ -12,19 +12,19 @@ A responsive landing page for a local food business, built with React. It is des
 * Contact details, location, and opening hours
 * Reusable React components for easy customization
 
-#Tech Stack
+# Tech Stack
 
 * React
 * Vite (build tool and dev server)
 * Tailwind CSS (styling)
 
-#Getting Started
+# Getting Started
 
-#Prerequisites
+# Prerequisites
 * Node.js 18 or later
 * npm (comes with Node.js) or yarn
 
-#Installation
+# Installation
 
 *Clone the repository
 git clone <your-repository-url>
@@ -36,23 +36,23 @@ cd fine-food-landing-page
 npm install
 
 
-#Run in development
+# Run in development
 
 npm run dev
 
 Open the local URL shown in the terminal (usually http://localhost:5173).
 
-#Build for production
+# Build for production
 
 npm run build
 
 The optimized files are generated in the dist/ folder.
 
-#Preview the production build
+# Preview the production build
 
 npm run preview
 
-#Project Structure
+# Project Structure
 fine-food-landing-page/
 ├── public/            # Static assets
 ├── src/
@@ -65,18 +65,18 @@ fine-food-landing-page/
 ├── package.json
 └── README.md
 
-#Customization
+# Customization
 
 Business details: update the name, tagline, address, phone number, and opening hours in the relevant components.
 Menu items: edit the menu data (names, descriptions, prices, images) in the Menu component or its data file.
 Images: replace files in src/assets/ or public/ with your own photos.
 Colors and fonts: adjust the theme in tailwind.config.js (or your CSS file).
 
-#Deployment
+# Deployment
 
 The built site is static, so it can be hosted on services like Netlify, Vercel, GitHub Pages, or any static web host. Run npm run build and deploy the contents of the dist/ folder.
 
-#Contributing
+# Contributing
 
 1. Fork the project
 2. Create a feature branch (git checkout -b feature/your-feature)
@@ -84,6 +84,6 @@ The built site is static, so it can be hosted on services like Netlify, Vercel, 
 4. Push to the branch (git push origin feature/your-feature)
 5. Open a pull request
 
-#License
+# License
 
 This project is licensed under the MIT License.

@@ -52,19 +52,6 @@ The optimized files are generated in the dist/ folder.
 
 npm run preview
 
-# Project Structure
-fine-food-landing-page/
-├── public/            # Static assets
-├── src/
-│   ├── components/    # Reusable UI components (Navbar, Hero, Menu, Footer, etc.)
-│   ├── assets/        # Images and icons
-│   ├── App.jsx        # Root component
-│   ├── main.jsx       # App entry point
-│   └── index.css      # Global styles
-├── index.html
-├── package.json
-└── README.md
-
 # Customization
 
 Business details: update the name, tagline, address, phone number, and opening hours in the relevant components.

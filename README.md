@@ -35,27 +35,39 @@ A responsive landing page for a local food business, built with React. It is des
 ```
 
 *Move into the project folder
+
+```bash
 cd fine-food-landing-page
+```
 
 *Install dependencies
+
+```bash
 npm install
+```
 
 
 # Run in development
 
+```bash
 npm run dev
+```
 
 Open the local URL shown in the terminal (usually http://localhost:5173).
 
 # Build for production
 
+```bash
 npm run build
+```
 
 The optimized files are generated in the dist/ folder.
 
 # Preview the production build
 
+```bash
 npm run preview
+```
 
 # Customization
 

@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom"
+import { useLoaderData, useNavigate, Link } from "react-router-dom";
 
 export default function OrderCard() {
     const order = useLoaderData()
@@ -13,12 +13,12 @@ export default function OrderCard() {
                     <h1> Address : {order.address} </h1>
                     <h1> Order #1 Item : {order.orderOneItem} </h1>
                     <h1> Order #1 Quantity : {order.orderOneQuantity} </h1>
-                    <h1> Order #1 Price : {order.orderOnePrice} </h1>
+                    <h1> Order #1 Price : {order.orderOnePrice} <Link to={ `/admin/orders/${order.name}` }>...</Link> </h1>
 
                     <button 
                         className="border border-black hover:text-yellow-300 my-[2px]"
                         onClick={ () => {
-                            navigate(`/admin/orders/${order.id}`)
+                            navigate(`/admin/orders/${order.name}`)
                         }}
                     >
                         Edit

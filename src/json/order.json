@@ -83,6 +83,27 @@
       "orderFiveQuantity": 1,
       "orderFivePrice": "",
       "id": "aocY-X4gHd8"
+    },
+    {
+      "name": "afsd",
+      "phone": "asdf",
+      "address": "gewrs",
+      "orderOneItem": "loadedFries",
+      "orderOneQuantity": 4.25,
+      "orderOnePrice": 765,
+      "orderTwoItem": "",
+      "orderTwoQuantity": 1,
+      "orderTwoPrice": "",
+      "orderThreeItem": "loadedFries",
+      "orderThreeQuantity": 1,
+      "orderThreePrice": 180,
+      "orderFourItem": "",
+      "orderFourQuantity": 1,
+      "orderFourPrice": "",
+      "orderFiveItem": "",
+      "orderFiveQuantity": 1,
+      "orderFivePrice": "",
+      "id": "GfcLFRX1R3s"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

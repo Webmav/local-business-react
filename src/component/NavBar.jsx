@@ -111,7 +111,8 @@ useEffect(() => {
         }
 
         addOrderSubmit(newOrder)
-        navigate("/")
+        const orderMenu = document.getElementById("order-menu")
+        orderMenu.classList.toggle("hidden")
     }
 
 //Function on order item changes

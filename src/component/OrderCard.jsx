@@ -18,7 +18,7 @@ export default function OrderCard() {
                     <button 
                         className="border border-black hover:text-yellow-300 my-[2px]"
                         onClick={ () => {
-
+                            navigate(`/admin/orders/${order.id}`)
                         }}
                     >
                         Edit

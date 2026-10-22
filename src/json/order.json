@@ -1,106 +1,25 @@
 {
   "orders": [
     {
-      "name": "afsdg",
-      "phone": "agsf",
-      "address": "asgf",
-      "orderOneItem": "loadedFries",
-      "orderOneQuantity": 2,
-      "orderOnePrice": "",
-      "id": "IX9I_CNg6iw"
-    },
-    {
-      "name": "hkbl",
-      "phone": "oiugugcy",
-      "address": "iygl",
-      "orderOneItem": "loadedFries",
-      "orderOneQuantity": 4.75,
-      "orderOnePrice": "",
-      "id": "Au_7mWCpZB4"
-    },
-    {
-      "name": "ewdgfh",
-      "phone": "agshd",
-      "address": "ahdfg",
-      "orderOneItem": "loadedFries",
-      "orderOneQuantity": 3.5,
-      "orderOnePrice": "",
-      "id": "3TijFrK27FE"
-    },
-    {
-      "name": "afsda",
-      "phone": "fsda",
-      "address": "dsfafdsa",
-      "orderOneItem": "shawaya",
-      "orderOneQuantity": 3.5,
-      "orderOnePrice": 120,
-      "id": "556YklYvg78"
-    },
-    {
-      "name": "asdf",
-      "phone": "afsd",
-      "address": "afsd",
-      "orderOneItem": "shawaya",
-      "orderOneQuantity": 3.75,
-      "orderOnePrice": 120,
-      "id": "BZak-z5nKpM"
-    },
-    {
-      "name": "asfd",
-      "phone": "asdg",
-      "address": "agsd",
-      "orderOneItem": "shawaya",
+      "name": "dsf",
+      "phone": "gaers",
+      "address": "adgf",
+      "orderOneItem": "mandhi",
       "orderOneQuantity": 4.5,
-      "orderOnePrice": 120,
-      "id": "DVwOO7FwKxw"
-    },
-    {
-      "name": "asfd",
-      "phone": "asgd",
-      "address": "asdf",
-      "orderOneItem": "burger",
-      "orderOneQuantity": 10.25,
-      "orderOnePrice": 140,
-      "id": "ss8Ob2KN4Tw"
-    },
-    {
-      "name": "sfdaf",
-      "phone": "aerfw",
-      "address": "arew",
-      "orderOneItem": "burger",
-      "orderOneQuantity": 9.5,
-      "orderOnePrice": null,
-      "id": "MBOKKvfOeYw"
-    },
-    {
-      "name": "asfd",
-      "phone": "asfd",
-      "address": "asdf",
-      "orderOneItem": "burger",
-      "orderOneQuantity": 2.75,
-      "orderOnePrice": 385,
-      "id": "D9hjZ-qXqbo"
-    },
-    {
-      "name": "qafsd",
-      "phone": "asfd",
-      "address": "agds",
-      "orderOneItem": "pepsi1l",
-      "orderOneQuantity": 5.75,
-      "orderOnePrice": 230,
-      "orderTwoItem": "loadedFries",
-      "orderTwoQuantity": 5.75,
-      "orderTwoPrice": 1035,
-      "orderThreeItem": "shawaya",
-      "orderThreeQuantity": 7.25,
-      "orderThreePrice": 870,
-      "orderFourItem": "burger",
-      "orderFourQuantity": 5.5,
-      "orderFourPrice": 770,
-      "orderFiveItem": "mandhi",
-      "orderFiveQuantity": 6.25,
-      "orderFivePrice": 1375,
-      "id": "2zRSYgc8iU4"
+      "orderOnePrice": 990,
+      "orderTwoItem": "",
+      "orderTwoQuantity": 1,
+      "orderTwoPrice": "",
+      "orderThreeItem": "",
+      "orderThreeQuantity": 1,
+      "orderThreePrice": "",
+      "orderFourItem": "",
+      "orderFourQuantity": 1,
+      "orderFourPrice": "",
+      "orderFiveItem": "",
+      "orderFiveQuantity": 1,
+      "orderFivePrice": "",
+      "id": "oLV8YyZwtEw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

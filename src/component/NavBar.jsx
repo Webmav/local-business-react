@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 export default function NavBar({ addOrderSubmit }) {
 
@@ -77,8 +77,6 @@ useEffect(() => {
     function Order() {
         const orderMenu = document.getElementById("order-menu")
         orderMenu.classList.toggle("hidden")
-
-        console.log("Clicked")
     }
 
 //Function to perform upon form submition
@@ -124,7 +122,6 @@ useEffect(() => {
             orderOnePriceBox.textContent = orderOneQuantity * burgerPrice ;
 
             let sumTwo = orderOneQuantity * burgerPrice;
-            console.log(sumTwo)
             setOrderOnePrice( sumTwo )
         }
         else if ((e.target.value == "loadedFries")) {
@@ -132,7 +129,6 @@ useEffect(() => {
             orderOnePriceBox.textContent = orderOneQuantity * loadedFriesPrice ;
 
             let sumTwo = orderOneQuantity * loadedFriesPrice;
-            console.log(sumTwo)
             setOrderOnePrice( sumTwo )
         }
         else if ((e.target.value == "shawaya")) {
@@ -140,7 +136,6 @@ useEffect(() => {
             orderOnePriceBox.textContent = orderOneQuantity * shawayaPrice ;
 
             let sumTwo = orderOneQuantity * shawayaPrice;
-            console.log(sumTwo)
             setOrderOnePrice( sumTwo )
         }
         else if ((e.target.value == "mandhi")) {
@@ -148,7 +143,6 @@ useEffect(() => {
             orderOnePriceBox.textContent = orderOneQuantity * mandhiPrice ;
 
             let sumTwo = orderOneQuantity * mandhiPrice;
-            console.log(sumTwo)
             setOrderOnePrice( sumTwo )
         }
         else if ((e.target.value == "pepsi1l")) {
@@ -156,7 +150,6 @@ useEffect(() => {
             orderOnePriceBox.textContent = orderOneQuantity * pepsi1lPrice ;
 
             let sumTwo = orderOneQuantity * pepsi1lPrice;
-            console.log(sumTwo)
             setOrderOnePrice( sumTwo )
         }
     }
@@ -167,7 +160,6 @@ useEffect(() => {
             orderTwoPriceBox.textContent = orderTwoQuantity * burgerPrice ;
 
             let sumTwo = orderTwoQuantity * burgerPrice;
-            console.log(sumTwo)
             setOrderTwoPrice( sumTwo )
         }
         else if ((e.target.value == "loadedFries")) {
@@ -175,7 +167,6 @@ useEffect(() => {
             orderTwoPriceBox.textContent = orderTwoQuantity * loadedFriesPrice ;
 
             let sumTwo = orderTwoQuantity * loadedFriesPrice;
-            console.log(sumTwo)
             setOrderTwoPrice( sumTwo )
         }
         else if ((e.target.value == "shawaya")) {
@@ -183,7 +174,6 @@ useEffect(() => {
             orderTwoPriceBox.textContent = orderTwoQuantity * shawayaPrice ;
 
             let sumTwo = orderTwoQuantity * shawayaPrice;
-            console.log(sumTwo)
             setOrderTwoPrice( sumTwo )
         }
         else if ((e.target.value == "mandhi")) {
@@ -191,7 +181,6 @@ useEffect(() => {
             orderTwoPriceBox.textContent = orderTwoQuantity * mandhiPrice ;
 
             let sumTwo = orderTwoQuantity * mandhiPrice;
-            console.log(sumTwo)
             setOrderTwoPrice( sumTwo )
         }
         else if ((e.target.value == "pepsi1l")) {
@@ -199,7 +188,6 @@ useEffect(() => {
             orderTwoPriceBox.textContent = orderTwoQuantity * pepsi1lPrice ;
 
             let sumTwo = orderTwoQuantity * pepsi1lPrice;
-            console.log(sumTwo)
             setOrderTwoPrice( sumTwo )
         }
     }
@@ -210,7 +198,6 @@ useEffect(() => {
             orderThreePriceBox.textContent = orderThreeQuantity * burgerPrice ;
 
             let sumTwo = orderThreeQuantity * burgerPrice;
-            console.log(sumTwo)
             setOrderThreePrice( sumTwo )
         }
         else if ((e.target.value == "loadedFries")) {
@@ -218,7 +205,6 @@ useEffect(() => {
             orderThreePriceBox.textContent = orderThreeQuantity * loadedFriesPrice ;
 
             let sumTwo = orderThreeQuantity * loadedFriesPrice;
-            console.log(sumTwo)
             setOrderThreePrice( sumTwo )
         }
         else if ((e.target.value == "shawaya")) {
@@ -226,7 +212,6 @@ useEffect(() => {
             orderThreePriceBox.textContent = orderThreeQuantity * shawayaPrice ;
 
             let sumTwo = orderThreeQuantity * shawayaPrice;
-            console.log(sumTwo)
             setOrderThreePrice( sumTwo )
         }
         else if ((e.target.value == "mandhi")) {
@@ -234,7 +219,6 @@ useEffect(() => {
             orderThreePriceBox.textContent = orderThreeQuantity * mandhiPrice ;
 
             let sumTwo = orderThreeQuantity * mandhiPrice;
-            console.log(sumTwo)
             setOrderThreePrice( sumTwo )
         }
         else if ((e.target.value == "pepsi1l")) {
@@ -242,7 +226,6 @@ useEffect(() => {
             orderThreePriceBox.textContent = orderThreeQuantity * pepsi1lPrice ;
 
             let sumTwo = orderThreeQuantity * pepsi1lPrice;
-            console.log(sumTwo)
             setOrderThreePrice( sumTwo )
         }
     }
@@ -253,7 +236,6 @@ useEffect(() => {
             orderFourPriceBox.textContent = orderFourQuantity * burgerPrice ;
 
             let sumTwo = orderFourQuantity * burgerPrice;
-            console.log(sumTwo)
             setOrderFourPrice( sumTwo )
         }
         else if ((e.target.value == "loadedFries")) {
@@ -261,7 +243,6 @@ useEffect(() => {
             orderFourPriceBox.textContent = orderFourQuantity * loadedFriesPrice ;
 
             let sumTwo = orderFourQuantity * loadedFriesPrice;
-            console.log(sumTwo)
             setOrderFourPrice( sumTwo )
         }
         else if ((e.target.value == "shawaya")) {
@@ -269,7 +250,6 @@ useEffect(() => {
             orderFourPriceBox.textContent = orderFourQuantity * shawayaPrice ;
 
             let sumTwo = orderFourQuantity * shawayaPrice;
-            console.log(sumTwo)
             setOrderFourPrice( sumTwo )
         }
         else if ((e.target.value == "mandhi")) {
@@ -277,7 +257,6 @@ useEffect(() => {
             orderFourPriceBox.textContent = orderFourQuantity * mandhiPrice ;
 
             let sumTwo = orderFourQuantity * mandhiPrice;
-            console.log(sumTwo)
             setOrderFourPrice( sumTwo )
         }
         else if ((e.target.value == "pepsi1l")) {
@@ -285,7 +264,6 @@ useEffect(() => {
             orderFourPriceBox.textContent = orderFourQuantity * pepsi1lPrice ;
 
             let sumTwo = orderFourQuantity * pepsi1lPrice;
-            console.log(sumTwo)
             setOrderFourPrice( sumTwo )
         }
     }
@@ -296,7 +274,6 @@ useEffect(() => {
             orderFivePriceBox.textContent = orderFiveQuantity * burgerPrice ;
 
             let sumTwo = orderFiveQuantity * burgerPrice;
-            console.log(sumTwo)
             setOrderFivePrice( sumTwo )
         }
         else if ((e.target.value == "loadedFries")) {
@@ -304,7 +281,6 @@ useEffect(() => {
             orderFivePriceBox.textContent = orderFiveQuantity * loadedFriesPrice ;
 
             let sumTwo = orderFiveQuantity * loadedFriesPrice;
-            console.log(sumTwo)
             setOrderFivePrice( sumTwo )
         }
         else if ((e.target.value == "shawaya")) {
@@ -312,7 +288,6 @@ useEffect(() => {
             orderFivePriceBox.textContent = orderFiveQuantity * shawayaPrice ;
 
             let sumTwo = orderFiveQuantity * shawayaPrice;
-            console.log(sumTwo)
             setOrderFivePrice( sumTwo )
         }
         else if ((e.target.value == "mandhi")) {
@@ -320,7 +295,6 @@ useEffect(() => {
             orderFivePriceBox.textContent = orderFiveQuantity * mandhiPrice ;
 
             let sumTwo = orderFiveQuantity * mandhiPrice;
-            console.log(sumTwo)
             setOrderFivePrice( sumTwo )
         }
         else if ((e.target.value == "pepsi1l")) {
@@ -328,7 +302,6 @@ useEffect(() => {
             orderFivePriceBox.textContent = orderFiveQuantity * pepsi1lPrice ;
 
             let sumTwo = orderFiveQuantity * pepsi1lPrice;
-            console.log(sumTwo)
             setOrderFivePrice( sumTwo )
         }
     }
@@ -748,7 +721,11 @@ useEffect(() => {
                 id="nav"
                 className="flex justify-between px-[75px] py-[25px] bg-red-500 text-yellow-300 border border-red-700"
             >
-                <h1 className="">Fine Food</h1>
+                <NavLink
+                    to='/'
+                >
+                    <h1 className="">Fine Food</h1>
+                </NavLink>
                 <ul
                     id='menu-list'
                     className="flex"
@@ -757,6 +734,11 @@ useEffect(() => {
                 <li>Track</li>
                 <li>Contacts</li>
                 <li>About us</li>
+                <NavLink
+                    to='/admin/orders'
+                >
+                    <li>Orders</li>
+                </NavLink>
                 </ul>
                 <button
                     className="rounded border border-black px-[7.5px] py-[2.5px] hover:bg-red-600 hover:text-yellow-100"
@@ -768,7 +750,7 @@ useEffect(() => {
             
             <div
                 id="order-menu"
-                className = "absolute justify-self-center top-[100px] border border-black drop-shadow-xl rounded-[25px] bg-red-500"
+                className = "absolute justify-self-center top-[100px] border border-black drop-shadow-xl rounded-[25px] bg-red-500 hidden"
             >
                 <form 
                     onSubmit={submitForm}

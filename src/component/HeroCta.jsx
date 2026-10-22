@@ -1,4 +1,10 @@
 export default function HeroCta() {
+//Function to perform upon clicking order now button.
+    function Order() {
+        const orderMenu = document.getElementById("order-menu")
+        orderMenu.classList.toggle("hidden")
+    }
+
     return(
         <div className="py-[25px]">
             <h2 className="justify-self-center font-bold text-2xl my-[12.5px]">The True Taste of Nadapuram, Crafted for Connoisseurs.</h2>
@@ -11,7 +17,10 @@ export default function HeroCta() {
                 <button className="mx-[12.5px] rounded border border-black px-[10px] py-[2.5px] hover:bg-red-700 hover:text-yellow-100">
                     Explore Our Menu
                 </button>
-                <button className="mx-[12.5px] rounded border border-black px-[10px] py-[2.5px] hover:bg-red-700 hover:text-yellow-100">
+                <button 
+                    className="mx-[12.5px] rounded border border-black px-[10px] py-[2.5px] hover:bg-red-700 hover:text-yellow-100"
+                    onClick={Order}
+                >
                     Order Now
                 </button>
             </div>

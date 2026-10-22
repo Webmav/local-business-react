@@ -7,11 +7,15 @@ import {
 
 import MainLayout from "./layouts/MainLayout";
 import HomePage from './pages/HomePage';
+import AdminPage from "./pages/AdminPage";
+import { AdminLoader } from "./component/AdminLoader";
+import OrderCard from "./component/OrderCard";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<MainLayout />}>
             <Route path='/' element={<HomePage />} />
+            <Route path='/admin/orders' element={<AdminPage />} loader={AdminLoader} />
         </Route>
     )
 )

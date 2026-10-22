@@ -13,12 +13,12 @@ export default function OrderCard() {
                     <h1> Address : {order.address} </h1>
                     <h1> Order #1 Item : {order.orderOneItem} </h1>
                     <h1> Order #1 Quantity : {order.orderOneQuantity} </h1>
-                    <h1> Order #1 Price : {order.orderOnePrice} { (!order.orderTwoItem == "") && <Link to={ `/admin/orders/${order.name}` } className="text-yellow-600 hover:text-yellow-800">...</Link> } </h1>
+                    <h1> Order #1 Price : {order.orderOnePrice} { (!order.orderTwoItem == "") && <Link to={ `/admin/orders/order-${order.name}` } className="text-yellow-600 hover:text-yellow-800">...</Link> } </h1>
 
                     <button 
                         className="border border-black hover:text-yellow-300 my-[2px]"
                         onClick={ () => {
-                            navigate(`/admin/orders/${order.name}`)
+                            navigate(`/admin/orders/edit-order/${order.name}`)
                         }}
                     >
                         Edit

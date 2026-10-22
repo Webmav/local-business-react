@@ -20,27 +20,6 @@
       "orderFiveQuantity": 1,
       "orderFivePrice": "",
       "id": "wlK7rROjW9M"
-    },
-    {
-      "name": "seaf",
-      "phone": "rqwef",
-      "address": "qrf",
-      "orderOneItem": "mandhi",
-      "orderOneQuantity": 1.25,
-      "orderOnePrice": 275,
-      "orderTwoItem": "burger",
-      "orderTwoQuantity": 6.75,
-      "orderTwoPrice": 945,
-      "orderThreeItem": "",
-      "orderThreeQuantity": 1,
-      "orderThreePrice": "",
-      "orderFourItem": "",
-      "orderFourQuantity": 1,
-      "orderFourPrice": "",
-      "orderFiveItem": "",
-      "orderFiveQuantity": 1,
-      "orderFivePrice": "",
-      "id": "Nh8t3KJ7jYI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

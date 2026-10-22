@@ -30,45 +30,45 @@ useEffect(() => {
     const [customerAddress, setCustomerAddress] = useState("");
 
     const [orderOneItem, setOrderOneItem] = useState("");
-    const [orderOneQuantity, setOrderOneQuantity] = useState(1);
-    const [orderOneSmallQuantity, setOrderOneSmallQuantity] = useState(0);
+    const [orderOneQuantity, setOrderOneQuantity] = useState("1");
+    const [orderOneSmallQuantity, setOrderOneSmallQuantity] = useState("0");
     const [orderOnePrice, setOrderOnePrice] = useState("")
 
-    const [orderTwoItem, setOrderTwoItem] = useState("");
-    const [orderTwoQuantity, setOrderTwoQuantity] = useState("1");
-    const [orderTwoSmallQuantity, setOrderTwoSmallQuantity] = useState("0");
-    const [orderTwoPrice, setOrderTwoPrice] = useState("")
+    // const [orderTwoItem, setOrderTwoItem] = useState("");
+    // const [orderTwoQuantity, setOrderTwoQuantity] = useState("""");
+    // const [orderTwoSmallQuantity, setOrderTwoSmallQuantity] = useState("0");
+    // const [orderTwoPrice, setOrderTwoPrice] = useState("")
 
-    const [orderThreeItem, setOrderThreeItem] = useState("");
-    const [orderThreeQuantity, setOrderThreeQuantity] = useState("1");
-    const [orderThreeSmallQuantity, setOrderThreeSmallQuantity] = useState("0");
-    const [orderThreePrice, setOrderThreePrice] = useState("")
+    // const [orderThreeItem, setOrderThreeItem] = useState("");
+    // const [orderThreeQuantity, setOrderThreeQuantity] = useState("""");
+    // const [orderThreeSmallQuantity, setOrderThreeSmallQuantity] = useState("0");
+    // const [orderThreePrice, setOrderThreePrice] = useState("")
 
-    const [orderFourItem, setOrderFourItem] = useState("");
-    const [orderFourQuantity, setOrderFourQuantity] = useState("1");
-    const [orderFourSmallQuantity, setOrderFourSmallQuantity] = useState("0");
-    const [orderFourPrice, setOrderFourPrice] = useState("")
+    // const [orderFourItem, setOrderFourItem] = useState("");
+    // const [orderFourQuantity, setOrderFourQuantity] = useState("1");
+    // const [orderFourSmallQuantity, setOrderFourSmallQuantity] = useState("0");
+    // const [orderFourPrice, setOrderFourPrice] = useState("")
 
-    const [orderFiveItem, setOrderFiveItem] = useState("");
-    const [orderFiveQuantity, setOrderFiveQuantity] = useState("1");
-    const [orderFiveSmallQuantity, setOrderFiveSmallQuantity] = useState("0");
-    const [orderFivePrice, setOrderFivePrice] = useState("")
+    // const [orderFiveItem, setOrderFiveItem] = useState("");
+    // const [orderFiveQuantity, setOrderFiveQuantity] = useState("1");
+    // const [orderFiveSmallQuantity, setOrderFiveSmallQuantity] = useState("0");
+    // const [orderFivePrice, setOrderFivePrice] = useState("")
 
 //For setting price upon deciding order 
     useEffect(() => {
         orderOnePriceBox = document.getElementById("order-one-price-box");
-        orderTwoPriceBox = document.getElementById("order-two-price-box");
-        orderThreePriceBox = document.getElementById("order-three-price-box");
-        orderFourPriceBox = document.getElementById("order-four-price-box");
-        orderFivePriceBox = document.getElementById("order-five-price-box");
+        // orderTwoPriceBox = document.getElementById("order-two-price-box");
+        // orderThreePriceBox = document.getElementById("order-three-price-box");
+        // orderFourPriceBox = document.getElementById("order-four-price-box");
+        // orderFivePriceBox = document.getElementById("order-five-price-box");
     }, [])
 
 //For setting price upon deciding quantity of order 
     let orderOnePriceBox = document.getElementById("order-one-price-box");
-    let orderTwoPriceBox = document.getElementById("order-two-price-box");
-    let orderThreePriceBox = document.getElementById("order-three-price-box");
-    let orderFourPriceBox = document.getElementById("order-four-price-box");
-    let orderFivePriceBox = document.getElementById("order-five-price-box");
+    // let orderTwoPriceBox = document.getElementById("order-two-price-box");
+    // let orderThreePriceBox = document.getElementById("order-three-price-box");
+    // let orderFourPriceBox = document.getElementById("order-four-price-box");
+    // let orderFivePriceBox = document.getElementById("order-five-price-box");
 
 //Initialized for navigating after submitting form
     const navigate = useNavigate();
@@ -86,10 +86,10 @@ useEffect(() => {
         e.preventDefault()
 
         const numberedOrderOneQuantity = Number(orderOneQuantity) + Number(orderOneSmallQuantity);
-        const numberedOrderTwoQuantity = Number(orderTwoQuantity) + Number(orderTwoSmallQuantity);
-        const numberedOrderThreeQuantity = Number(orderThreeQuantity) + Number(orderThreeSmallQuantity);
-        const numberedOrderFourQuantity = Number(orderFourQuantity) + Number(orderFourSmallQuantity);
-        const numberedOrderFiveQuantity = Number(orderFiveQuantity) + Number(orderFiveSmallQuantity);
+        // const numberedOrderTwoQuantity = Number(orderTwoQuantity) + Number(orderTwoSmallQuantity);
+        // const numberedOrderThreeQuantity = Number(orderThreeQuantity) + Number(orderThreeSmallQuantity);
+        // const numberedOrderFourQuantity = Number(orderFourQuantity) + Number(orderFourSmallQuantity);
+        // const numberedOrderFiveQuantity = Number(orderFiveQuantity) + Number(orderFiveSmallQuantity);
 
         const newOrder = {
             name : customerName,
@@ -98,18 +98,18 @@ useEffect(() => {
             orderOneItem,
             orderOneQuantity: numberedOrderOneQuantity,
             orderOnePrice,
-            orderTwoItem,
-            orderTwoQuantity: numberedOrderTwoQuantity,
-            orderTwoPrice,
-            orderThreeItem,
-            orderThreeQuantity: numberedOrderThreeQuantity,
-            orderThreePrice,
-            orderFourItem,
-            orderFourQuantity: numberedOrderFourQuantity,
-            orderFourPrice,
-            orderFiveItem,
-            orderFiveQuantity: numberedOrderFiveQuantity,
-            orderFivePrice,
+            // orderTwoItem,
+            // orderTwoQuantity: numberedOrderTwoQuantity,
+            // orderTwoPrice,
+            // orderThreeItem,
+            // orderThreeQuantity: numberedOrderThreeQuantity,
+            // orderThreePrice,
+            // orderFourItem,
+            // orderFourQuantity: numberedOrderFourQuantity,
+            // orderFourPrice,
+            // orderFiveItem,
+            // orderFiveQuantity: numberedOrderFiveQuantity,
+            // orderFivePrice,
         }
 
         addOrderSubmit(newOrder)
@@ -122,131 +122,139 @@ useEffect(() => {
         if ((e.target.value == "burger")) {
             setOrderOneItem(e.target.value)
             orderOnePriceBox.textContent = orderOneQuantity * burgerPrice ;
+
+            let sumTwo = orderOneQuantity * burgerPrice;
+            console.log(sumTwo)
+            setOrderOnePrice( sumTwo )
         }
         else if ((e.target.value == "loadedFries")) {
             setOrderOneItem(e.target.value)
             orderOnePriceBox.textContent = orderOneQuantity * loadedFriesPrice ;
+            setOrderOnePrice( (orderOneQuantity * loadedFriesPrice) )
         }
         else if ((e.target.value == "shawaya")) {
             setOrderOneItem(e.target.value)
             orderOnePriceBox.textContent = orderOneQuantity * shawayaPrice ;
+            setOrderOnePrice( (orderOneQuantity * shawayaPrice) )
         }
         else if ((e.target.value == "mandhi")) {
             setOrderOneItem(e.target.value)
             orderOnePriceBox.textContent = orderOneQuantity * mandhiPrice ;
+            setOrderOnePrice( (orderOneQuantity * mandhiPrice) )
         }
         else if ((e.target.value == "pepsi1l")) {
             setOrderOneItem(e.target.value)
             orderOnePriceBox.textContent = orderOneQuantity * pepsi1lPrice ;
+            setOrderOnePrice( (orderOneQuantity * pepsi1lPrice) )
 
             const smallQuantityOrderOneBox = document.getElementById("small-quantity-order-one");
             smallQuantityOrderOneBox.style.display = "none";
         }
     }
-    //Order Two item
-    function orderTwoItemChanged(e) {
-        if ((e.target.value == "burger")) {
-            setOrderTwoItem(e.target.value)
-            orderTwoPriceBox.textContent = orderTwoQuantity * burgerPrice ;
-        }
-        else if ((e.target.value == "loadedFries")) {
-            setOrderTwoItem(e.target.value)
-            orderTwoPriceBox.textContent = orderTwoQuantity * loadedFriesPrice ;
-        }
-        else if ((e.target.value == "shawaya")) {
-            setOrderTwoItem(e.target.value)
-            orderTwoPriceBox.textContent = orderTwoQuantity * shawayaPrice ;
-        }
-        else if ((e.target.value == "mandhi")) {
-            setOrderTwoItem(e.target.value)
-            orderTwoPriceBox.textContent = orderTwoQuantity * mandhiPrice ;
-        }
-        else if ((e.target.value == "pepsi1l")) {
-            setOrderTwoItem(e.target.value)
-            orderTwoPriceBox.textContent = orderTwoQuantity * pepsi1lPrice ;
+    // //Order Two item
+    // function orderTwoItemChanged(e) {
+    //     if ((e.target.value == "burger")) {
+    //         setOrderTwoItem(e.target.value)
+    //         orderTwoPriceBox.textContent = orderTwoQuantity * burgerPrice ;
+    //     }
+    //     else if ((e.target.value == "loadedFries")) {
+    //         setOrderTwoItem(e.target.value)
+    //         orderTwoPriceBox.textContent = orderTwoQuantity * loadedFriesPrice ;
+    //     }
+    //     else if ((e.target.value == "shawaya")) {
+    //         setOrderTwoItem(e.target.value)
+    //         orderTwoPriceBox.textContent = orderTwoQuantity * shawayaPrice ;
+    //     }
+    //     else if ((e.target.value == "mandhi")) {
+    //         setOrderTwoItem(e.target.value)
+    //         orderTwoPriceBox.textContent = orderTwoQuantity * mandhiPrice ;
+    //     }
+    //     else if ((e.target.value == "pepsi1l")) {
+    //         setOrderTwoItem(e.target.value)
+    //         orderTwoPriceBox.textContent = orderTwoQuantity * pepsi1lPrice ;
 
-            const smallQuantityOrderTwoBox = document.getElementById("small-quantity-order-Two");
-            smallQuantityOrderTwoBox.style.display = "none";
-        }
-    }
-    //Order Three item
-    function orderThreeItemChanged(e) {
-        if ((e.target.value == "burger")) {
-            setOrderThreeItem(e.target.value)
-            orderThreePriceBox.textContent = orderThreeQuantity * burgerPrice ;
-        }
-        else if ((e.target.value == "loadedFries")) {
-            setOrderThreeItem(e.target.value)
-            orderThreePriceBox.textContent = orderThreeQuantity * loadedFriesPrice ;
-        }
-        else if ((e.target.value == "shawaya")) {
-            setOrderThreeItem(e.target.value)
-            orderThreePriceBox.textContent = orderThreeQuantity * shawayaPrice ;
-        }
-        else if ((e.target.value == "mandhi")) {
-            setOrderThreeItem(e.target.value)
-            orderThreePriceBox.textContent = orderThreeQuantity * mandhiPrice ;
-        }
-        else if ((e.target.value == "pepsi1l")) {
-            setOrderThreeItem(e.target.value)
-            orderThreePriceBox.textContent = orderThreeQuantity * pepsi1lPrice ;
+    //         const smallQuantityOrderTwoBox = document.getElementById("small-quantity-order-Two");
+    //         smallQuantityOrderTwoBox.style.display = "none";
+    //     }
+    // }
+    // //Order Three item
+    // function orderThreeItemChanged(e) {
+    //     if ((e.target.value == "burger")) {
+    //         setOrderThreeItem(e.target.value)
+    //         orderThreePriceBox.textContent = orderThreeQuantity * burgerPrice ;
+    //     }
+    //     else if ((e.target.value == "loadedFries")) {
+    //         setOrderThreeItem(e.target.value)
+    //         orderThreePriceBox.textContent = orderThreeQuantity * loadedFriesPrice ;
+    //     }
+    //     else if ((e.target.value == "shawaya")) {
+    //         setOrderThreeItem(e.target.value)
+    //         orderThreePriceBox.textContent = orderThreeQuantity * shawayaPrice ;
+    //     }
+    //     else if ((e.target.value == "mandhi")) {
+    //         setOrderThreeItem(e.target.value)
+    //         orderThreePriceBox.textContent = orderThreeQuantity * mandhiPrice ;
+    //     }
+    //     else if ((e.target.value == "pepsi1l")) {
+    //         setOrderThreeItem(e.target.value)
+    //         orderThreePriceBox.textContent = orderThreeQuantity * pepsi1lPrice ;
 
-            const smallQuantityOrderThreeBox = document.getElementById("small-quantity-order-Three");
-            smallQuantityOrderThreeBox.style.display = "none";
-        }
-    }
-    //Order Four item
-    function orderFourItemChanged(e) {
-        if ((e.target.value == "burger")) {
-            setOrderFourItem(e.target.value)
-            orderFourPriceBox.textContent = orderFourQuantity * burgerPrice ;
-        }
-        else if ((e.target.value == "loadedFries")) {
-            setOrderFourItem(e.target.value)
-            orderFourPriceBox.textContent = orderFourQuantity * loadedFriesPrice ;
-        }
-        else if ((e.target.value == "shawaya")) {
-            setOrderFourItem(e.target.value)
-            orderFourPriceBox.textContent = orderFourQuantity * shawayaPrice ;
-        }
-        else if ((e.target.value == "mandhi")) {
-            setOrderFourItem(e.target.value)
-            orderFourPriceBox.textContent = orderFourQuantity * mandhiPrice ;
-        }
-        else if ((e.target.value == "pepsi1l")) {
-            setOrderFourItem(e.target.value)
-            orderFourPriceBox.textContent = orderFourQuantity * pepsi1lPrice ;
+    //         const smallQuantityOrderThreeBox = document.getElementById("small-quantity-order-Three");
+    //         smallQuantityOrderThreeBox.style.display = "none";
+    //     }
+    // }
+    // //Order Four item
+    // function orderFourItemChanged(e) {
+    //     if ((e.target.value == "burger")) {
+    //         setOrderFourItem(e.target.value)
+    //         orderFourPriceBox.textContent = orderFourQuantity * burgerPrice ;
+    //     }
+    //     else if ((e.target.value == "loadedFries")) {
+    //         setOrderFourItem(e.target.value)
+    //         orderFourPriceBox.textContent = orderFourQuantity * loadedFriesPrice ;
+    //     }
+    //     else if ((e.target.value == "shawaya")) {
+    //         setOrderFourItem(e.target.value)
+    //         orderFourPriceBox.textContent = orderFourQuantity * shawayaPrice ;
+    //     }
+    //     else if ((e.target.value == "mandhi")) {
+    //         setOrderFourItem(e.target.value)
+    //         orderFourPriceBox.textContent = orderFourQuantity * mandhiPrice ;
+    //     }
+    //     else if ((e.target.value == "pepsi1l")) {
+    //         setOrderFourItem(e.target.value)
+    //         orderFourPriceBox.textContent = orderFourQuantity * pepsi1lPrice ;
 
-            const smallQuantityOrderFourBox = document.getElementById("small-quantity-order-Four");
-            smallQuantityOrderFourBox.style.display = "none";
-        }
-    }
-    //Order Five item
-    function orderFiveItemChanged(e) {
-        if ((e.target.value == "burger")) {
-            setOrderFiveItem(e.target.value)
-            orderFivePriceBox.textContent = orderFiveQuantity * burgerPrice ;
-        }
-        else if ((e.target.value == "loadedFries")) {
-            setOrderFiveItem(e.target.value)
-            orderFivePriceBox.textContent = orderFiveQuantity * loadedFriesPrice ;
-        }
-        else if ((e.target.value == "shawaya")) {
-            setOrderFiveItem(e.target.value)
-            orderFivePriceBox.textContent = orderFiveQuantity * shawayaPrice ;
-        }
-        else if ((e.target.value == "mandhi")) {
-            setOrderFiveItem(e.target.value)
-            orderFivePriceBox.textContent = orderFiveQuantity * mandhiPrice ;
-        }
-        else if ((e.target.value == "pepsi1l")) {
-            setOrderFiveItem(e.target.value)
-            orderFivePriceBox.textContent = orderFiveQuantity * pepsi1lPrice ;
+    //         const smallQuantityOrderFourBox = document.getElementById("small-quantity-order-Four");
+    //         smallQuantityOrderFourBox.style.display = "none";
+    //     }
+    // }
+    // //Order Five item
+    // function orderFiveItemChanged(e) {
+    //     if ((e.target.value == "burger")) {
+    //         setOrderFiveItem(e.target.value)
+    //         orderFivePriceBox.textContent = orderFiveQuantity * burgerPrice ;
+    //     }
+    //     else if ((e.target.value == "loadedFries")) {
+    //         setOrderFiveItem(e.target.value)
+    //         orderFivePriceBox.textContent = orderFiveQuantity * loadedFriesPrice ;
+    //     }
+    //     else if ((e.target.value == "shawaya")) {
+    //         setOrderFiveItem(e.target.value)
+    //         orderFivePriceBox.textContent = orderFiveQuantity * shawayaPrice ;
+    //     }
+    //     else if ((e.target.value == "mandhi")) {
+    //         setOrderFiveItem(e.target.value)
+    //         orderFivePriceBox.textContent = orderFiveQuantity * mandhiPrice ;
+    //     }
+    //     else if ((e.target.value == "pepsi1l")) {
+    //         setOrderFiveItem(e.target.value)
+    //         orderFivePriceBox.textContent = orderFiveQuantity * pepsi1lPrice ;
 
-            const smallQuantityOrderFiveBox = document.getElementById("small-quantity-order-Five");
-            smallQuantityOrderFiveBox.style.display = "none";
-        }
-    }
+    //         const smallQuantityOrderFiveBox = document.getElementById("small-quantity-order-Five");
+    //         smallQuantityOrderFiveBox.style.display = "none";
+    //     }
+    // }
 
 //Function to perform on Order quantity changes
     //Order One quantity
@@ -254,6 +262,10 @@ useEffect(() => {
         if (orderOneItem == "burger") {
             setOrderOneQuantity(e.target.value)
             orderOnePriceBox.textContent = e.target.value * burgerPrice ;
+                        
+            let sumTwo = e.target.value * burgerPrice;
+            console.log(sumTwo)
+            setOrderOnePrice( sumTwo )
         }
         else if (orderOneItem == "loadedFries") {
             setOrderOneQuantity(e.target.value)
@@ -272,98 +284,98 @@ useEffect(() => {
             orderOnePriceBox.textContent = e.target.value * pepsi1lPrice ;
         }
     }
-    //Order Two quantity
-    function orderTwoQuantityChanged(e) {
-        if (orderTwoItem == "burger") {
-            setOrderTwoQuantity(e.target.value)
-            orderTwoPriceBox.textContent = e.target.value * burgerPrice ;
-        }
-        else if (orderTwoItem == "loadedFries") {
-            setOrderTwoQuantity(e.target.value)
-            orderTwoPriceBox.textContent = e.target.value * loadedFriesPrice ;
-        }
-        else if (orderTwoItem == "shawaya") {
-            setOrderTwoQuantity(e.target.value)
-            orderTwoPriceBox.textContent = e.target.value * shawayaPrice ;
-        }
-        else if (orderTwoItem == "mandhi") {
-            setOrderTwoQuantity(e.target.value)
-            orderTwoPriceBox.textContent = e.target.value * mandhiPrice ;
-        }
-        else if (orderTwoItem == "pepsi1l") {
-            setOrderTwoQuantity(e.target.value)
-            orderTwoPriceBox.textContent = e.target.value * pepsi1lPrice ;
-        }
-    }
-    //Order Three quantity
-    function orderThreeQuantityChanged(e) {
-        if (orderThreeItem == "burger") {
-            setOrderThreeQuantity(e.target.value)
-            orderThreePriceBox.textContent = e.target.value * burgerPrice ;
-        }
-        else if (orderThreeItem == "loadedFries") {
-            setOrderThreeQuantity(e.target.value)
-            orderThreePriceBox.textContent = e.target.value * loadedFriesPrice ;
-        }
-        else if (orderThreeItem == "shawaya") {
-            setOrderThreeQuantity(e.target.value)
-            orderThreePriceBox.textContent = e.target.value * shawayaPrice ;
-        }
-        else if (orderThreeItem == "mandhi") {
-            setOrderThreeQuantity(e.target.value)
-            orderThreePriceBox.textContent = e.target.value * mandhiPrice ;
-        }
-        else if (orderThreeItem == "pepsi1l") {
-            setOrderThreeQuantity(e.target.value)
-            orderThreePriceBox.textContent = e.target.value * pepsi1lPrice ;
-        }
-    }
-    //Order Four quantity
-    function orderFourQuantityChanged(e) {
-        if (orderFourItem == "burger") {
-            setOrderFourQuantity(e.target.value)
-            orderFourPriceBox.textContent = e.target.value * burgerPrice ;
-        }
-        else if (orderFourItem == "loadedFries") {
-            setOrderFourQuantity(e.target.value)
-            orderFourPriceBox.textContent = e.target.value * loadedFriesPrice ;
-        }
-        else if (orderFourItem == "shawaya") {
-            setOrderFourQuantity(e.target.value)
-            orderFourPriceBox.textContent = e.target.value * shawayaPrice ;
-        }
-        else if (orderFourItem == "mandhi") {
-            setOrderFourQuantity(e.target.value)
-            orderFourPriceBox.textContent = e.target.value * mandhiPrice ;
-        }
-        else if (orderFourItem == "pepsi1l") {
-            setOrderFourQuantity(e.target.value)
-            orderFourPriceBox.textContent = e.target.value * pepsi1lPrice ;
-        }
-    }
-    //Order Five quantity
-    function orderFiveQuantityChanged(e) {
-        if (orderFiveItem == "burger") {
-            setOrderFiveQuantity(e.target.value)
-            orderFivePriceBox.textContent = e.target.value * burgerPrice ;
-        }
-        else if (orderFiveItem == "loadedFries") {
-            setOrderFiveQuantity(e.target.value)
-            orderFivePriceBox.textContent = e.target.value * loadedFriesPrice ;
-        }
-        else if (orderFiveItem == "shawaya") {
-            setOrderFiveQuantity(e.target.value)
-            orderFivePriceBox.textContent = e.target.value * shawayaPrice ;
-        }
-        else if (orderFiveItem == "mandhi") {
-            setOrderFiveQuantity(e.target.value)
-            orderFivePriceBox.textContent = e.target.value * mandhiPrice ;
-        }
-        else if (orderFiveItem == "pepsi1l") {
-            setOrderFiveQuantity(e.target.value)
-            orderFivePriceBox.textContent = e.target.value * pepsi1lPrice ;
-        }
-    }
+    // // Order Two quantity
+    // function orderTwoQuantityChanged(e) {
+    //     if (orderTwoItem == "burger") {
+    //         setOrderTwoQuantity(e.target.value)
+    //         orderTwoPriceBox.textContent = e.target.value * burgerPrice ;
+    //     }
+    //     else if (orderTwoItem == "loadedFries") {
+    //         setOrderTwoQuantity(e.target.value)
+    //         orderTwoPriceBox.textContent = e.target.value * loadedFriesPrice ;
+    //     }
+    //     else if (orderTwoItem == "shawaya") {
+    //         setOrderTwoQuantity(e.target.value)
+    //         orderTwoPriceBox.textContent = e.target.value * shawayaPrice ;
+    //     }
+    //     else if (orderTwoItem == "mandhi") {
+    //         setOrderTwoQuantity(e.target.value)
+    //         orderTwoPriceBox.textContent = e.target.value * mandhiPrice ;
+    //     }
+    //     else if (orderTwoItem == "pepsi1l") {
+    //         setOrderTwoQuantity(e.target.value)
+    //         orderTwoPriceBox.textContent = e.target.value * pepsi1lPrice ;
+    //     }
+    // }
+    // //Order Three quantity
+    // function orderThreeQuantityChanged(e) {
+    //     if (orderThreeItem == "burger") {
+    //         setOrderThreeQuantity(e.target.value)
+    //         orderThreePriceBox.textContent = e.target.value * burgerPrice ;
+    //     }
+    //     else if (orderThreeItem == "loadedFries") {
+    //         setOrderThreeQuantity(e.target.value)
+    //         orderThreePriceBox.textContent = e.target.value * loadedFriesPrice ;
+    //     }
+    //     else if (orderThreeItem == "shawaya") {
+    //         setOrderThreeQuantity(e.target.value)
+    //         orderThreePriceBox.textContent = e.target.value * shawayaPrice ;
+    //     }
+    //     else if (orderThreeItem == "mandhi") {
+    //         setOrderThreeQuantity(e.target.value)
+    //         orderThreePriceBox.textContent = e.target.value * mandhiPrice ;
+    //     }
+    //     else if (orderThreeItem == "pepsi1l") {
+    //         setOrderThreeQuantity(e.target.value)
+    //         orderThreePriceBox.textContent = e.target.value * pepsi1lPrice ;
+    //     }
+    // }
+    // //Order Four quantity
+    // function orderFourQuantityChanged(e) {
+    //     if (orderFourItem == "burger") {
+    //         setOrderFourQuantity(e.target.value)
+    //         orderFourPriceBox.textContent = e.target.value * burgerPrice ;
+    //     }
+    //     else if (orderFourItem == "loadedFries") {
+    //         setOrderFourQuantity(e.target.value)
+    //         orderFourPriceBox.textContent = e.target.value * loadedFriesPrice ;
+    //     }
+    //     else if (orderFourItem == "shawaya") {
+    //         setOrderFourQuantity(e.target.value)
+    //         orderFourPriceBox.textContent = e.target.value * shawayaPrice ;
+    //     }
+    //     else if (orderFourItem == "mandhi") {
+    //         setOrderFourQuantity(e.target.value)
+    //         orderFourPriceBox.textContent = e.target.value * mandhiPrice ;
+    //     }
+    //     else if (orderFourItem == "pepsi1l") {
+    //         setOrderFourQuantity(e.target.value)
+    //         orderFourPriceBox.textContent = e.target.value * pepsi1lPrice ;
+    //     }
+    // }
+    // //Order Five quantity
+    // function orderFiveQuantityChanged(e) {
+    //     if (orderFiveItem == "burger") {
+    //         setOrderFiveQuantity(e.target.value)
+    //         orderFivePriceBox.textContent = e.target.value * burgerPrice ;
+    //     }
+    //     else if (orderFiveItem == "loadedFries") {
+    //         setOrderFiveQuantity(e.target.value)
+    //         orderFivePriceBox.textContent = e.target.value * loadedFriesPrice ;
+    //     }
+    //     else if (orderFiveItem == "shawaya") {
+    //         setOrderFiveQuantity(e.target.value)
+    //         orderFivePriceBox.textContent = e.target.value * shawayaPrice ;
+    //     }
+    //     else if (orderFiveItem == "mandhi") {
+    //         setOrderFiveQuantity(e.target.value)
+    //         orderFivePriceBox.textContent = e.target.value * mandhiPrice ;
+    //     }
+    //     else if (orderFiveItem == "pepsi1l") {
+    //         setOrderFiveQuantity(e.target.value)
+    //         orderFivePriceBox.textContent = e.target.value * pepsi1lPrice ;
+    //     }
+    // }
 
 //Function to perform on Order small quantity changes
     //Order One small quantity
@@ -373,9 +385,13 @@ useEffect(() => {
         
         if (orderOneItem == "burger") {
             setOrderOneSmallQuantity(e.target.value)
-            let sum = orderOneQuantity + Number(e.target.value);
-            console.log(sum)
+            let sum = orderOneQuantity + e.target.value;
             orderOnePriceBox.textContent = sum * burgerPrice ;
+                                    
+            console.log()
+            let sumTwo = sum * burgerPrice;
+            console.log(sumTwo)
+            setOrderOnePrice( sumTwo )
         }
         else if (orderOneItem == "loadedFries") {
             setOrderOneSmallQuantity(e.target.value)
@@ -398,130 +414,130 @@ useEffect(() => {
             orderOnePriceBox.textContent = sum * pepsi1lPrice ;
         }
     }
-    //Order Two small quantity
-    function orderTwoSmallQuantityChanged(e) {
-        console.log(orderTwoQuantity)
-        console.log(e.target.value)
+    // //Order Two small quantity
+    // function orderTwoSmallQuantityChanged(e) {
+    //     console.log(orderTwoQuantity)
+    //     console.log(e.target.value)
         
-        if (orderTwoItem == "burger") {
-            setOrderTwoSmallQuantity(e.target.value)
-            let sum = orderTwoQuantity + e.target.value;
-            orderTwoPriceBox.textContent = sum * burgerPrice ;
-        }
-        else if (orderTwoItem == "loadedFries") {
-            setOrderTwoSmallQuantity(e.target.value)
-            let sum = orderTwoQuantity + e.target.value;
-            orderTwoPriceBox.textContent = sum * loadedFriesPrice ;
-        }
-        else if (orderTwoItem == "shawaya") {
-            setOrderTwoSmallQuantity(e.target.value)
-            let sum = orderTwoQuantity + e.target.value;
-            orderTwoPriceBox.textContent = sum * shawayaPrice ;
-        }
-        else if (orderTwoItem == "mandhi") {
-            setOrderTwoSmallQuantity(e.target.value)
-            let sum = orderTwoQuantity + e.target.value;
-            orderTwoPriceBox.textContent = sum * mandhiPrice ;
-        }
-        else if (orderTwoItem == "pepsi1l") {
-            setOrderTwoSmallQuantity(e.target.value)
-            let sum = orderTwoQuantity + e.target.value;
-            orderTwoPriceBox.textContent = sum * pepsi1lPrice ;
-        }
-    }
-    //Order Three small quantity
-    function orderThreeSmallQuantityChanged(e) {
-        console.log(orderThreeQuantity)
-        console.log(e.target.value)
+    //     if (orderTwoItem == "burger") {
+    //         setOrderTwoSmallQuantity(e.target.value)
+    //         let sum = orderTwoQuantity + e.target.value;
+    //         orderTwoPriceBox.textContent = sum * burgerPrice ;
+    //     }
+    //     else if (orderTwoItem == "loadedFries") {
+    //         setOrderTwoSmallQuantity(e.target.value)
+    //         let sum = orderTwoQuantity + e.target.value;
+    //         orderTwoPriceBox.textContent = sum * loadedFriesPrice ;
+    //     }
+    //     else if (orderTwoItem == "shawaya") {
+    //         setOrderTwoSmallQuantity(e.target.value)
+    //         let sum = orderTwoQuantity + e.target.value;
+    //         orderTwoPriceBox.textContent = sum * shawayaPrice ;
+    //     }
+    //     else if (orderTwoItem == "mandhi") {
+    //         setOrderTwoSmallQuantity(e.target.value)
+    //         let sum = orderTwoQuantity + e.target.value;
+    //         orderTwoPriceBox.textContent = sum * mandhiPrice ;
+    //     }
+    //     else if (orderTwoItem == "pepsi1l") {
+    //         setOrderTwoSmallQuantity(e.target.value)
+    //         let sum = orderTwoQuantity + e.target.value;
+    //         orderTwoPriceBox.textContent = sum * pepsi1lPrice ;
+    //     }
+    // }
+    // //Order Three small quantity
+    // function orderThreeSmallQuantityChanged(e) {
+    //     console.log(orderThreeQuantity)
+    //     console.log(e.target.value)
         
-        if (orderThreeItem == "burger") {
-            setOrderThreeSmallQuantity(e.target.value)
-            let sum = orderThreeQuantity + e.target.value;
-            orderThreePriceBox.textContent = sum * burgerPrice ;
-        }
-        else if (orderThreeItem == "loadedFries") {
-            setOrderThreeSmallQuantity(e.target.value)
-            let sum = orderThreeQuantity + e.target.value;
-            orderThreePriceBox.textContent = sum * loadedFriesPrice ;
-        }
-        else if (orderThreeItem == "shawaya") {
-            setOrderThreeSmallQuantity(e.target.value)
-            let sum = orderThreeQuantity + e.target.value;
-            orderThreePriceBox.textContent = sum * shawayaPrice ;
-        }
-        else if (orderThreeItem == "mandhi") {
-            setOrderThreeSmallQuantity(e.target.value)
-            let sum = orderThreeQuantity + e.target.value;
-            orderThreePriceBox.textContent = sum * mandhiPrice ;
-        }
-        else if (orderThreeItem == "pepsi1l") {
-            setOrderThreeSmallQuantity(e.target.value)
-            let sum = orderThreeQuantity + e.target.value;
-            orderThreePriceBox.textContent = sum * pepsi1lPrice ;
-        }
-    }
-    //Order Four small quantity
-    function orderFourSmallQuantityChanged(e) {
-        console.log(orderFourQuantity)
-        console.log(e.target.value)
+    //     if (orderThreeItem == "burger") {
+    //         setOrderThreeSmallQuantity(e.target.value)
+    //         let sum = orderThreeQuantity + e.target.value;
+    //         orderThreePriceBox.textContent = sum * burgerPrice ;
+    //     }
+    //     else if (orderThreeItem == "loadedFries") {
+    //         setOrderThreeSmallQuantity(e.target.value)
+    //         let sum = orderThreeQuantity + e.target.value;
+    //         orderThreePriceBox.textContent = sum * loadedFriesPrice ;
+    //     }
+    //     else if (orderThreeItem == "shawaya") {
+    //         setOrderThreeSmallQuantity(e.target.value)
+    //         let sum = orderThreeQuantity + e.target.value;
+    //         orderThreePriceBox.textContent = sum * shawayaPrice ;
+    //     }
+    //     else if (orderThreeItem == "mandhi") {
+    //         setOrderThreeSmallQuantity(e.target.value)
+    //         let sum = orderThreeQuantity + e.target.value;
+    //         orderThreePriceBox.textContent = sum * mandhiPrice ;
+    //     }
+    //     else if (orderThreeItem == "pepsi1l") {
+    //         setOrderThreeSmallQuantity(e.target.value)
+    //         let sum = orderThreeQuantity + e.target.value;
+    //         orderThreePriceBox.textContent = sum * pepsi1lPrice ;
+    //     }
+    // }
+    // //Order Four small quantity
+    // function orderFourSmallQuantityChanged(e) {
+    //     console.log(orderFourQuantity)
+    //     console.log(e.target.value)
         
-        if (orderFourItem == "burger") {
-            setOrderFourSmallQuantity(e.target.value)
-            let sum = orderFourQuantity + e.target.value;
-            orderFourPriceBox.textContent = sum * burgerPrice ;
-        }
-        else if (orderFourItem == "loadedFries") {
-            setOrderFourSmallQuantity(e.target.value)
-            let sum = orderFourQuantity + e.target.value;
-            orderFourPriceBox.textContent = sum * loadedFriesPrice ;
-        }
-        else if (orderFourItem == "shawaya") {
-            setOrderFourSmallQuantity(e.target.value)
-            let sum = orderFourQuantity + e.target.value;
-            orderFourPriceBox.textContent = sum * shawayaPrice ;
-        }
-        else if (orderFourItem == "mandhi") {
-            setOrderFourSmallQuantity(e.target.value)
-            let sum = orderFourQuantity + e.target.value;
-            orderFourPriceBox.textContent = sum * mandhiPrice ;
-        }
-        else if (orderFourItem == "pepsi1l") {
-            setOrderFourSmallQuantity(e.target.value)
-            let sum = orderFourQuantity + e.target.value;
-            orderFourPriceBox.textContent = sum * pepsi1lPrice ;
-        }
-    }
-    //Order Five small quantity
-    function orderFiveSmallQuantityChanged(e) {
-        console.log(orderFiveQuantity)
-        console.log(e.target.value)
+    //     if (orderFourItem == "burger") {
+    //         setOrderFourSmallQuantity(e.target.value)
+    //         let sum = orderFourQuantity + e.target.value;
+    //         orderFourPriceBox.textContent = sum * burgerPrice ;
+    //     }
+    //     else if (orderFourItem == "loadedFries") {
+    //         setOrderFourSmallQuantity(e.target.value)
+    //         let sum = orderFourQuantity + e.target.value;
+    //         orderFourPriceBox.textContent = sum * loadedFriesPrice ;
+    //     }
+    //     else if (orderFourItem == "shawaya") {
+    //         setOrderFourSmallQuantity(e.target.value)
+    //         let sum = orderFourQuantity + e.target.value;
+    //         orderFourPriceBox.textContent = sum * shawayaPrice ;
+    //     }
+    //     else if (orderFourItem == "mandhi") {
+    //         setOrderFourSmallQuantity(e.target.value)
+    //         let sum = orderFourQuantity + e.target.value;
+    //         orderFourPriceBox.textContent = sum * mandhiPrice ;
+    //     }
+    //     else if (orderFourItem == "pepsi1l") {
+    //         setOrderFourSmallQuantity(e.target.value)
+    //         let sum = orderFourQuantity + e.target.value;
+    //         orderFourPriceBox.textContent = sum * pepsi1lPrice ;
+    //     }
+    // }
+    // //Order Five small quantity
+    // function orderFiveSmallQuantityChanged(e) {
+    //     console.log(orderFiveQuantity)
+    //     console.log(e.target.value)
         
-        if (orderFiveItem == "burger") {
-            setOrderFiveSmallQuantity(e.target.value)
-            let sum = orderFiveQuantity + e.target.value;
-            orderFivePriceBox.textContent = sum * burgerPrice ;
-        }
-        else if (orderFiveItem == "loadedFries") {
-            setOrderFiveSmallQuantity(e.target.value)
-            let sum = orderFiveQuantity + e.target.value;
-            orderFivePriceBox.textContent = sum * loadedFriesPrice ;
-        }
-        else if (orderFiveItem == "shawaya") {
-            setOrderFiveSmallQuantity(e.target.value)
-            let sum = orderFiveQuantity + e.target.value;
-            orderFivePriceBox.textContent = sum * shawayaPrice ;
-        }
-        else if (orderFiveItem == "mandhi") {
-            setOrderFiveSmallQuantity(e.target.value)
-            let sum = orderFiveQuantity + e.target.value;
-            orderFivePriceBox.textContent = sum * mandhiPrice ;
-        }
-        else if (orderFiveItem == "pepsi1l") {
-            setOrderFiveSmallQuantity(e.target.value)
-            let sum = orderFiveQuantity + e.target.value;
-            orderFivePriceBox.textContent = sum * pepsi1lPrice ;
-        }
-    }
+    //     if (orderFiveItem == "burger") {
+    //         setOrderFiveSmallQuantity(e.target.value)
+    //         let sum = orderFiveQuantity + e.target.value;
+    //         orderFivePriceBox.textContent = sum * burgerPrice ;
+    //     }
+    //     else if (orderFiveItem == "loadedFries") {
+    //         setOrderFiveSmallQuantity(e.target.value)
+    //         let sum = orderFiveQuantity + e.target.value;
+    //         orderFivePriceBox.textContent = sum * loadedFriesPrice ;
+    //     }
+    //     else if (orderFiveItem == "shawaya") {
+    //         setOrderFiveSmallQuantity(e.target.value)
+    //         let sum = orderFiveQuantity + e.target.value;
+    //         orderFivePriceBox.textContent = sum * shawayaPrice ;
+    //     }
+    //     else if (orderFiveItem == "mandhi") {
+    //         setOrderFiveSmallQuantity(e.target.value)
+    //         let sum = orderFiveQuantity + e.target.value;
+    //         orderFivePriceBox.textContent = sum * mandhiPrice ;
+    //     }
+    //     else if (orderFiveItem == "pepsi1l") {
+    //         setOrderFiveSmallQuantity(e.target.value)
+    //         let sum = orderFiveQuantity + e.target.value;
+    //         orderFivePriceBox.textContent = sum * pepsi1lPrice ;
+    //     }
+    // }
 
     return(
         <div>
@@ -618,17 +634,17 @@ useEffect(() => {
                                     value={ orderOneQuantity }
                                     onChange={ orderOneQuantityChanged }
                                 >
-                                        <option value={0}> 0 </option>
-                                        <option value={1}> 1 </option>
-                                        <option value={2}> 2 </option>
-                                        <option value={3}> 3 </option>
-                                        <option value={4}> 4 </option>
-                                        <option value={5}> 5 </option>
-                                        <option value={6}> 6 </option>
-                                        <option value={7}> 7 </option>
-                                        <option value={8}> 8 </option>
-                                        <option value={9}> 9 </option>
-                                        <option value={10}> 10 </option>
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
                                 </select>
 
                                 <select
@@ -638,10 +654,10 @@ useEffect(() => {
                                     value={ orderOneSmallQuantity }
                                     onChange={ orderOneSmallQuantityChanged }
                                 >
-                                        <option value={0}> Null </option>
-                                        <option value={.25}> Quarter (1/4) </option>
-                                        <option value={.5}> Half (1/2) </option>
-                                        <option value={.75}> Three quarter (3/4)  </option>
+                                        <option value={"0"}> Null </option>
+                                        <option value={".25"}> Quarter (1/4) </option>
+                                        <option value={".5"}> Half (1/2) </option>
+                                        <option value={".75"}> Three quarter (3/4)  </option>
                                 </select>
 
                                 <div className="border border-black px-[5px] py-[2px] rounded">
@@ -654,7 +670,7 @@ useEffect(() => {
                                 </div>
                             </div>
 
-                            <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
+                            {/* <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
                                 Order #2 : <select
                                     className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                     id='order-two-item'
@@ -888,7 +904,7 @@ useEffect(() => {
                                         
                                     </p>
                                 </div>
-                            </div>
+                            </div> */}
                     </div>
 
                     <div 

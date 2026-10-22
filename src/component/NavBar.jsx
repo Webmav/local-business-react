@@ -35,23 +35,23 @@ useEffect(() => {
     const [orderOnePrice, setOrderOnePrice] = useState("")
 
     const [orderTwoItem, setOrderTwoItem] = useState("");
-    const [orderTwoQuantity, setOrderTwoQuantity] = useState(1);
-    const [orderTwoSmallQuantity, setOrderTwoSmallQuantity] = useState(0);
+    const [orderTwoQuantity, setOrderTwoQuantity] = useState("1");
+    const [orderTwoSmallQuantity, setOrderTwoSmallQuantity] = useState("0");
     const [orderTwoPrice, setOrderTwoPrice] = useState("")
 
     const [orderThreeItem, setOrderThreeItem] = useState("");
-    const [orderThreeQuantity, setOrderThreeQuantity] = useState(1);
-    const [orderThreeSmallQuantity, setOrderThreeSmallQuantity] = useState(0);
+    const [orderThreeQuantity, setOrderThreeQuantity] = useState("1");
+    const [orderThreeSmallQuantity, setOrderThreeSmallQuantity] = useState("0");
     const [orderThreePrice, setOrderThreePrice] = useState("")
 
     const [orderFourItem, setOrderFourItem] = useState("");
-    const [orderFourQuantity, setOrderFourQuantity] = useState(1);
-    const [orderFourSmallQuantity, setOrderFourSmallQuantity] = useState(0);
+    const [orderFourQuantity, setOrderFourQuantity] = useState("1");
+    const [orderFourSmallQuantity, setOrderFourSmallQuantity] = useState("0");
     const [orderFourPrice, setOrderFourPrice] = useState("")
 
     const [orderFiveItem, setOrderFiveItem] = useState("");
-    const [orderFiveQuantity, setOrderFiveQuantity] = useState(1);
-    const [orderFiveSmallQuantity, setOrderFiveSmallQuantity] = useState(0);
+    const [orderFiveQuantity, setOrderFiveQuantity] = useState("1");
+    const [orderFiveSmallQuantity, setOrderFiveSmallQuantity] = useState("0");
     const [orderFivePrice, setOrderFivePrice] = useState("")
 
 //For setting price upon deciding order 
@@ -373,7 +373,8 @@ useEffect(() => {
         
         if (orderOneItem == "burger") {
             setOrderOneSmallQuantity(e.target.value)
-            let sum = orderOneQuantity + e.target.value;
+            let sum = orderOneQuantity + Number(e.target.value);
+            console.log(sum)
             orderOnePriceBox.textContent = sum * burgerPrice ;
         }
         else if (orderOneItem == "loadedFries") {
@@ -917,3 +918,9 @@ useEffect(() => {
         </div>
     )
 }
+
+
+
+
+//pepsi = small quantity hide
+//Price bug upon giving small quantity

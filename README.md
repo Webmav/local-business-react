@@ -27,7 +27,12 @@ A responsive landing page for a local food business, built with React. It is des
 # Installation
 
 *Clone the repository
-git clone <your-repository-url>
+
+```bash
+  git clone https://github.com/your-username/fine-food-landing-page.git
+  cd fine-food-landing-page
+  npm install
+```
 
 *Move into the project folder
 cd fine-food-landing-page

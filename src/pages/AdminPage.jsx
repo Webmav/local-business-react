@@ -1,4 +1,3 @@
-import { useLoaderData } from 'react-router-dom';
 import OrderCard from '../component/OrderCard'
 
 export default function AdminPage() { 

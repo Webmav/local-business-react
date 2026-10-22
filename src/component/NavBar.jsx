@@ -18,19 +18,36 @@ export default function NavBar() {
                 >
                     <h1 className="">Fine Food</h1>
                 </NavLink>
-                <ul
-                    id='menu-list'
-                    className="flex"
-                >
-                <li>Menu</li>
-                <li>Track</li>
-                <li>Contacts</li>
-                <li>About us</li>
-                <NavLink
-                    to='/admin/orders'
-                >
-                    <li>Orders</li>
-                </NavLink>
+                <ul id='menu-list' className="flex">
+                    <NavLink 
+                        to="/"
+                    >
+                        <li className='hover:text-yellow-100'>Menu</li>
+                    </NavLink>
+
+                    <NavLink 
+                        to="/"
+                    >
+                        <li className='hover:text-yellow-100'>Track</li>
+                    </NavLink>
+
+                    <NavLink 
+                        to="/"
+                    >
+                        <li className='hover:text-yellow-100'>Contacts</li>
+                    </NavLink>
+
+                    <NavLink 
+                        to="/"
+                    >
+                        <li className='hover:text-yellow-100'>About us</li>
+                    </NavLink>
+
+                    <NavLink
+                        to='/admin/orders'
+                    >
+                        <li className='hover:text-yellow-100'>Orders</li>
+                    </NavLink>
                 </ul>
                 <button
                     className="rounded border border-black px-[7.5px] py-[2.5px] hover:bg-red-600 hover:text-yellow-100"

@@ -80,6 +80,27 @@
       "orderOneQuantity": 2.75,
       "orderOnePrice": 385,
       "id": "D9hjZ-qXqbo"
+    },
+    {
+      "name": "qafsd",
+      "phone": "asfd",
+      "address": "agds",
+      "orderOneItem": "pepsi1l",
+      "orderOneQuantity": 5.75,
+      "orderOnePrice": 230,
+      "orderTwoItem": "loadedFries",
+      "orderTwoQuantity": 5.75,
+      "orderTwoPrice": 1035,
+      "orderThreeItem": "shawaya",
+      "orderThreeQuantity": 7.25,
+      "orderThreePrice": 870,
+      "orderFourItem": "burger",
+      "orderFourQuantity": 5.5,
+      "orderFourPrice": 770,
+      "orderFiveItem": "mandhi",
+      "orderFiveQuantity": 6.25,
+      "orderFivePrice": 1375,
+      "id": "2zRSYgc8iU4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

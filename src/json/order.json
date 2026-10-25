@@ -8,6 +8,27 @@
       "orderOneItem": "shawaya",
       "orderOneQuantity": 6,
       "orderOnePrice": 720
+    },
+    {
+      "id": "2YqjQFav05g",
+      "name": "afsda",
+      "phone": "dfsadsf",
+      "address": "afsdadfsfads",
+      "orderOneItem": "mandhi",
+      "orderOneQuantity": 1,
+      "orderOnePrice": 220,
+      "orderTwoItem": "pepsi1l",
+      "orderTwoQuantity": 1,
+      "orderTwoPrice": 40,
+      "orderThreeItem": "burger",
+      "orderThreeQuantity": 1,
+      "orderThreePrice": 140,
+      "orderFourItem": "pepsi1l",
+      "orderFourQuantity": 1,
+      "orderFourPrice": 40,
+      "orderFiveItem": "loadedFries",
+      "orderFiveQuantity": 1,
+      "orderFivePrice": 180
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

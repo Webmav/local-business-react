@@ -64,134 +64,262 @@ export default function OrderEdit({ UpdatedOrderSubmit }) {
         <section className="bg-indigo-50">
             <div className="container m-auto max-w-2xl py-24">
                 <div>
-                    <form onSubmit={updatedOrder}>
-                        <h2 className="text-center text-3xl font-semibold mb-6 ">Update Order</h2>
+                    <form onSubmit={updatedOrder} className='bg-white border border-white shadow-xl rounded px-[25px] py-[50px]'>
+                        <h2 className="text-center text-3xl font-semibold mb-6 "><i class="codicon codicon-arrow-left"></i> Update Order</h2>
 
-                        <div>
-                            <p> id: {id} </p>
+                        <p className='bg-gray-500 rounded px-[10px] py-[2.5px] my-[12.5px] justify-self-start'> Id : {id} </p>
+
+                        <div className="my-[12.5px]">
+                            <p className="font-bold">Name</p>
+                            <input
+                                className='border border-gray-200 w-full px-3 py-2 my-2 rounded'
+                                type='text'
+                                name={name}
+                                value={name}
+                                onChange={ (e) => { setName(e.target.value) } }
+                            />
+                        </div>
+                        
+                        <div className="my-[12.5px]">
+                            <p className="font-bold">phone</p>
+                            <input
+                                className='border border-gray-200 w-full px-3 py-2 my-2 rounded'
+                                type='text'
+                                name={phone}
+                                value={phone}
+                                onChange={ (e) => { setPhone(e.target.value) } }
+                            />
                         </div>
 
-                        Name : <input 
-                                    type='text' 
-                                    value={name} 
-                                    onChange={ (e) => { setName(e.target.value) } }
-                                /> <br />
-                        Phone : <input 
-                                    type='text' 
-                                    value={phone} 
-                                    onChange={ (e) => { setPhone(e.target.value) } }
-                                /> <br />
-                        Address : <input 
-                                    type='text' 
-                                    value={address} 
-                                    onChange={ (e) => { setAddress(e.target.value) } }
-                                /> <br />
+                        <div className="my-[12.5px]">
+                            <p className="font-bold">Address</p>
+                            <textarea
+                                className='border border-gray-200 w-full h-[100px] px-3 py-2 my-2 rounded'
+                                type='text'
+                                name={address}
+                                value={address}
+                                onChange={ (e) => { setAddress(e.target.value) } }
+                            />
+                        </div>
 
-                        Order #1 : 
-                            <input 
-                                type='text' 
-                                value={orderOneItem} 
-                                onChange={ (e) => { setOrderOneItem(e.target.value) } }
-                            />
-                            <input 
-                                type='text' 
-                                value={orderOneQuantity} 
-                                onChange={ (e) => { setOrderOneQuantity(e.target.value) } }
-                            />
-                            <input 
-                                type='text' 
-                                value={orderOnePrice} 
-                                onChange={ (e) => { setOrderOnePrice(e.target.value) } }
-                            />
+                        <div className="flex flex-col my-[12.5px]">
+                            <p className="font-bold">Order #1</p>
+
+                            <div className="flex flex-nowrap grow-1 items-center">
+                                <input
+                                    className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                    type='text'
+                                    name={orderOneItem}
+                                    value={orderOneItem}
+                                    onChange={ (e) => { setOrderOneItem(e.target.value) } }
+                                />
+
+                                <input
+                                    className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                    type='text'
+                                    name={orderOneQuantity}
+                                    value={orderOneQuantity}
+                                    onChange={ (e) => { setOrderOneQuantity(e.target.value) } }
+                                />
+                                
+                                <input
+                                    className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                    type='text'
+                                    name={orderOnePrice}
+                                    value={orderOnePrice}
+                                    onChange={ (e) => { setOrderOnePrice(e.target.value) } }
+                                />
+
+                                <button 
+                                    className='px-3 border border-gray-200 hover:bg-gray-100 hover:border-gray-500 rounded'
+                                    onClick={ (e) => {
+                                        e.preventDefault()
+
+                                        setOrderOnePrice("Heey")
+                                    } }
+                                >
+                                    =₹
+                                </button>
+                            </div>
+                        </div>
 
                         { ( !orderTwoPrice == "" ) && (
-                                <div>
-                                    Order #2 :
-                                        <input
-                                            type='text'
-                                            value={orderTwoItem}
-                                            onChange={ (e) => { setOrderTwoItem(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderTwoQuantity}
-                                            onChange={ (e) => { setOrderTwoQuantity(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderTwoPrice}
-                                            onChange={ (e) => { setOrderTwoPrice(e.target.value) } }
-                                        />
+                            <div className="flex flex-col my-[12.5px]">
+                                <p className="font-bold">Order #2</p>
+
+                                <div className="flex flex-nowrap grow-1 items-center">
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderTwoItem}
+                                        value={orderTwoItem}
+                                        onChange={ (e) => { setOrderTwoItem(e.target.value) } }
+                                    />
+
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderTwoQuantity}
+                                        value={orderTwoQuantity}
+                                        onChange={ (e) => { setOrderTwoQuantity(e.target.value) } }
+                                    />
+                                    
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderTwoPrice}
+                                        value={orderTwoPrice}
+                                        onChange={ (e) => { setOrderTwoPrice(e.target.value) } }
+                                    />
+
+                                    <button 
+                                        className='px-3 border border-gray-200 hover:bg-gray-100 hover:border-gray-500 rounded'
+                                        onClick={ (e) => {
+                                            e.preventDefault()
+
+                                            setOrderTwoPrice("Heey")
+                                        } }
+                                    >
+                                        =₹
+                                    </button>
                                 </div>
+                            </div>
                         ) }
 
                         { ( !orderThreePrice == "" ) && (
-                                <div>
-                                    Order #3 :
-                                        <input
-                                            type='text'
-                                            value={orderThreeItem}
-                                            onChange={ (e) => { setOrderThreeItem(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderThreeQuantity}
-                                            onChange={ (e) => { setOrderThreeQuantity(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderThreePrice}
-                                            onChange={ (e) => { setOrderThreePrice(e.target.value) } }
-                                        />
+                            <div className="flex flex-col my-[12.5px]">
+                                <p className="font-bold">Order #3</p>
+
+                                <div className="flex flex-nowrap grow-1 items-center">
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderThreeItem}
+                                        value={orderThreeItem}
+                                        onChange={ (e) => { setOrderThreeItem(e.target.value) } }
+                                    />
+
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderThreeQuantity}
+                                        value={orderThreeQuantity}
+                                        onChange={ (e) => { setOrderThreeQuantity(e.target.value) } }
+                                    />
+                                    
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderThreePrice}
+                                        value={orderThreePrice}
+                                        onChange={ (e) => { setOrderThreePrice(e.target.value) } }
+                                    />
+
+                                    <button 
+                                        className='px-3 border border-gray-200 hover:bg-gray-100 hover:border-gray-500 rounded'
+                                        onClick={ (e) => {
+                                            e.preventDefault()
+
+                                            setOrderThreePrice("Heey")
+                                        } }
+                                    >
+                                        =₹
+                                    </button>
                                 </div>
+                            </div>
                         ) }
 
                         { ( !orderFourPrice == "" ) && (
-                                <div>
-                                    Order #4 :
-                                        <input
-                                            type='text'
-                                            value={orderFourItem}
-                                            onChange={ (e) => { setOrderFourItem(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderFourQuantity}
-                                            onChange={ (e) => { setOrderFourQuantity(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderFourPrice}
-                                            onChange={ (e) => { setOrderFourPrice(e.target.value) } }
-                                        />
+                            <div className="flex flex-col my-[12.5px]">
+                                <p className="font-bold">Order #4</p>
+
+                                <div className="flex flex-nowrap grow-1 items-center">
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderFourItem}
+                                        value={orderFourItem}
+                                        onChange={ (e) => { setOrderFourItem(e.target.value) } }
+                                    />
+
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderFourQuantity}
+                                        value={orderFourQuantity}
+                                        onChange={ (e) => { setOrderFourQuantity(e.target.value) } }
+                                    />
+                                    
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderFourPrice}
+                                        value={orderFourPrice}
+                                        onChange={ (e) => { setOrderFourPrice(e.target.value) } }
+                                    />
+
+                                    <button 
+                                        className='px-3 border border-gray-200 hover:bg-gray-100 hover:border-gray-500 rounded'
+                                        onClick={ (e) => {
+                                            e.preventDefault()
+
+                                            setOrderFourPrice("Heey")
+                                        } }
+                                    >
+                                        =₹
+                                    </button>
                                 </div>
+                            </div>
                         ) }
 
                         { ( !orderFivePrice == "" ) && (
-                                <div>
-                                    Order #5 :
-                                        <input
-                                            type='text'
-                                            value={orderFiveItem}
-                                            onChange={ (e) => { setOrderFiveItem(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderFiveQuantity}
-                                            onChange={ (e) => { setOrderFiveQuantity(e.target.value) } }
-                                        />
-                                        <input
-                                            type='text'
-                                            value={orderFivePrice}
-                                            onChange={ (e) => { setOrderFivePrice(e.target.value) } }
-                                        />
-                                </div>
-                        ) }
-                        
+                            <div className="flex flex-col my-[12.5px]">
+                                <p className="font-bold">Order #5</p>
 
-                        <button className="border border-black hover:text-yellow-300">
-                            Update Order
-                        </button>
+                                <div className="flex flex-nowrap grow-1 items-center">
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderFiveItem}
+                                        value={orderFiveItem}
+                                        onChange={ (e) => { setOrderFiveItem(e.target.value) } }
+                                    />
+
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderFiveQuantity}
+                                        value={orderFiveQuantity}
+                                        onChange={ (e) => { setOrderFiveQuantity(e.target.value) } }
+                                    />
+                                    
+                                    <input
+                                        className='my-2 border border-gray-200 mx-1 text-center rounded'
+                                        type='text'
+                                        name={orderFivePrice}
+                                        value={orderFivePrice}
+                                        onChange={ (e) => { setOrderFivePrice(e.target.value) } }
+                                    />
+
+                                    <button 
+                                        className='px-3 border border-gray-200 hover:bg-gray-100 hover:border-gray-500 rounded'
+                                        onClick={ (e) => {
+                                            e.preventDefault()
+
+                                            setOrderFivePrice("Heey")
+                                        } }
+                                    >
+                                        =₹
+                                    </button>
+                                </div>
+                            </div>
+                        ) }
+
+                        <div className="flex justify-center">
+                            <button className="border border-black hover:text-yellow-300 px-[10px] py-[2.5px] my-[10px] rounded">
+                                Update Order
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

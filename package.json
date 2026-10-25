@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "server": "json-server --watch src/json/order.json --port 8000"
+    "server": "json-server --watch src/json/order.json --port 8001"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useLoaderData, useParams, useNavigate } from 'react-router-dom'
+import { FaArrowLeft } from 'react-icons/fa'
 
 export default function OrderEdit({ UpdatedOrderSubmit }) {
     const order = useLoaderData()
@@ -65,7 +66,14 @@ export default function OrderEdit({ UpdatedOrderSubmit }) {
             <div className="container m-auto max-w-2xl py-24">
                 <div>
                     <form onSubmit={updatedOrder} className='bg-white border border-white shadow-xl rounded px-[25px] py-[50px]'>
-                        <h2 className="text-center text-3xl font-semibold mb-6 "><i class="codicon codicon-arrow-left"></i> Update Order</h2>
+                        <FaArrowLeft 
+                            className='mb-[10px] hover:text-gray-600'
+                            onClick={ () => {
+                                navigate('/admin/orders')
+                            } }
+                        />
+                        
+                        <h2 className="text-center text-3xl font-semibold mb-6 mx-auto self-center "> Update Order</h2>
 
                         <p className='bg-gray-500 rounded px-[10px] py-[2.5px] my-[12.5px] justify-self-start'> Id : {id} </p>
 

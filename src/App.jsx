@@ -9,7 +9,6 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from './pages/HomePage';
 import AdminPage from "./pages/AdminPage";
 import { AdminLoader } from "./component/AdminLoader";
-import OrderCard from "./component/OrderCard";
 import NotFoundPage from "./pages/NotFoundPage";
 import OrderEditPage from "./pages/OrderEditPage";
 import OrderLoader from "./component/OrderLoader";

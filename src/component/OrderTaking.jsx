@@ -54,6 +54,31 @@ export default function OrderTaking({ addOrderSubmit }) {
     const [orderFiveSmallQuantity, setOrderFiveSmallQuantity] = useState("0");
     const [orderFivePrice, setOrderFivePrice] = useState("")
 
+    const [orderSixItem, setOrderSixItem] = useState("");
+    const [orderSixQuantity, setOrderSixQuantity] = useState("1");
+    const [orderSixSmallQuantity, setOrderSixSmallQuantity] = useState("0");
+    const [orderSixPrice, setOrderSixPrice] = useState("")
+
+    const [orderSevenItem, setOrderSevenItem] = useState("");
+    const [orderSevenQuantity, setOrderSevenQuantity] = useState("1");
+    const [orderSevenSmallQuantity, setOrderSevenSmallQuantity] = useState("0");
+    const [orderSevenPrice, setOrderSevenPrice] = useState("")
+
+    const [orderEightItem, setOrderEightItem] = useState("");
+    const [orderEightQuantity, setOrderEightQuantity] = useState("1");
+    const [orderEightSmallQuantity, setOrderEightSmallQuantity] = useState("0");
+    const [orderEightPrice, setOrderEightPrice] = useState("")
+
+    const [orderNineItem, setOrderNineItem] = useState("");
+    const [orderNineQuantity, setOrderNineQuantity] = useState("1");
+    const [orderNineSmallQuantity, setOrderNineSmallQuantity] = useState("0");
+    const [orderNinePrice, setOrderNinePrice] = useState("")
+
+    const [orderTenItem, setOrderTenItem] = useState("");
+    const [orderTenQuantity, setOrderTenQuantity] = useState("1");
+    const [orderTenSmallQuantity, setOrderTenSmallQuantity] = useState("0");
+    const [orderTenPrice, setOrderTenPrice] = useState("")
+
 //For setting price upon deciding order 
     useEffect(() => {
         orderOnePriceBox = document.getElementById("order-one-price-box");
@@ -61,6 +86,11 @@ export default function OrderTaking({ addOrderSubmit }) {
         orderThreePriceBox = document.getElementById("order-three-price-box");
         orderFourPriceBox = document.getElementById("order-four-price-box");
         orderFivePriceBox = document.getElementById("order-five-price-box");
+        orderSixPriceBox = document.getElementById("order-six-price-box");
+        orderSevenPriceBox = document.getElementById("order-seven-price-box");
+        orderEightPriceBox = document.getElementById("order-eight-price-box");
+        orderNinePriceBox = document.getElementById("order-nine-price-box");
+        orderTenPriceBox = document.getElementById("order-ten-price-box");
     }, [])
 
 //For setting price upon deciding quantity of order 
@@ -69,6 +99,11 @@ export default function OrderTaking({ addOrderSubmit }) {
     let orderThreePriceBox = document.getElementById("order-three-price-box");
     let orderFourPriceBox = document.getElementById("order-four-price-box");
     let orderFivePriceBox = document.getElementById("order-five-price-box");
+    let orderSixPriceBox = document.getElementById("order-six-price-box");
+    let orderSevenPriceBox = document.getElementById("order-seven-price-box");
+    let orderEightPriceBox = document.getElementById("order-eight-price-box");
+    let orderNinePriceBox = document.getElementById("order-nine-price-box");
+    let orderTenPriceBox = document.getElementById("order-ten-price-box");
 
 //Initialized for navigating after submitting form
     const navigate = useNavigate();
@@ -84,6 +119,11 @@ export default function OrderTaking({ addOrderSubmit }) {
         const numberedOrderThreeQuantity = Number(orderThreeQuantity) + Number(orderThreeSmallQuantity);
         const numberedOrderFourQuantity = Number(orderFourQuantity) + Number(orderFourSmallQuantity);
         const numberedOrderFiveQuantity = Number(orderFiveQuantity) + Number(orderFiveSmallQuantity);
+        const numberedOrderSixQuantity = Number(orderSixQuantity) + Number(orderSixSmallQuantity);
+        const numberedOrderSevenQuantity = Number(orderSevenQuantity) + Number(orderSevenSmallQuantity);
+        const numberedOrderEightQuantity = Number(orderEightQuantity) + Number(orderEightSmallQuantity);
+        const numberedOrderNineQuantity = Number(orderNineQuantity) + Number(orderNineSmallQuantity);
+        const numberedOrderTenQuantity = Number(orderTenQuantity) + Number(orderTenSmallQuantity);
 
         const newOrder = {
             id,
@@ -105,6 +145,21 @@ export default function OrderTaking({ addOrderSubmit }) {
             orderFiveItem,
             orderFiveQuantity: numberedOrderFiveQuantity,
             orderFivePrice,
+            orderSixItem,
+            orderSixQuantity: numberedOrderSixQuantity,
+            orderSixPrice,
+            orderSevenItem,
+            orderSevenQuantity: numberedOrderSevenQuantity,
+            orderSevenPrice,
+            orderEightItem,
+            orderEightQuantity: numberedOrderEightQuantity,
+            orderEightPrice,
+            orderNineItem,
+            orderNineQuantity: numberedOrderNineQuantity,
+            orderNinePrice,
+            orderTenItem,
+            orderTenQuantity: numberedOrderTenQuantity,
+            orderTenPrice,
         }
 
         addOrderSubmit(newOrder)
@@ -303,6 +358,196 @@ export default function OrderTaking({ addOrderSubmit }) {
             setOrderFivePrice( sumTwo )
         }
     }
+    //Order Six item
+    function orderSixItemChanged(e) {
+        if ((e.target.value == "burger")) {
+            setOrderSixItem(e.target.value)
+            orderSixPriceBox.textContent = orderSixQuantity * burgerPrice ;
+
+            let sumTwo = orderSixQuantity * burgerPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if ((e.target.value == "loadedFries")) {
+            setOrderSixItem(e.target.value)
+            orderSixPriceBox.textContent = orderSixQuantity * loadedFriesPrice ;
+
+            let sumTwo = orderSixQuantity * loadedFriesPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if ((e.target.value == "shawaya")) {
+            setOrderSixItem(e.target.value)
+            orderSixPriceBox.textContent = orderSixQuantity * shawayaPrice ;
+
+            let sumTwo = orderSixQuantity * shawayaPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if ((e.target.value == "mandhi")) {
+            setOrderSixItem(e.target.value)
+            orderSixPriceBox.textContent = orderSixQuantity * mandhiPrice ;
+
+            let sumTwo = orderSixQuantity * mandhiPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if ((e.target.value == "pepsi1l")) {
+            setOrderSixItem(e.target.value)
+            orderSixPriceBox.textContent = orderSixQuantity * pepsi1lPrice ;
+
+            let sumTwo = orderSixQuantity * pepsi1lPrice;
+            setOrderSixPrice( sumTwo )
+        }
+    }
+    //Order Seven item
+    function orderSevenItemChanged(e) {
+        if ((e.target.value == "burger")) {
+            setOrderSevenItem(e.target.value)
+            orderSevenPriceBox.textContent = orderSevenQuantity * burgerPrice ;
+
+            let sumTwo = orderSevenQuantity * burgerPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if ((e.target.value == "loadedFries")) {
+            setOrderSevenItem(e.target.value)
+            orderSevenPriceBox.textContent = orderSevenQuantity * loadedFriesPrice ;
+
+            let sumTwo = orderSevenQuantity * loadedFriesPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if ((e.target.value == "shawaya")) {
+            setOrderSevenItem(e.target.value)
+            orderSevenPriceBox.textContent = orderSevenQuantity * shawayaPrice ;
+
+            let sumTwo = orderSevenQuantity * shawayaPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if ((e.target.value == "mandhi")) {
+            setOrderSevenItem(e.target.value)
+            orderSevenPriceBox.textContent = orderSevenQuantity * mandhiPrice ;
+
+            let sumTwo = orderSevenQuantity * mandhiPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if ((e.target.value == "pepsi1l")) {
+            setOrderSevenItem(e.target.value)
+            orderSevenPriceBox.textContent = orderSevenQuantity * pepsi1lPrice ;
+
+            let sumTwo = orderSevenQuantity * pepsi1lPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+    }
+    //Order Eight item
+    function orderEightItemChanged(e) {
+        if ((e.target.value == "burger")) {
+            setOrderEightItem(e.target.value)
+            orderEightPriceBox.textContent = orderEightQuantity * burgerPrice ;
+
+            let sumTwo = orderEightQuantity * burgerPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if ((e.target.value == "loadedFries")) {
+            setOrderEightItem(e.target.value)
+            orderEightPriceBox.textContent = orderEightQuantity * loadedFriesPrice ;
+
+            let sumTwo = orderEightQuantity * loadedFriesPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if ((e.target.value == "shawaya")) {
+            setOrderEightItem(e.target.value)
+            orderEightPriceBox.textContent = orderEightQuantity * shawayaPrice ;
+
+            let sumTwo = orderEightQuantity * shawayaPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if ((e.target.value == "mandhi")) {
+            setOrderEightItem(e.target.value)
+            orderEightPriceBox.textContent = orderEightQuantity * mandhiPrice ;
+
+            let sumTwo = orderEightQuantity * mandhiPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if ((e.target.value == "pepsi1l")) {
+            setOrderEightItem(e.target.value)
+            orderEightPriceBox.textContent = orderEightQuantity * pepsi1lPrice ;
+
+            let sumTwo = orderEightQuantity * pepsi1lPrice;
+            setOrderEightPrice( sumTwo )
+        }
+    }
+    //Order Nine item
+    function orderNineItemChanged(e) {
+        if ((e.target.value == "burger")) {
+            setOrderNineItem(e.target.value)
+            orderNinePriceBox.textContent = orderNineQuantity * burgerPrice ;
+
+            let sumTwo = orderNineQuantity * burgerPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if ((e.target.value == "loadedFries")) {
+            setOrderNineItem(e.target.value)
+            orderNinePriceBox.textContent = orderNineQuantity * loadedFriesPrice ;
+
+            let sumTwo = orderNineQuantity * loadedFriesPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if ((e.target.value == "shawaya")) {
+            setOrderNineItem(e.target.value)
+            orderNinePriceBox.textContent = orderNineQuantity * shawayaPrice ;
+
+            let sumTwo = orderNineQuantity * shawayaPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if ((e.target.value == "mandhi")) {
+            setOrderNineItem(e.target.value)
+            orderNinePriceBox.textContent = orderNineQuantity * mandhiPrice ;
+
+            let sumTwo = orderNineQuantity * mandhiPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if ((e.target.value == "pepsi1l")) {
+            setOrderNineItem(e.target.value)
+            orderNinePriceBox.textContent = orderNineQuantity * pepsi1lPrice ;
+
+            let sumTwo = orderNineQuantity * pepsi1lPrice;
+            setOrderNinePrice( sumTwo )
+        }
+    }
+    //Order Ten item
+    function orderTenItemChanged(e) {
+        if ((e.target.value == "burger")) {
+            setOrderTenItem(e.target.value)
+            orderTenPriceBox.textContent = orderTenQuantity * burgerPrice ;
+
+            let sumTwo = orderTenQuantity * burgerPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if ((e.target.value == "loadedFries")) {
+            setOrderTenItem(e.target.value)
+            orderTenPriceBox.textContent = orderTenQuantity * loadedFriesPrice ;
+
+            let sumTwo = orderTenQuantity * loadedFriesPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if ((e.target.value == "shawaya")) {
+            setOrderTenItem(e.target.value)
+            orderTenPriceBox.textContent = orderTenQuantity * shawayaPrice ;
+
+            let sumTwo = orderTenQuantity * shawayaPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if ((e.target.value == "mandhi")) {
+            setOrderTenItem(e.target.value)
+            orderTenPriceBox.textContent = orderTenQuantity * mandhiPrice ;
+
+            let sumTwo = orderTenQuantity * mandhiPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if ((e.target.value == "pepsi1l")) {
+            setOrderTenItem(e.target.value)
+            orderTenPriceBox.textContent = orderTenQuantity * pepsi1lPrice ;
+
+            let sumTwo = orderTenQuantity * pepsi1lPrice;
+            setOrderTenPrice( sumTwo )
+        }
+    }
 
 //Function to perform on Order quantity changes
     //Order One quantity
@@ -493,6 +738,196 @@ export default function OrderTaking({ addOrderSubmit }) {
                         
             let sumTwo = e.target.value * pepsi1lPrice;
             setOrderFivePrice( sumTwo )
+        }
+    }
+    //Order Six quantity
+    function orderSixQuantityChanged(e) {
+        if (orderSixItem == "burger") {
+            setOrderSixQuantity(e.target.value)
+            orderSixPriceBox.textContent = e.target.value * burgerPrice ;
+                        
+            let sumTwo = e.target.value * burgerPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "loadedFries") {
+            setOrderSixQuantity(e.target.value)
+            orderSixPriceBox.textContent = e.target.value * loadedFriesPrice ;
+                        
+            let sumTwo = e.target.value * loadedFriesPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "shawaya") {
+            setOrderSixQuantity(e.target.value)
+            orderSixPriceBox.textContent = e.target.value * shawayaPrice ;
+                        
+            let sumTwo = e.target.value * shawayaPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "mandhi") {
+            setOrderSixQuantity(e.target.value)
+            orderSixPriceBox.textContent = e.target.value * mandhiPrice ;
+                        
+            let sumTwo = e.target.value * mandhiPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "pepsi1l") {
+            setOrderSixQuantity(e.target.value)
+            orderSixPriceBox.textContent = e.target.value * pepsi1lPrice ;
+                        
+            let sumTwo = e.target.value * pepsi1lPrice;
+            setOrderSixPrice( sumTwo )
+        }
+    }
+    //Order Seven quantity
+    function orderSevenQuantityChanged(e) {
+        if (orderSevenItem == "burger") {
+            setOrderSevenQuantity(e.target.value)
+            orderSevenPriceBox.textContent = e.target.value * burgerPrice ;
+                        
+            let sumTwo = e.target.value * burgerPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "loadedFries") {
+            setOrderSevenQuantity(e.target.value)
+            orderSevenPriceBox.textContent = e.target.value * loadedFriesPrice ;
+                        
+            let sumTwo = e.target.value * loadedFriesPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "shawaya") {
+            setOrderSevenQuantity(e.target.value)
+            orderSevenPriceBox.textContent = e.target.value * shawayaPrice ;
+                        
+            let sumTwo = e.target.value * shawayaPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "mandhi") {
+            setOrderSevenQuantity(e.target.value)
+            orderSevenPriceBox.textContent = e.target.value * mandhiPrice ;
+                        
+            let sumTwo = e.target.value * mandhiPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "pepsi1l") {
+            setOrderSevenQuantity(e.target.value)
+            orderSevenPriceBox.textContent = e.target.value * pepsi1lPrice ;
+                        
+            let sumTwo = e.target.value * pepsi1lPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+    }
+    //Order Eight quantity
+    function orderEightQuantityChanged(e) {
+        if (orderEightItem == "burger") {
+            setOrderEightQuantity(e.target.value)
+            orderEightPriceBox.textContent = e.target.value * burgerPrice ;
+                        
+            let sumTwo = e.target.value * burgerPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "loadedFries") {
+            setOrderEightQuantity(e.target.value)
+            orderEightPriceBox.textContent = e.target.value * loadedFriesPrice ;
+                        
+            let sumTwo = e.target.value * loadedFriesPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "shawaya") {
+            setOrderEightQuantity(e.target.value)
+            orderEightPriceBox.textContent = e.target.value * shawayaPrice ;
+                        
+            let sumTwo = e.target.value * shawayaPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "mandhi") {
+            setOrderEightQuantity(e.target.value)
+            orderEightPriceBox.textContent = e.target.value * mandhiPrice ;
+                        
+            let sumTwo = e.target.value * mandhiPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "pepsi1l") {
+            setOrderEightQuantity(e.target.value)
+            orderEightPriceBox.textContent = e.target.value * pepsi1lPrice ;
+                        
+            let sumTwo = e.target.value * pepsi1lPrice;
+            setOrderEightPrice( sumTwo )
+        }
+    }
+    //Order Nine quantity
+    function orderNineQuantityChanged(e) {
+        if (orderNineItem == "burger") {
+            setOrderNineQuantity(e.target.value)
+            orderNinePriceBox.textContent = e.target.value * burgerPrice ;
+                        
+            let sumTwo = e.target.value * burgerPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "loadedFries") {
+            setOrderNineQuantity(e.target.value)
+            orderNinePriceBox.textContent = e.target.value * loadedFriesPrice ;
+                        
+            let sumTwo = e.target.value * loadedFriesPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "shawaya") {
+            setOrderNineQuantity(e.target.value)
+            orderNinePriceBox.textContent = e.target.value * shawayaPrice ;
+                        
+            let sumTwo = e.target.value * shawayaPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "mandhi") {
+            setOrderNineQuantity(e.target.value)
+            orderNinePriceBox.textContent = e.target.value * mandhiPrice ;
+                        
+            let sumTwo = e.target.value * mandhiPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "pepsi1l") {
+            setOrderNineQuantity(e.target.value)
+            orderNinePriceBox.textContent = e.target.value * pepsi1lPrice ;
+                        
+            let sumTwo = e.target.value * pepsi1lPrice;
+            setOrderNinePrice( sumTwo )
+        }
+    }
+    //Order Ten quantity
+    function orderTenQuantityChanged(e) {
+        if (orderTenItem == "burger") {
+            setOrderTenQuantity(e.target.value)
+            orderTenPriceBox.textContent = e.target.value * burgerPrice ;
+                        
+            let sumTwo = e.target.value * burgerPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "loadedFries") {
+            setOrderTenQuantity(e.target.value)
+            orderTenPriceBox.textContent = e.target.value * loadedFriesPrice ;
+                        
+            let sumTwo = e.target.value * loadedFriesPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "shawaya") {
+            setOrderTenQuantity(e.target.value)
+            orderTenPriceBox.textContent = e.target.value * shawayaPrice ;
+                        
+            let sumTwo = e.target.value * shawayaPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "mandhi") {
+            setOrderTenQuantity(e.target.value)
+            orderTenPriceBox.textContent = e.target.value * mandhiPrice ;
+                        
+            let sumTwo = e.target.value * mandhiPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "pepsi1l") {
+            setOrderTenQuantity(e.target.value)
+            orderTenPriceBox.textContent = e.target.value * pepsi1lPrice ;
+                        
+            let sumTwo = e.target.value * pepsi1lPrice;
+            setOrderTenPrice( sumTwo )
         }
     }
 
@@ -712,24 +1147,239 @@ export default function OrderTaking({ addOrderSubmit }) {
             setOrderFivePrice( sumTwo )
         }
     }
+    //Order Six small quantity
+    function orderSixSmallQuantityChanged(e) {
+        if (orderSixItem == "burger") {
+            setOrderSixSmallQuantity(e.target.value)
+            let sum = orderSixQuantity + e.target.value;
+            orderSixPriceBox.textContent = sum * burgerPrice ;
+                                    
+            let sumTwo = sum * burgerPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "loadedFries") {
+            setOrderSixSmallQuantity(e.target.value)
+            let sum = orderSixQuantity + e.target.value;
+            orderSixPriceBox.textContent = sum * loadedFriesPrice ;
+                                    
+            let sumTwo = sum * loadedFriesPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "shawaya") {
+            setOrderSixSmallQuantity(e.target.value)
+            let sum = orderSixQuantity + e.target.value;
+            orderSixPriceBox.textContent = sum * shawayaPrice ;
+                                    
+            let sumTwo = sum * shawayaPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "mandhi") {
+            setOrderSixSmallQuantity(e.target.value)
+            let sum = orderSixQuantity + e.target.value;
+            orderSixPriceBox.textContent = sum * mandhiPrice ;
+                                    
+            let sumTwo = sum * mandhiPrice;
+            setOrderSixPrice( sumTwo )
+        }
+        else if (orderSixItem == "pepsi1l") {
+            setOrderSixSmallQuantity(e.target.value)
+            let sum = orderSixQuantity + e.target.value;
+            orderSixPriceBox.textContent = sum * pepsi1lPrice ;
+                                    
+            let sumTwo = sum * pepsi1lPrice;
+            setOrderSixPrice( sumTwo )
+        }
+    }
+    //Order Seven small quantity
+    function orderSevenSmallQuantityChanged(e) {
+        if (orderSevenItem == "burger") {
+            setOrderSevenSmallQuantity(e.target.value)
+            let sum = orderSevenQuantity + e.target.value;
+            orderSevenPriceBox.textContent = sum * burgerPrice ;
+                                    
+            let sumTwo = sum * burgerPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "loadedFries") {
+            setOrderSevenSmallQuantity(e.target.value)
+            let sum = orderSevenQuantity + e.target.value;
+            orderSevenPriceBox.textContent = sum * loadedFriesPrice ;
+                                    
+            let sumTwo = sum * loadedFriesPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "shawaya") {
+            setOrderSevenSmallQuantity(e.target.value)
+            let sum = orderSevenQuantity + e.target.value;
+            orderSevenPriceBox.textContent = sum * shawayaPrice ;
+                                    
+            let sumTwo = sum * shawayaPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "mandhi") {
+            setOrderSevenSmallQuantity(e.target.value)
+            let sum = orderSevenQuantity + e.target.value;
+            orderSevenPriceBox.textContent = sum * mandhiPrice ;
+                                    
+            let sumTwo = sum * mandhiPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+        else if (orderSevenItem == "pepsi1l") {
+            setOrderSevenSmallQuantity(e.target.value)
+            let sum = orderSevenQuantity + e.target.value;
+            orderSevenPriceBox.textContent = sum * pepsi1lPrice ;
+                                    
+            let sumTwo = sum * pepsi1lPrice;
+            setOrderSevenPrice( sumTwo )
+        }
+    }
+    //Order Eight small quantity
+    function orderEightSmallQuantityChanged(e) {
+        if (orderEightItem == "burger") {
+            setOrderEightSmallQuantity(e.target.value)
+            let sum = orderEightQuantity + e.target.value;
+            orderEightPriceBox.textContent = sum * burgerPrice ;
+                                    
+            let sumTwo = sum * burgerPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "loadedFries") {
+            setOrderEightSmallQuantity(e.target.value)
+            let sum = orderEightQuantity + e.target.value;
+            orderEightPriceBox.textContent = sum * loadedFriesPrice ;
+                                    
+            let sumTwo = sum * loadedFriesPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "shawaya") {
+            setOrderEightSmallQuantity(e.target.value)
+            let sum = orderEightQuantity + e.target.value;
+            orderEightPriceBox.textContent = sum * shawayaPrice ;
+                                    
+            let sumTwo = sum * shawayaPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "mandhi") {
+            setOrderEightSmallQuantity(e.target.value)
+            let sum = orderEightQuantity + e.target.value;
+            orderEightPriceBox.textContent = sum * mandhiPrice ;
+                                    
+            let sumTwo = sum * mandhiPrice;
+            setOrderEightPrice( sumTwo )
+        }
+        else if (orderEightItem == "pepsi1l") {
+            setOrderEightSmallQuantity(e.target.value)
+            let sum = orderEightQuantity + e.target.value;
+            orderEightPriceBox.textContent = sum * pepsi1lPrice ;
+                                    
+            let sumTwo = sum * pepsi1lPrice;
+            setOrderEightPrice( sumTwo )
+        }
+    }
+    //Order Nine small quantity
+    function orderNineSmallQuantityChanged(e) {
+        if (orderNineItem == "burger") {
+            setOrderNineSmallQuantity(e.target.value)
+            let sum = orderNineQuantity + e.target.value;
+            orderNinePriceBox.textContent = sum * burgerPrice ;
+                                    
+            let sumTwo = sum * burgerPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "loadedFries") {
+            setOrderNineSmallQuantity(e.target.value)
+            let sum = orderNineQuantity + e.target.value;
+            orderNinePriceBox.textContent = sum * loadedFriesPrice ;
+                                    
+            let sumTwo = sum * loadedFriesPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "shawaya") {
+            setOrderNineSmallQuantity(e.target.value)
+            let sum = orderNineQuantity + e.target.value;
+            orderNinePriceBox.textContent = sum * shawayaPrice ;
+                                    
+            let sumTwo = sum * shawayaPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "mandhi") {
+            setOrderNineSmallQuantity(e.target.value)
+            let sum = orderNineQuantity + e.target.value;
+            orderNinePriceBox.textContent = sum * mandhiPrice ;
+                                    
+            let sumTwo = sum * mandhiPrice;
+            setOrderNinePrice( sumTwo )
+        }
+        else if (orderNineItem == "pepsi1l") {
+            setOrderNineSmallQuantity(e.target.value)
+            let sum = orderNineQuantity + e.target.value;
+            orderNinePriceBox.textContent = sum * pepsi1lPrice ;
+                                    
+            let sumTwo = sum * pepsi1lPrice;
+            setOrderNinePrice( sumTwo )
+        }
+    }
+    //Order Ten small quantity
+    function orderTenSmallQuantityChanged(e) {
+        if (orderTenItem == "burger") {
+            setOrderTenSmallQuantity(e.target.value)
+            let sum = orderTenQuantity + e.target.value;
+            orderTenPriceBox.textContent = sum * burgerPrice ;
+                                    
+            let sumTwo = sum * burgerPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "loadedFries") {
+            setOrderTenSmallQuantity(e.target.value)
+            let sum = orderTenQuantity + e.target.value;
+            orderTenPriceBox.textContent = sum * loadedFriesPrice ;
+                                    
+            let sumTwo = sum * loadedFriesPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "shawaya") {
+            setOrderTenSmallQuantity(e.target.value)
+            let sum = orderTenQuantity + e.target.value;
+            orderTenPriceBox.textContent = sum * shawayaPrice ;
+                                    
+            let sumTwo = sum * shawayaPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "mandhi") {
+            setOrderTenSmallQuantity(e.target.value)
+            let sum = orderTenQuantity + e.target.value;
+            orderTenPriceBox.textContent = sum * mandhiPrice ;
+                                    
+            let sumTwo = sum * mandhiPrice;
+            setOrderTenPrice( sumTwo )
+        }
+        else if (orderTenItem == "pepsi1l") {
+            setOrderTenSmallQuantity(e.target.value)
+            let sum = orderTenQuantity + e.target.value;
+            orderTenPriceBox.textContent = sum * pepsi1lPrice ;
+                                    
+            let sumTwo = sum * pepsi1lPrice;
+            setOrderTenPrice( sumTwo )
+        }
+    }
 
     return(
         <div
             id="order-menu"
-            className = "absolute justify-self-center top-[100px] border border-black drop-shadow-xl rounded-[25px] bg-red-500 hidden"
+            className = "absolute justify-self-center top-[100px] drop-shadow-2xl rounded bg-white hidden"
         >
             <form 
                 onSubmit={submitForm}
                 className="mx-[25px] my-[50px]"
             >
-                <h1 className="justify-self-center my-[25px]">Order</h1>
+                <h1 className="justify-self-center my-[25px] font-bold text-[24px]">Order</h1>
 
-                <h2 className='justify-self-center text-[7.5px] text-yellow-100'>You can only order if you have filled Name, Phone and Address field !</h2>
+                <h2 className='justify-self-center text-[10px] text-yellow-400'>You can only order if you have filled Name, Phone and Address field!</h2>
 
                 <ul>
                     <li className="mx-[20px] my-[20px]">
                         Name : <input
-                            className="border border-black  hover:bg-red-600 px-[5px] py-[2.5px] rounded-[5px] mx-[30px]"
+                            className="border border-black  hover:bg-gray-100 px-[5px] py-[2.5px] rounded-[5px] mx-[30px]"
                             type="text" 
                             name="name"
                             value={ customerName }
@@ -739,8 +1389,8 @@ export default function OrderTaking({ addOrderSubmit }) {
 
                     <li className="mx-[20px] my-[20px]">  
                         Phone : <input
-                            className="border border-black  hover:bg-red-600 px-[5px] py-[2.5px] rounded-[5px] mx-[27px]"
-                            type="phone" 
+                            className="border border-black  hover:bg-gray-100 px-[5px] py-[2.5px] rounded-[5px] mx-[27px]"
+                            type="number" 
                             name="Phone"
                             value={ customerPhone }
                             onChange={ (e) => { setCustomerPhone(e.target.value) } }
@@ -749,7 +1399,7 @@ export default function OrderTaking({ addOrderSubmit }) {
 
                     <li className="mx-[20px] my-[20px]">
                         Address : <input
-                            className="border border-black  hover:bg-red-600 px-[5px] py-[2.5px] rounded-[5px] mx-[14px]"
+                            className="border border-black  hover:bg-gray-100 px-[5px] py-[2.5px] rounded-[5px] mx-[14px]"
                             type="text" 
                             name="Address" 
                             value={ customerAddress }
@@ -760,126 +1410,127 @@ export default function OrderTaking({ addOrderSubmit }) {
 
 
                 <div id="Order">
-                        {/* <input type="checkbox" className="ml-[50px] mr-[7.5px] "/>Manual */}
+                    {/* <input type="checkbox" className="ml-[50px] mr-[7.5px] "/>Manual */}
 
-                        <div id="div-order-one" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #1 : <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-one-item'
-                                name="order-one-item"
-                                value={ orderOneItem }
-                                onChange={ orderOneItemChanged }
+                    <div id="div-order-one" className="flex gap-[10px] mx-[20px] my-[20px]">
+                        Order #1 : <select
+                            className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
+                            id='order-one-item'
+                            name="order-one-item"
+                            value={ orderOneItem }
+                            onChange={ orderOneItemChanged }
+                        >
+                            <option value="Choose Your Order"> Choose Your Order </option>
+                            <option value="burger"> burger </option>
+                            <option value="loadedFries"> loadedFries </option>
+                            <option value="shawaya"> shawaya </option>
+                            <option value="mandhi"> mandhi </option>
+                            <option value="pepsi1l"> pepsi1l </option>
+                        </select>
+
+                        <select
+                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            id="quantity-order-one" 
+                            name="quantity-order-one"
+                            value={ orderOneQuantity }
+                            onChange={ orderOneQuantityChanged }
+                        >
+                                <option value={"0"}> 0 </option>
+                                <option value={"1"}> 1 </option>
+                                <option value={"2"}> 2 </option>
+                                <option value={"3"}> 3 </option>
+                                <option value={"4"}> 4 </option>
+                                <option value={"5"}> 5 </option>
+                                <option value={"6"}> 6 </option>
+                                <option value={"7"}> 7 </option>
+                                <option value={"8"}> 8 </option>
+                                <option value={"9"}> 9 </option>
+                                <option value={"10"}> 10 </option>
+                        </select>
+
+                        <select
+                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            id="small-quantity-order-one" 
+                            name="small-quantity-order-one"
+                            value={ orderOneSmallQuantity }
+                            onChange={ orderOneSmallQuantityChanged }
+                        >
+                                <option value={"0"}> Null </option>
+                                <option value={".25"}> Quarter (1/4) </option>
+                                <option value={".5"}> Half (1/2) </option>
+                                <option value={".75"}> Three quarter (3/4)  </option>
+                        </select>
+
+                        <div className="border border-black px-[5px] py-[2px] rounded">
+                            <p 
+                                id="order-one-price-box"
+                                className="totalPrice min-w-[50px] px-[5px] p-[2px] "
                             >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                id="quantity-order-one" 
-                                name="quantity-order-one"
-                                value={ orderOneQuantity }
-                                onChange={ orderOneQuantityChanged }
-                            >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                id="small-quantity-order-one" 
-                                name="small-quantity-order-one"
-                                value={ orderOneSmallQuantity }
-                                onChange={ orderOneSmallQuantityChanged }
-                            >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-one-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
-                                    
-                                </p>
-                            </div>
+                                
+                            </p>
                         </div>
+                    </div>
 
-                        <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #2 : <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-two-item'
-                                name="order-two-item"
-                                value={ orderTwoItem }
-                                onChange={ orderTwoItemChanged }
+                    <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
+                        Order #2 : <select
+                            className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
+                            id='order-two-item'
+                            name="order-two-item"
+                            value={ orderTwoItem }
+                            onChange={ orderTwoItemChanged }
+                        >
+                            <option value="Choose Your Order"> Choose Your Order </option>
+                            <option value="burger"> burger </option>
+                            <option value="loadedFries"> loadedFries </option>
+                            <option value="shawaya"> shawaya </option>
+                            <option value="mandhi"> mandhi </option>
+                            <option value="pepsi1l"> pepsi1l </option>
+                        </select>
+
+                        <select
+                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            id="quantity-order-two" 
+                            name="quantity-order-two"
+                            value={ orderTwoQuantity }
+                            onChange={ orderTwoQuantityChanged }
+                        >
+                                <option value={"0"}> 0 </option>
+                                <option value={"1"}> 1 </option>
+                                <option value={"2"}> 2 </option>
+                                <option value={"3"}> 3 </option>
+                                <option value={"4"}> 4 </option>
+                                <option value={"5"}> 5 </option>
+                                <option value={"6"}> 6 </option>
+                                <option value={"7"}> 7 </option>
+                                <option value={"8"}> 8 </option>
+                                <option value={"9"}> 9 </option>
+                                <option value={"10"}> 10 </option>
+                        </select>
+
+                        <select
+                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            id="small-quantity-order-two" 
+                            name="small-quantity-order-two"
+                            value={ orderTwoSmallQuantity }
+                            onChange={ orderTwoSmallQuantityChanged }
+                        >
+                                <option value={"0"}> Null </option>
+                                <option value={".25"}> Quarter (1/4) </option>
+                                <option value={".5"}> Half (1/2) </option>
+                                <option value={".75"}> Three quarter (3/4)  </option>
+                        </select>
+
+                        <div className="border border-black px-[5px] py-[2px] rounded">
+                            <p 
+                                id="order-two-price-box"
+                                className="totalPrice min-w-[50px] px-[5px] p-[2px] "
                             >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                id="quantity-order-two" 
-                                name="quantity-order-two"
-                                value={ orderTwoQuantity }
-                                onChange={ orderTwoQuantityChanged }
-                            >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
-                                id="small-quantity-order-two" 
-                                name="small-quantity-order-two"
-                                value={ orderTwoSmallQuantity }
-                                onChange={ orderTwoSmallQuantityChanged }
-                            >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-two-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
-                                    
-                                </p>
-                            </div>
+                                
+                            </p>
                         </div>
+                    </div>
 
+                    { (!orderOnePrice == "") && (
                         <div id="div-order-Three" className="flex gap-[10px] mx-[20px] my-[20px]">
                             Order #3 : <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
@@ -938,7 +1589,10 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 </p>
                             </div>
                         </div>
+                    )}
 
+
+                    { (!orderTwoPrice == "") && (
                         <div id="div-order-four" className="flex gap-[10px] mx-[20px] my-[20px]">
                             Order #4 : <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
@@ -997,7 +1651,9 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 </p>
                             </div>
                         </div>
+                    )}
 
+                    { (!orderThreePrice == "") && (
                         <div id="div-order-five" className="flex gap-[10px] mx-[20px] my-[20px]">
                             Order #5 : <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
@@ -1056,6 +1712,312 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 </p>
                             </div>
                         </div>
+                    )}
+
+                    { (!orderFourPrice == "") && (
+                        <div id="div-order-six" className="flex gap-[10px] mx-[20px] my-[20px]">
+                            Order #6 : <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
+                                id='order-six-item'
+                                name="order-six-item"
+                                value={ orderSixItem }
+                                onChange={ orderSixItemChanged }
+                            >
+                                <option value="Choose Your Order"> Choose Your Order </option>
+                                <option value="burger"> burger </option>
+                                <option value="loadedFries"> loadedFries </option>
+                                <option value="shawaya"> shawaya </option>
+                                <option value="mandhi"> mandhi </option>
+                                <option value="pepsi1l"> pepsi1l </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="quantity-order-six" 
+                                name="quantity-order-six"
+                                value={ orderSixQuantity }
+                                onChange={ orderSixQuantityChanged }
+                            >
+                                    <option value={"0"}> 0 </option>
+                                    <option value={"1"}> 1 </option>
+                                    <option value={"2"}> 2 </option>
+                                    <option value={"3"}> 3 </option>
+                                    <option value={"4"}> 4 </option>
+                                    <option value={"5"}> 5 </option>
+                                    <option value={"6"}> 6 </option>
+                                    <option value={"7"}> 7 </option>
+                                    <option value={"8"}> 8 </option>
+                                    <option value={"9"}> 9 </option>
+                                    <option value={"10"}> 10 </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="small-quantity-order-six" 
+                                name="small-quantity-order-six"
+                                value={ orderSixSmallQuantity }
+                                onChange={ orderSixSmallQuantityChanged }
+                            >
+                                    <option value={"0"}> Null </option>
+                                    <option value={".25"}> Quarter (1/4) </option>
+                                    <option value={".5"}> Half (1/2) </option>
+                                    <option value={".75"}> Three quarter (3/4)  </option>
+                            </select>
+
+                            <div className="border border-black px-[5px] py-[2px] rounded">
+                                <p 
+                                    id="order-six-price-box"
+                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                >
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    )}
+
+                    { (!orderFivePrice == "") && (
+                        <div id="div-order-seven" className="flex gap-[10px] mx-[20px] my-[20px]">
+                            Order #7 : <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
+                                id='order-seven-item'
+                                name="order-seven-item"
+                                value={ orderSevenItem }
+                                onChange={ orderSevenItemChanged }
+                            >
+                                <option value="Choose Your Order"> Choose Your Order </option>
+                                <option value="burger"> burger </option>
+                                <option value="loadedFries"> loadedFries </option>
+                                <option value="shawaya"> shawaya </option>
+                                <option value="mandhi"> mandhi </option>
+                                <option value="pepsi1l"> pepsi1l </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="quantity-order-seven" 
+                                name="quantity-order-seven"
+                                value={ orderSevenQuantity }
+                                onChange={ orderSevenQuantityChanged }
+                            >
+                                    <option value={"0"}> 0 </option>
+                                    <option value={"1"}> 1 </option>
+                                    <option value={"2"}> 2 </option>
+                                    <option value={"3"}> 3 </option>
+                                    <option value={"4"}> 4 </option>
+                                    <option value={"5"}> 5 </option>
+                                    <option value={"6"}> 6 </option>
+                                    <option value={"7"}> 7 </option>
+                                    <option value={"8"}> 8 </option>
+                                    <option value={"9"}> 9 </option>
+                                    <option value={"10"}> 10 </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="small-quantity-order-seven" 
+                                name="small-quantity-order-seven"
+                                value={ orderSevenSmallQuantity }
+                                onChange={ orderSevenSmallQuantityChanged }
+                            >
+                                    <option value={"0"}> Null </option>
+                                    <option value={".25"}> Quarter (1/4) </option>
+                                    <option value={".5"}> Half (1/2) </option>
+                                    <option value={".75"}> Three quarter (3/4)  </option>
+                            </select>
+
+                            <div className="border border-black px-[5px] py-[2px] rounded">
+                                <p 
+                                    id="order-seven-price-box"
+                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                >
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    )}
+
+                    { (!orderSixPrice == "") && (
+                        <div id="div-order-eight" className="flex gap-[10px] mx-[20px] my-[20px]">
+                            Order #8 : <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
+                                id='order-eight-item'
+                                name="order-eight-item"
+                                value={ orderEightItem }
+                                onChange={ orderEightItemChanged }
+                            >
+                                <option value="Choose Your Order"> Choose Your Order </option>
+                                <option value="burger"> burger </option>
+                                <option value="loadedFries"> loadedFries </option>
+                                <option value="shawaya"> shawaya </option>
+                                <option value="mandhi"> mandhi </option>
+                                <option value="pepsi1l"> pepsi1l </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="quantity-order-eight" 
+                                name="quantity-order-eight"
+                                value={ orderEightQuantity }
+                                onChange={ orderEightQuantityChanged }
+                            >
+                                    <option value={"0"}> 0 </option>
+                                    <option value={"1"}> 1 </option>
+                                    <option value={"2"}> 2 </option>
+                                    <option value={"3"}> 3 </option>
+                                    <option value={"4"}> 4 </option>
+                                    <option value={"5"}> 5 </option>
+                                    <option value={"6"}> 6 </option>
+                                    <option value={"7"}> 7 </option>
+                                    <option value={"8"}> 8 </option>
+                                    <option value={"9"}> 9 </option>
+                                    <option value={"10"}> 10 </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="small-quantity-order-eight" 
+                                name="small-quantity-order-eight"
+                                value={ orderEightSmallQuantity }
+                                onChange={ orderEightSmallQuantityChanged }
+                            >
+                                    <option value={"0"}> Null </option>
+                                    <option value={".25"}> Quarter (1/4) </option>
+                                    <option value={".5"}> Half (1/2) </option>
+                                    <option value={".75"}> Three quarter (3/4)  </option>
+                            </select>
+
+                            <div className="border border-black px-[5px] py-[2px] rounded">
+                                <p 
+                                    id="order-eight-price-box"
+                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                >
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    )}
+
+                    { (!orderSevenPrice == "") && (
+                        <div id="div-order-nine" className="flex gap-[10px] mx-[20px] my-[20px]">
+                            Order #9 : <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
+                                id='order-nine-item'
+                                name="order-nine-item"
+                                value={ orderNineItem }
+                                onChange={ orderNineItemChanged }
+                            >
+                                <option value="Choose Your Order"> Choose Your Order </option>
+                                <option value="burger"> burger </option>
+                                <option value="loadedFries"> loadedFries </option>
+                                <option value="shawaya"> shawaya </option>
+                                <option value="mandhi"> mandhi </option>
+                                <option value="pepsi1l"> pepsi1l </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="quantity-order-nine" 
+                                name="quantity-order-nine"
+                                value={ orderNineQuantity }
+                                onChange={ orderNineQuantityChanged }
+                            >
+                                    <option value={"0"}> 0 </option>
+                                    <option value={"1"}> 1 </option>
+                                    <option value={"2"}> 2 </option>
+                                    <option value={"3"}> 3 </option>
+                                    <option value={"4"}> 4 </option>
+                                    <option value={"5"}> 5 </option>
+                                    <option value={"6"}> 6 </option>
+                                    <option value={"7"}> 7 </option>
+                                    <option value={"8"}> 8 </option>
+                                    <option value={"9"}> 9 </option>
+                                    <option value={"10"}> 10 </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="small-quantity-order-nine" 
+                                name="small-quantity-order-nine"
+                                value={ orderNineSmallQuantity }
+                                onChange={ orderNineSmallQuantityChanged }
+                            >
+                                    <option value={"0"}> Null </option>
+                                    <option value={".25"}> Quarter (1/4) </option>
+                                    <option value={".5"}> Half (1/2) </option>
+                                    <option value={".75"}> Three quarter (3/4)  </option>
+                            </select>
+
+                            <div className="border border-black px-[5px] py-[2px] rounded">
+                                <p 
+                                    id="order-nine-price-box"
+                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                >
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    )}
+
+                    { (!orderEightPrice == "") && (
+                        <div id="div-order-ten" className="flex gap-[10px] mx-[20px] my-[20px]">
+                            Order #10 : <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
+                                id='order-ten-item'
+                                name="order-ten-item"
+                                value={ orderTenItem }
+                                onChange={ orderTenItemChanged }
+                            >
+                                <option value="Choose Your Order"> Choose Your Order </option>
+                                <option value="burger"> burger </option>
+                                <option value="loadedFries"> loadedFries </option>
+                                <option value="shawaya"> shawaya </option>
+                                <option value="mandhi"> mandhi </option>
+                                <option value="pepsi1l"> pepsi1l </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="quantity-order-ten" 
+                                name="quantity-order-ten"
+                                value={ orderTenQuantity }
+                                onChange={ orderTenQuantityChanged }
+                            >
+                                    <option value={"0"}> 0 </option>
+                                    <option value={"1"}> 1 </option>
+                                    <option value={"2"}> 2 </option>
+                                    <option value={"3"}> 3 </option>
+                                    <option value={"4"}> 4 </option>
+                                    <option value={"5"}> 5 </option>
+                                    <option value={"6"}> 6 </option>
+                                    <option value={"7"}> 7 </option>
+                                    <option value={"8"}> 8 </option>
+                                    <option value={"9"}> 9 </option>
+                                    <option value={"10"}> 10 </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                id="small-quantity-order-ten" 
+                                name="small-quantity-order-ten"
+                                value={ orderTenSmallQuantity }
+                                onChange={ orderTenSmallQuantityChanged }
+                            >
+                                    <option value={"0"}> Null </option>
+                                    <option value={".25"}> Quarter (1/4) </option>
+                                    <option value={".5"}> Half (1/2) </option>
+                                    <option value={".75"}> Three quarter (3/4)  </option>
+                            </select>
+
+                            <div className="border border-black px-[5px] py-[2px] rounded">
+                                <p 
+                                    id="order-ten-price-box"
+                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                >
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <div 

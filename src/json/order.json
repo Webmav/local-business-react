@@ -1,35 +1,4 @@
 {
-  "orders": [
-    {
-      "id": "tgC5aDEKhME",
-      "name": "afd",
-      "phone": "3022",
-      "address": "gdsa",
-      "orderOneItem": "shawaya",
-      "orderOneQuantity": 6,
-      "orderOnePrice": 720
-    },
-    {
-      "id": "2YqjQFav05g",
-      "name": "Rishad",
-      "phone": "9292939329",
-      "address": "Vettiyapalam, Vevam, Nadapuram",
-      "orderOneItem": "mandhi",
-      "orderOneQuantity": 1,
-      "orderOnePrice": 220,
-      "orderTwoItem": "pepsi1l",
-      "orderTwoQuantity": "4",
-      "orderTwoPrice": "160",
-      "orderThreeItem": "burger",
-      "orderThreeQuantity": "2",
-      "orderThreePrice": "280",
-      "orderFourItem": "pepsi1l",
-      "orderFourQuantity": "9",
-      "orderFourPrice": "360",
-      "orderFiveItem": "loadedFries",
-      "orderFiveQuantity": "0",
-      "orderFivePrice": "0"
-    }
-  ],
+  "orders": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

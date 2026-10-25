@@ -19,6 +19,7 @@ const router = createBrowserRouter(
             <Route path='/' element={<HomePage />} />
             <Route path='/admin/orders' element={<AdminPage />} loader={AdminLoader} />
             <Route path='/admin/orders/edit-order/:id' element={<OrderEditPage />} loader={OrderLoader} />
+            {/* <Route path='/admin/orders/:id' element={<OrderEditPage />} loader={OrderLoader} /> */}
             <Route path='/*' element={<NotFoundPage />} />
         </Route>
     )

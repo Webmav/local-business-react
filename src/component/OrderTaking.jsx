@@ -6,6 +6,7 @@ export default function OrderTaking({ addOrderSubmit }) {
 //Hides button until all required field is filled
     const inputs = document.querySelectorAll("input");
     const submits = document.querySelectorAll("select");
+    const textareas = document.querySelectorAll("textarea");
 
     useEffect(() => {
         const confirmOrderButton = document.getElementById("confirm-order");
@@ -15,7 +16,7 @@ export default function OrderTaking({ addOrderSubmit }) {
             (!customerPhone == "") &&
             (!customerAddress == "")
         ) ? confirmOrderButton.style.display = "block" : confirmOrderButton.style.display = "none";
-    }, [ inputs, submits])
+    }, [ inputs, submits, textareas])
 
 //Menu
     const burgerPrice = 140;
@@ -1377,9 +1378,13 @@ export default function OrderTaking({ addOrderSubmit }) {
                 <h2 className='justify-self-center text-[10px] text-yellow-400'>You can only order if you have filled Name, Phone and Address field!</h2>
 
                 <ul>
-                    <li className="mx-[20px] my-[20px]">
-                        Name : <input
-                            className="border border-black  hover:bg-gray-100 px-[5px] py-[2.5px] rounded-[5px] mx-[30px]"
+                    <li>
+                        <p>
+                            Name : 
+                        </p> 
+                        
+                        <input
+                            className="border border-black  hover:bg-gray-100 px-3 py-1 rounded-[5px] w-full mb-2"
                             type="text" 
                             name="name"
                             value={ customerName }
@@ -1387,9 +1392,13 @@ export default function OrderTaking({ addOrderSubmit }) {
                         />
                     </li>
 
-                    <li className="mx-[20px] my-[20px]">  
-                        Phone : <input
-                            className="border border-black  hover:bg-gray-100 px-[5px] py-[2.5px] rounded-[5px] mx-[27px]"
+                    <li>  
+                        <p>
+                            Phone : 
+                        </p> 
+                        
+                        <input
+                            className="border border-black  hover:bg-gray-100 px-3 py-1 rounded-[5px] w-full mb-2"
                             type="number" 
                             name="Phone"
                             value={ customerPhone }
@@ -1397,9 +1406,13 @@ export default function OrderTaking({ addOrderSubmit }) {
                         />
                     </li>
 
-                    <li className="mx-[20px] my-[20px]">
-                        Address : <input
-                            className="border border-black  hover:bg-gray-100 px-[5px] py-[2.5px] rounded-[5px] mx-[14px]"
+                    <li>
+                        <p>
+                            Address : 
+                        </p> 
+                        
+                        <textarea
+                            className="border border-black  hover:bg-gray-100 px-3 py-1 rounded-[5px] w-full mb-2"
                             type="text" 
                             name="Address" 
                             value={ customerAddress }
@@ -1411,9 +1424,10 @@ export default function OrderTaking({ addOrderSubmit }) {
 
                 <div id="Order">
                     {/* <input type="checkbox" className="ml-[50px] mr-[7.5px] "/>Manual */}
-
-                    <div id="div-order-one" className="flex gap-[10px] mx-[20px] my-[20px]">
-                        Order #1 : <select
+                        <div>
+                        <p> Order #1 : </p>
+                        <div id="div-order-one" className="flex gap-[10px] mx-[20px] my-[20px]">
+                        <select
                             className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                             id='order-one-item'
                             name="order-one-item"
@@ -1470,9 +1484,11 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </p>
                         </div>
                     </div>
-
-                    <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
-                        Order #2 : <select
+                    </div>
+                        <div>
+                        <p> Order #2 : </p>
+                        <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
+                        <select
                             className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                             id='order-two-item'
                             name="order-two-item"
@@ -1529,16 +1545,22 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </p>
                         </div>
                     </div>
+                    </div>
 
                     { (!orderOnePrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-Three" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #3 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-three-item'
                                 name="order-three-item"
                                 value={ orderThreeItem }
                                 onChange={ orderThreeItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1553,7 +1575,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-three"
                                 value={ orderThreeQuantity }
                                 onChange={ orderThreeQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1573,7 +1595,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-three"
                                 value={ orderThreeSmallQuantity }
                                 onChange={ orderThreeSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -1584,23 +1606,29 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-three-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}
 
 
                     { (!orderTwoPrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-four" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #4 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-four-item'
                                 name="order-four-item"
                                 value={ orderFourItem }
                                 onChange={ orderFourItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1615,7 +1643,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-four"
                                 value={ orderFourQuantity }
                                 onChange={ orderFourQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1635,7 +1663,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-four"
                                 value={ orderFourSmallQuantity }
                                 onChange={ orderFourSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -1646,22 +1674,28 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-four-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderThreePrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-five" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #5 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-five-item'
                                 name="order-five-item"
                                 value={ orderFiveItem }
                                 onChange={ orderFiveItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1676,7 +1710,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-five"
                                 value={ orderFiveQuantity }
                                 onChange={ orderFiveQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1696,7 +1730,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-five"
                                 value={ orderFiveSmallQuantity }
                                 onChange={ orderFiveSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -1707,22 +1741,28 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-five-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderFourPrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-six" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #6 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-six-item'
                                 name="order-six-item"
                                 value={ orderSixItem }
                                 onChange={ orderSixItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1737,7 +1777,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-six"
                                 value={ orderSixQuantity }
                                 onChange={ orderSixQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1757,7 +1797,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-six"
                                 value={ orderSixSmallQuantity }
                                 onChange={ orderSixSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -1768,22 +1808,28 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-six-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderFivePrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-seven" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #7 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-seven-item'
                                 name="order-seven-item"
                                 value={ orderSevenItem }
                                 onChange={ orderSevenItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1798,7 +1844,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-seven"
                                 value={ orderSevenQuantity }
                                 onChange={ orderSevenQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1818,7 +1864,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-seven"
                                 value={ orderSevenSmallQuantity }
                                 onChange={ orderSevenSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -1829,22 +1875,28 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-seven-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderSixPrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-eight" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #8 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-eight-item'
                                 name="order-eight-item"
                                 value={ orderEightItem }
                                 onChange={ orderEightItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1859,7 +1911,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-eight"
                                 value={ orderEightQuantity }
                                 onChange={ orderEightQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1879,7 +1931,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-eight"
                                 value={ orderEightSmallQuantity }
                                 onChange={ orderEightSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -1890,22 +1942,28 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-eight-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderSevenPrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-nine" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #9 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-nine-item'
                                 name="order-nine-item"
                                 value={ orderNineItem }
                                 onChange={ orderNineItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1920,7 +1978,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-nine"
                                 value={ orderNineQuantity }
                                 onChange={ orderNineQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1940,7 +1998,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-nine"
                                 value={ orderNineSmallQuantity }
                                 onChange={ orderNineSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -1951,22 +2009,28 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-nine-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderEightPrice == "") && (
+                    <div>
+                        <p>
+                            Order #N :
+                        </p>
                         <div id="div-order-ten" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            Order #10 : <select
+                            
+                            <select
                                 className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                                 id='order-ten-item'
                                 name="order-ten-item"
                                 value={ orderTenItem }
                                 onChange={ orderTenItemChanged }
-                            >
+                                >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1981,7 +2045,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="quantity-order-ten"
                                 value={ orderTenQuantity }
                                 onChange={ orderTenQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -2001,7 +2065,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 name="small-quantity-order-ten"
                                 value={ orderTenSmallQuantity }
                                 onChange={ orderTenSmallQuantityChanged }
-                            >
+                                >
                                     <option value={"0"}> Null </option>
                                     <option value={".25"}> Quarter (1/4) </option>
                                     <option value={".5"}> Half (1/2) </option>
@@ -2012,9 +2076,10 @@ export default function OrderTaking({ addOrderSubmit }) {
                                 <p 
                                     id="order-ten-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                >
+                                    >
                                     
                                 </p>
+                            </div>
                             </div>
                         </div>
                     )}

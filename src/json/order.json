@@ -1,12 +1,12 @@
 {
   "orders": [
     {
-      "name": "rishad",
-      "phone": "238-9",
-      "address": "234",
-      "orderOneItem": "loadedFries",
-      "orderOneQuantity": 4.75,
-      "orderOnePrice": 855,
+      "name": "asdf",
+      "phone": "gas",
+      "address": "agds",
+      "orderOneItem": "shawaya",
+      "orderOneQuantity": 3.5,
+      "orderOnePrice": 420,
       "orderTwoItem": "",
       "orderTwoQuantity": 1,
       "orderTwoPrice": "",
@@ -19,7 +19,28 @@
       "orderFiveItem": "",
       "orderFiveQuantity": 1,
       "orderFivePrice": "",
-      "id": "wlK7rROjW9M"
+      "id": "hk7ffkyQAQA"
+    },
+    {
+      "name": "2qew",
+      "phone": "dfsa",
+      "address": "gads",
+      "orderOneItem": "shawaya",
+      "orderOneQuantity": 4,
+      "orderOnePrice": 480,
+      "orderTwoItem": "mandhi",
+      "orderTwoQuantity": 1,
+      "orderTwoPrice": 220,
+      "orderThreeItem": "",
+      "orderThreeQuantity": 1,
+      "orderThreePrice": "",
+      "orderFourItem": "",
+      "orderFourQuantity": 1,
+      "orderFourPrice": "",
+      "orderFiveItem": "",
+      "orderFiveQuantity": 1,
+      "orderFivePrice": "",
+      "id": "ooNoeHCts7A"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -11,12 +11,15 @@ import AdminPage from "./pages/AdminPage";
 import { AdminLoader } from "./component/AdminLoader";
 import OrderCard from "./component/OrderCard";
 import NotFoundPage from "./pages/NotFoundPage";
+import OrderEditPage from "./pages/OrderEditPage";
+import OrderLoader from "./component/OrderLoader";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<MainLayout />}>
             <Route path='/' element={<HomePage />} />
             <Route path='/admin/orders' element={<AdminPage />} loader={AdminLoader} />
+            <Route path='/admin/orders/edit-order/:id' element={<OrderEditPage />} loader={OrderLoader} />
             <Route path='/*' element={<NotFoundPage />} />
         </Route>
     )

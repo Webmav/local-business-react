@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function OrderTaking({ addOrderSubmit }) {
 
@@ -72,6 +72,8 @@ export default function OrderTaking({ addOrderSubmit }) {
 
 //Initialized for navigating after submitting form
     const navigate = useNavigate();
+//Initialized for id 
+    const { id } = useParams();
 
 //Function to perform upon form submition
     function submitForm(e) {
@@ -84,6 +86,7 @@ export default function OrderTaking({ addOrderSubmit }) {
         const numberedOrderFiveQuantity = Number(orderFiveQuantity) + Number(orderFiveSmallQuantity);
 
         const newOrder = {
+            id,
             name : customerName,
             phone : customerPhone,
             address : customerAddress,

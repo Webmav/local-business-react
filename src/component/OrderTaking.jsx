@@ -1425,8 +1425,9 @@ export default function OrderTaking({ addOrderSubmit }) {
                 <div id="Order">
                     {/* <input type="checkbox" className="ml-[50px] mr-[7.5px] "/>Manual */}
                         <div>
-                        <p> Order #1 : </p>
+                            <p> Order #1 : </p>
                         <div id="div-order-one" className="flex gap-[10px] mx-[20px] my-[20px]">
+
                         <select
                             className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                             id='order-one-item'
@@ -1443,7 +1444,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                         </select>
 
                         <select
-                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                             id="quantity-order-one" 
                             name="quantity-order-one"
                             value={ orderOneQuantity }
@@ -1463,16 +1464,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                         </select>
 
                         <select
-                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                             id="small-quantity-order-one" 
                             name="small-quantity-order-one"
                             value={ orderOneSmallQuantity }
                             onChange={ orderOneSmallQuantityChanged }
                         >
-                                <option value={"0"}> Null </option>
-                                <option value={".25"}> Quarter (1/4) </option>
-                                <option value={".5"}> Half (1/2) </option>
-                                <option value={".75"}> Three quarter (3/4)  </option>
+                                <option value={"0"}> 0 </option>
+                                <option value={".25"}> .25 </option>
+                                <option value={".5"}> .5 </option>
+                                <option value={".75"}> .75  </option>
                         </select>
 
                         <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1484,10 +1485,12 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </p>
                         </div>
                     </div>
+
                     </div>
                         <div>
-                        <p> Order #2 : </p>
+                            <p> Order #2 : </p>
                         <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
+
                         <select
                             className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
                             id='order-two-item'
@@ -1504,7 +1507,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                         </select>
 
                         <select
-                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                             id="quantity-order-two" 
                             name="quantity-order-two"
                             value={ orderTwoQuantity }
@@ -1524,16 +1527,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                         </select>
 
                         <select
-                            className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                             id="small-quantity-order-two" 
                             name="small-quantity-order-two"
                             value={ orderTwoSmallQuantity }
                             onChange={ orderTwoSmallQuantityChanged }
                         >
-                                <option value={"0"}> Null </option>
-                                <option value={".25"}> Quarter (1/4) </option>
-                                <option value={".5"}> Half (1/2) </option>
-                                <option value={".75"}> Three quarter (3/4)  </option>
+                                <option value={"0"}> 0 </option>
+                                <option value={".25"}> .25 </option>
+                                <option value={".5"}> .5 </option>
+                                <option value={".75"}> .75  </option>
                         </select>
 
                         <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1570,7 +1573,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-three" 
                                 name="quantity-order-three"
                                 value={ orderThreeQuantity }
@@ -1590,16 +1593,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-three" 
                                 name="small-quantity-order-three"
                                 value={ orderThreeSmallQuantity }
                                 onChange={ orderThreeSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1638,7 +1641,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-four" 
                                 name="quantity-order-four"
                                 value={ orderFourQuantity }
@@ -1658,16 +1661,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-four" 
                                 name="small-quantity-order-four"
                                 value={ orderFourSmallQuantity }
                                 onChange={ orderFourSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1705,7 +1708,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-five" 
                                 name="quantity-order-five"
                                 value={ orderFiveQuantity }
@@ -1725,16 +1728,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-five" 
                                 name="small-quantity-order-five"
                                 value={ orderFiveSmallQuantity }
                                 onChange={ orderFiveSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1772,7 +1775,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-six" 
                                 name="quantity-order-six"
                                 value={ orderSixQuantity }
@@ -1792,16 +1795,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-six" 
                                 name="small-quantity-order-six"
                                 value={ orderSixSmallQuantity }
                                 onChange={ orderSixSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1839,7 +1842,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-seven" 
                                 name="quantity-order-seven"
                                 value={ orderSevenQuantity }
@@ -1859,16 +1862,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-seven" 
                                 name="small-quantity-order-seven"
                                 value={ orderSevenSmallQuantity }
                                 onChange={ orderSevenSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1906,7 +1909,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-eight" 
                                 name="quantity-order-eight"
                                 value={ orderEightQuantity }
@@ -1926,16 +1929,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-eight" 
                                 name="small-quantity-order-eight"
                                 value={ orderEightSmallQuantity }
                                 onChange={ orderEightSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
@@ -1973,7 +1976,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-nine" 
                                 name="quantity-order-nine"
                                 value={ orderNineQuantity }
@@ -1993,16 +1996,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-nine" 
                                 name="small-quantity-order-nine"
                                 value={ orderNineSmallQuantity }
                                 onChange={ orderNineSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
@@ -2040,7 +2043,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="quantity-order-ten" 
                                 name="quantity-order-ten"
                                 value={ orderTenQuantity }
@@ -2060,16 +2063,16 @@ export default function OrderTaking({ addOrderSubmit }) {
                             </select>
 
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[100px]"
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
                                 id="small-quantity-order-ten" 
                                 name="small-quantity-order-ten"
                                 value={ orderTenSmallQuantity }
                                 onChange={ orderTenSmallQuantityChanged }
                                 >
-                                    <option value={"0"}> Null </option>
-                                    <option value={".25"}> Quarter (1/4) </option>
-                                    <option value={".5"}> Half (1/2) </option>
-                                    <option value={".75"}> Three quarter (3/4)  </option>
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
                             </select>
 
                             <div className="border border-black px-[5px] py-[2px] rounded">

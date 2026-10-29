@@ -1,41 +1,45 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useRevalidator } from 'react-router-dom';
 import { supabase } from '../lib/supabase'
 
 import NavBar from '../component/NavBar';
 import Footer from '../component/Footer';
 import OrderTaking from '../component/OrderTaking';
 
-// //Add Order locally
-// async function AddOrder(newOrder) {
+export default function MainLayout() {
+    const { revalidate } = useRevalidator()
 
-//     const res = await fetch("/api/orders", {
-//         method: "POST",
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(newOrder)
-//     });
-//     console.log("Order Confirmed");
-//     return;
-// }
+    // //Add Order locally
+    // async function AddOrder(newOrder) {
 
-//Add order remotely
-async function AddOrder(newOrder) {
-    const { data, error } = await supabase
-        .from("orders")
-        .insert(newOrder)
-        .select()
-        .single()
+    //     const res = await fetch("/api/orders", {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(newOrder)
+    //     });
+    //     console.log("Order Confirmed");
+    //     return;
+    // }
 
-    if(error) {
-        console.error("Could not create Order : ", error.message)
-        return
+    //Add order remotely
+    async function AddOrder(newOrder) {
+        const { data, error } = await supabase
+            .from("orders")
+            .insert(newOrder)
+            .select()
+            .single()
+
+        if(error) {
+            console.error("Could not create Order : ", error.message)
+            return
+        } else {
+            revalidate();
+        }
+
+        console.log(data)
     }
 
-    console.log(data)
-}
-
-export default function MainLayout() {
     return (
         <>
             <NavBar/>

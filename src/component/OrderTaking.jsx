@@ -6,7 +6,7 @@ export default function OrderTaking({ addOrderSubmit }) {
 //Hides button until all required field is filled
     const inputs = document.querySelectorAll("input");
     const submits = document.querySelectorAll("select");
-    const textareas = document.querySelectorAll("textarea");
+    const textarea = document.querySelectorAll("textarea");
 
     useEffect(() => {
         const confirmOrderButton = document.getElementById("confirm-order");
@@ -16,7 +16,7 @@ export default function OrderTaking({ addOrderSubmit }) {
             (!customerPhone == "") &&
             (!customerAddress == "")
         ) ? confirmOrderButton.style.display = "block" : confirmOrderButton.style.display = "none";
-    }, [ inputs, submits, textareas])
+    }, [ inputs, submits, textarea])
 
 //Menu
     const burgerPrice = 140;
@@ -79,6 +79,63 @@ export default function OrderTaking({ addOrderSubmit }) {
     const [orderTenQuantity, setOrderTenQuantity] = useState("1");
     const [orderTenSmallQuantity, setOrderTenSmallQuantity] = useState("0");
     const [orderTenPrice, setOrderTenPrice] = useState("")
+
+//function to reset form after button click
+    function resetForm() {
+        setCustomerName("");
+        setCustomerPhone("");
+        setCustomerAddress("");
+
+        setOrderOneItem("");
+        setOrderOneQuantity("1");
+        setOrderOneSmallQuantity("0");
+        setOrderOnePrice("")
+
+        setOrderTwoItem("");
+        setOrderTwoQuantity("1");
+        setOrderTwoSmallQuantity("0");
+        setOrderTwoPrice("")
+
+        setOrderThreeItem("");
+        setOrderThreeQuantity("1");
+        setOrderThreeSmallQuantity("0");
+        setOrderThreePrice("")
+
+        setOrderFourItem("");
+        setOrderFourQuantity("1");
+        setOrderFourSmallQuantity("0");
+        setOrderFourPrice("")
+
+        setOrderFiveItem("");
+        setOrderFiveQuantity("1");
+        setOrderFiveSmallQuantity("0");
+        setOrderFivePrice("")
+
+        setOrderSixItem("");
+        setOrderSixQuantity("1");
+        setOrderSixSmallQuantity("0");
+        setOrderSixPrice("")
+
+        setOrderSevenItem("");
+        setOrderSevenQuantity("1");
+        setOrderSevenSmallQuantity("0");
+        setOrderSevenPrice("")
+
+        setOrderEightItem("");
+        setOrderEightQuantity("1");
+        setOrderEightSmallQuantity("0");
+        setOrderEightPrice("")
+
+        setOrderNineItem("");
+        setOrderNineQuantity("1");
+        setOrderNineSmallQuantity("0");
+        setOrderNinePrice("")
+
+        setOrderTenItem("");
+        setOrderTenQuantity("1");
+        setOrderTenSmallQuantity("0");
+        setOrderTenPrice("")
+    }
 
 //For setting price upon deciding order 
     useEffect(() => {
@@ -166,6 +223,7 @@ export default function OrderTaking({ addOrderSubmit }) {
         addOrderSubmit(newOrder)
         const orderMenu = document.getElementById("order-menu")
         orderMenu.classList.toggle("hidden")
+        resetForm()
     }
 
 //Function on order item changes
@@ -1553,7 +1611,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderOnePrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #3 :
                         </p>
                         <div id="div-order-Three" className="flex gap-[10px] mx-[20px] my-[20px]">
                             
@@ -1621,7 +1679,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderTwoPrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #4 :
                         </p>
                         <div id="div-order-four" className="flex gap-[10px] mx-[20px] my-[20px]">
                             
@@ -1688,7 +1746,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderThreePrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #5 :
                         </p>
                         <div id="div-order-five" className="flex gap-[10px] mx-[20px] my-[20px]">
                             
@@ -1755,7 +1813,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderFourPrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #6 :
                         </p>
                         <div id="div-order-six" className="flex gap-[10px] mx-[20px] my-[20px]">
                             
@@ -1822,7 +1880,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderFivePrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #7 :
                         </p>
                         <div id="div-order-seven" className="flex gap-[10px] mx-[20px] my-[20px]">
                             
@@ -1889,7 +1947,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderSixPrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #8 :
                         </p>
                         <div id="div-order-eight" className="flex gap-[10px] mx-[20px] my-[20px]">
                             
@@ -1956,7 +2014,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderSevenPrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #9 :
                         </p>
                         <div id="div-order-nine" className="flex gap-[10px] mx-[20px] my-[20px]">
                             
@@ -2023,7 +2081,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                     { (!orderEightPrice == "") && (
                     <div>
                         <p>
-                            Order #N :
+                            Order #10 :
                         </p>
                         <div id="div-order-ten" className="flex gap-[10px] mx-[20px] my-[20px]">
                             

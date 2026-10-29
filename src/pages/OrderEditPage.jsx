@@ -1,5 +1,7 @@
 import OrderEdit from "../component/OrderEdit";
+import { supabase } from "../lib/supabase";
 
+//Locally order updating function
 async function orderEdit(updatedOrder) {
     const res = await fetch(`/api/orders/${updatedOrder.id}`, {
         method: "PUT",
@@ -8,6 +10,18 @@ async function orderEdit(updatedOrder) {
         },
         body: JSON.stringify(updatedOrder)
     });
+    return;
+}
+
+//Remotely order updating function
+async function orderEdit(updatedOrder) {
+    const { error } = await supabase
+        .from("orders")
+        .update(updatedOrder)
+        .eq('id',updatedOrder.id)
+    if(error) {
+        console.log("Could not update order : ", error.message)
+    }
     return;
 }
 

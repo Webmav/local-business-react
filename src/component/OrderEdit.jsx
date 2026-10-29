@@ -31,6 +31,26 @@ export default function OrderEdit({ UpdatedOrderSubmit }) {
     const [orderFiveQuantity, setOrderFiveQuantity] = useState(order.orderFiveQuantity)
     const [orderFivePrice, setOrderFivePrice] = useState(order.orderFivePrice)
 
+    const [orderSixItem, setOrderSixItem] = useState(order.orderSixItem)
+    const [orderSixQuantity, setOrderSixQuantity] = useState(order.orderSixQuantity)
+    const [orderSixPrice, setOrderSixPrice] = useState(order.orderSixPrice)
+
+    const [orderSevenItem, setOrderSevenItem] = useState(order.orderSevenItem)
+    const [orderSevenQuantity, setOrderSevenQuantity] = useState(order.orderSevenQuantity)
+    const [orderSevenPrice, setOrderSevenPrice] = useState(order.orderSevenPrice)
+
+    const [orderEightItem, setOrderEightItem] = useState(order.orderEightItem)
+    const [orderEightQuantity, setOrderEightQuantity] = useState(order.orderEightQuantity)
+    const [orderEightPrice, setOrderEightPrice] = useState(order.orderEightPrice)
+
+    const [orderNineItem, setOrderNineItem] = useState(order.orderNineItem)
+    const [orderNineQuantity, setOrderNineQuantity] = useState(order.orderNineQuantity)
+    const [orderNinePrice, setOrderNinePrice] = useState(order.orderNinePrice)
+
+    const [orderTenItem, setOrderTenItem] = useState(order.orderTenItem)
+    const [orderTenQuantity, setOrderTenQuantity] = useState(order.orderTenQuantity)
+    const [orderTenPrice, setOrderTenPrice] = useState(order.orderTenPrice)
+
     function updatedOrder(e) {
         e.preventDefault()
 
@@ -54,6 +74,21 @@ export default function OrderEdit({ UpdatedOrderSubmit }) {
             orderFiveItem,
             orderFiveQuantity,
             orderFivePrice,
+            orderSixItem,
+            orderSixQuantity,
+            orderSixPrice,
+            orderSevenItem,
+            orderSevenQuantity,
+            orderSevenPrice,
+            orderEightItem,
+            orderEightQuantity,
+            orderEightPrice,
+            orderNineItem,
+            orderNineQuantity,
+            orderNinePrice,
+            orderTenItem,
+            orderTenQuantity,
+            orderTenPrice,
         }
 
         UpdatedOrderSubmit(updatedOrder)

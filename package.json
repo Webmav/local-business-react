@@ -11,6 +11,7 @@
     "server": "json-server --watch src/json/order.json --port 8001"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
     "@tailwindcss/vite": "^4.3.3",
     "json-server": "^1.0.0-beta.15",
     "react": "^19.2.8",

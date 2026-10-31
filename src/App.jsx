@@ -32,3 +32,6 @@ export default function App() {
     </>
   )
 }
+
+//Carousel
+//menu list and icons

@@ -10,31 +10,36 @@ export default function SlidingMenu() {
             id="sliding-menu" 
             className="flex justify-self-center gap-[50px] px-[25px] py-[30px] radius-[25px]"
         >
+            {/*
             <img 
                 src={menuOne}
                 alt="menu-one" id="menu-one" 
-                className="w-[250px] h-[250px] "
+                className="w-[75%] md:w-[250px] h-[100%] md:h-[250px] rounded justify-self-center"
             />
+             
             <img 
                 src={menuTwo}
                 alt="menu-two" id="menu-two" 
-                className="w-[250px] h-[250px] "
+                className="w-[75%] md:w-[250px] h-[100%] md:h-[250px] rounded justify-self-center"
             />
+
             <img 
                 src={menuThree}
                 alt="menu-three" id="menu-three" 
-                className="w-[250px] h-[250px] "
+                className="w-[75%] md:w-[250px] h-[100%] md:h-[250px] rounded justify-self-center"
             />
+
             <img 
                 src={menuFour}
                 alt="menu-four" id="menu-four" 
-                className="w-[250px] h-[250px] "
+                className="w-[75%] md:w-[250px] h-[100%] md:h-[250px] rounded justify-self-center"
             />
+            
             <img 
                 src={menuFive}
                 alt="menu-five" id="menu-five" 
-                className="w-[250px] h-[250px] "
-            />
+                className="w-[75%] md:w-[250px] h-[100%] md:h-[250px] rounded justify-self-center"
+            /> */}
         </div>
     )
 }

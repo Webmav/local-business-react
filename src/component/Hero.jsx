@@ -6,7 +6,7 @@ export default function Hero() {
             <img 
                 src={fineFoodImg}
                 alt="Image of fine food or something" 
-                className="w-[70%] h-[70%] justify-self-center"
+                className="w-[70%] h-[70%] justify-self-center rounded"
             />
         </div>
     )

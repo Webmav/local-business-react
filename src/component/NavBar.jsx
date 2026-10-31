@@ -11,14 +11,13 @@ export default function NavBar() {
         <div>
             <nav
                 id="nav"
-                className="flex justify-between px-[75px] py-[25px] bg-red-500 text-yellow-300 border border-red-700"
+                className="flex justify-between px-[25px] md:px-[75px] py-[12.5px] md:py-[25px] bg-red-500 text-yellow-300 border border-red-700"
             >
-                <NavLink
-                    to='/'
-                >
+                <NavLink to='/'>
                     <h1 className="">Fine Food</h1>
                 </NavLink>
-                <ul id='menu-list' className="flex">
+
+                <ul id='menu-list' className="flex max-md:hidden">
                     <NavLink 
                         to="/"
                     >
@@ -49,8 +48,9 @@ export default function NavBar() {
                         <li className='hover:text-yellow-100'>Orders</li>
                     </NavLink>
                 </ul>
+
                 <button
-                    className="rounded border border-black px-[7.5px] py-[2.5px] hover:bg-red-600 hover:text-yellow-100"
+                    className="rounded border border-black px-[7.5px] py-[2.5px] hover:bg-red-600 hover:text-yellow-100 max-md:hidden"
                     onClick={Order}
                 >
                     Order

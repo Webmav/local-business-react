@@ -3,8 +3,8 @@ import FooterCopyright from "./FooterCopyright"
 export default function Footer() {
     return(
         <>
-            <footer className="flex justify-between px-[75px] py-[25px] bg-red-500 text-yellow-300 border border-red-700">
-                <h1>FineFood</h1>
+            <footer className="flex max-md:flex-col max-md:gap-[15px] justify-between px-[75px] py-[25px] bg-red-500 text-yellow-300 border border-red-700">
+                <h1 className="max-md:self-center">FineFood</h1>
 
                 <ul className="even-columns">
                     <h2>Locations : </h2>

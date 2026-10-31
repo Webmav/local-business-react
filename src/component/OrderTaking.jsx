@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function OrderTaking({ addOrderSubmit }) {
+//Function to perform upon clicking close button in the menu-list
+    function order() {
+        const orderMenu = document.getElementById("order-menu")
+        orderMenu.classList.toggle("hidden")
+    }
 
 //Hides button until all required field is filled
     const inputs = document.querySelectorAll("input");
@@ -1425,15 +1430,23 @@ export default function OrderTaking({ addOrderSubmit }) {
     return(
         <div
             id="order-menu"
-            className = "absolute justify-self-center top-[100px] drop-shadow-2xl rounded bg-white hidden"
+            className = "absolute justify-self-center top-[100px] drop-shadow-2xl rounded-xl bg-white max-md:w-[325px] md:w-[750px] "
         >
+            <button
+                className="absolute top-[25px] md:top-[50px] right-[25px] md:right-[50px] "
+                onClick={order}
+            >
+                &#10006;
+            </button>
+
             <form 
                 onSubmit={submitForm}
-                className="mx-[25px] my-[50px]"
+                className="mx-[25px] my-[25px] md:my-[50px]"
             >
-                <h1 className="justify-self-center my-[25px] font-bold text-[24px]">Order</h1>
 
-                <h2 className='justify-self-center text-[10px] text-yellow-400'>You can only order if you have filled Name, Phone and Address field!</h2>
+                <h1 className="justify-self-center my-[10px] md:my-[25px] font-bold text-[16px] md:text-[24px]">Order</h1>
+
+                <h2 className='justify-self-center max-md:w-[200px] text-[10px] text-yellow-400 text-center mb-[20px]'>You can only order if you have filled Name, Phone and Address field!</h2>
 
                 <ul>
                     <li>
@@ -1482,146 +1495,18 @@ export default function OrderTaking({ addOrderSubmit }) {
 
                 <div id="Order">
                     {/* <input type="checkbox" className="ml-[50px] mr-[7.5px] "/>Manual */}
-                        <div>
-                            <p> Order #1 : </p>
-                        <div id="div-order-one" className="flex gap-[10px] mx-[20px] my-[20px]">
 
-                        <select
-                            className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                            id='order-one-item'
-                            name="order-one-item"
-                            value={ orderOneItem }
-                            onChange={ orderOneItemChanged }
-                        >
-                            <option value="Choose Your Order"> Choose Your Order </option>
-                            <option value="burger"> burger </option>
-                            <option value="loadedFries"> loadedFries </option>
-                            <option value="shawaya"> shawaya </option>
-                            <option value="mandhi"> mandhi </option>
-                            <option value="pepsi1l"> pepsi1l </option>
-                        </select>
+                    <div className='mb-[20px]'>
+                        <p> Order #1 : </p>
 
-                        <select
-                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                            id="quantity-order-one" 
-                            name="quantity-order-one"
-                            value={ orderOneQuantity }
-                            onChange={ orderOneQuantityChanged }
-                        >
-                                <option value={"0"}> 0 </option>
-                                <option value={"1"}> 1 </option>
-                                <option value={"2"}> 2 </option>
-                                <option value={"3"}> 3 </option>
-                                <option value={"4"}> 4 </option>
-                                <option value={"5"}> 5 </option>
-                                <option value={"6"}> 6 </option>
-                                <option value={"7"}> 7 </option>
-                                <option value={"8"}> 8 </option>
-                                <option value={"9"}> 9 </option>
-                                <option value={"10"}> 10 </option>
-                        </select>
-
-                        <select
-                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                            id="small-quantity-order-one" 
-                            name="small-quantity-order-one"
-                            value={ orderOneSmallQuantity }
-                            onChange={ orderOneSmallQuantityChanged }
-                        >
-                                <option value={"0"}> 0 </option>
-                                <option value={".25"}> .25 </option>
-                                <option value={".5"}> .5 </option>
-                                <option value={".75"}> .75  </option>
-                        </select>
-
-                        <div className="border border-black px-[5px] py-[2px] rounded">
-                            <p 
-                                id="order-one-price-box"
-                                className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                            >
-                                
-                            </p>
-                        </div>
-                    </div>
-
-                    </div>
-                        <div>
-                            <p> Order #2 : </p>
-                        <div id="div-order-two" className="flex gap-[10px] mx-[20px] my-[20px]">
-
-                        <select
-                            className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                            id='order-two-item'
-                            name="order-two-item"
-                            value={ orderTwoItem }
-                            onChange={ orderTwoItemChanged }
-                        >
-                            <option value="Choose Your Order"> Choose Your Order </option>
-                            <option value="burger"> burger </option>
-                            <option value="loadedFries"> loadedFries </option>
-                            <option value="shawaya"> shawaya </option>
-                            <option value="mandhi"> mandhi </option>
-                            <option value="pepsi1l"> pepsi1l </option>
-                        </select>
-
-                        <select
-                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                            id="quantity-order-two" 
-                            name="quantity-order-two"
-                            value={ orderTwoQuantity }
-                            onChange={ orderTwoQuantityChanged }
-                        >
-                                <option value={"0"}> 0 </option>
-                                <option value={"1"}> 1 </option>
-                                <option value={"2"}> 2 </option>
-                                <option value={"3"}> 3 </option>
-                                <option value={"4"}> 4 </option>
-                                <option value={"5"}> 5 </option>
-                                <option value={"6"}> 6 </option>
-                                <option value={"7"}> 7 </option>
-                                <option value={"8"}> 8 </option>
-                                <option value={"9"}> 9 </option>
-                                <option value={"10"}> 10 </option>
-                        </select>
-
-                        <select
-                            className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                            id="small-quantity-order-two" 
-                            name="small-quantity-order-two"
-                            value={ orderTwoSmallQuantity }
-                            onChange={ orderTwoSmallQuantityChanged }
-                        >
-                                <option value={"0"}> 0 </option>
-                                <option value={".25"}> .25 </option>
-                                <option value={".5"}> .5 </option>
-                                <option value={".75"}> .75  </option>
-                        </select>
-
-                        <div className="border border-black px-[5px] py-[2px] rounded">
-                            <p 
-                                id="order-two-price-box"
-                                className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                            >
-                                
-                            </p>
-                        </div>
-                    </div>
-                    </div>
-
-                    { (!orderOnePrice == "") && (
-                    <div>
-                        <p>
-                            Order #3 :
-                        </p>
-                        <div id="div-order-Three" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            
+                        <div id="div-order-one" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
                             <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-three-item'
-                                name="order-three-item"
-                                value={ orderThreeItem }
-                                onChange={ orderThreeItemChanged }
-                                >
+                                className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                id='order-one-item'
+                                name="order-one-item"
+                                value={ orderOneItem }
+                                onChange={ orderOneItemChanged }
+                            >
                                 <option value="Choose Your Order"> Choose Your Order </option>
                                 <option value="burger"> burger </option>
                                 <option value="loadedFries"> loadedFries </option>
@@ -1632,11 +1517,11 @@ export default function OrderTaking({ addOrderSubmit }) {
 
                             <select
                                 className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-three" 
-                                name="quantity-order-three"
-                                value={ orderThreeQuantity }
-                                onChange={ orderThreeQuantityChanged }
-                                >
+                                id="quantity-order-one" 
+                                name="quantity-order-one"
+                                value={ orderOneQuantity }
+                                onChange={ orderOneQuantityChanged }
+                            >
                                     <option value={"0"}> 0 </option>
                                     <option value={"1"}> 1 </option>
                                     <option value={"2"}> 2 </option>
@@ -1652,11 +1537,11 @@ export default function OrderTaking({ addOrderSubmit }) {
 
                             <select
                                 className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-three" 
-                                name="small-quantity-order-three"
-                                value={ orderThreeSmallQuantity }
-                                onChange={ orderThreeSmallQuantityChanged }
-                                >
+                                id="small-quantity-order-one" 
+                                name="small-quantity-order-one"
+                                value={ orderOneSmallQuantity }
+                                onChange={ orderOneSmallQuantityChanged }
+                            >
                                     <option value={"0"}> 0 </option>
                                     <option value={".25"}> .25 </option>
                                     <option value={".5"}> .5 </option>
@@ -1665,493 +1550,619 @@ export default function OrderTaking({ addOrderSubmit }) {
 
                             <div className="border border-black px-[5px] py-[2px] rounded">
                                 <p 
-                                    id="order-three-price-box"
+                                    id="order-one-price-box"
                                     className="totalPrice min-w-[50px] px-[5px] p-[2px] "
-                                    >
+                                >
                                     
                                 </p>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className='mb-[20px]'>
+                        <p> Order #2 : </p>
+
+                        <div id="div-order-two" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                id='order-two-item'
+                                name="order-two-item"
+                                value={ orderTwoItem }
+                                onChange={ orderTwoItemChanged }
+                            >
+                                <option value="Choose Your Order"> Choose Your Order </option>
+                                <option value="burger"> burger </option>
+                                <option value="loadedFries"> loadedFries </option>
+                                <option value="shawaya"> shawaya </option>
+                                <option value="mandhi"> mandhi </option>
+                                <option value="pepsi1l"> pepsi1l </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                id="quantity-order-two" 
+                                name="quantity-order-two"
+                                value={ orderTwoQuantity }
+                                onChange={ orderTwoQuantityChanged }
+                            >
+                                    <option value={"0"}> 0 </option>
+                                    <option value={"1"}> 1 </option>
+                                    <option value={"2"}> 2 </option>
+                                    <option value={"3"}> 3 </option>
+                                    <option value={"4"}> 4 </option>
+                                    <option value={"5"}> 5 </option>
+                                    <option value={"6"}> 6 </option>
+                                    <option value={"7"}> 7 </option>
+                                    <option value={"8"}> 8 </option>
+                                    <option value={"9"}> 9 </option>
+                                    <option value={"10"}> 10 </option>
+                            </select>
+
+                            <select
+                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                id="small-quantity-order-two" 
+                                name="small-quantity-order-two"
+                                value={ orderTwoSmallQuantity }
+                                onChange={ orderTwoSmallQuantityChanged }
+                            >
+                                    <option value={"0"}> 0 </option>
+                                    <option value={".25"}> .25 </option>
+                                    <option value={".5"}> .5 </option>
+                                    <option value={".75"}> .75  </option>
+                            </select>
+
+                            <div className="border border-black px-[5px] py-[2px] rounded">
+                                <p 
+                                    id="order-two-price-box"
+                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                >
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    { (!orderOnePrice == "") && (
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #3 :
+                            </p>
+
+                            <div id="div-order-Three" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-three-item'
+                                    name="order-three-item"
+                                    value={ orderThreeItem }
+                                    onChange={ orderThreeItemChanged }
+                                >
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-three" 
+                                    name="quantity-order-three"
+                                    value={ orderThreeQuantity }
+                                    onChange={ orderThreeQuantityChanged }
+                                >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-three" 
+                                    name="small-quantity-order-three"
+                                    value={ orderThreeSmallQuantity }
+                                    onChange={ orderThreeSmallQuantityChanged }
+                                >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-three-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
 
 
                     { (!orderTwoPrice == "") && (
-                    <div>
-                        <p>
-                            Order #4 :
-                        </p>
-                        <div id="div-order-four" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-four-item'
-                                name="order-four-item"
-                                value={ orderFourItem }
-                                onChange={ orderFourItemChanged }
-                                >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #4 :
+                            </p>
 
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-four" 
-                                name="quantity-order-four"
-                                value={ orderFourQuantity }
-                                onChange={ orderFourQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-four" 
-                                name="small-quantity-order-four"
-                                value={ orderFourSmallQuantity }
-                                onChange={ orderFourSmallQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={".25"}> .25 </option>
-                                    <option value={".5"}> .5 </option>
-                                    <option value={".75"}> .75  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-four-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                            <div id="div-order-four" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">    
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-four-item'
+                                    name="order-four-item"
+                                    value={ orderFourItem }
+                                    onChange={ orderFourItemChanged }
                                     >
-                                    
-                                </p>
-                            </div>
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-four" 
+                                    name="quantity-order-four"
+                                    value={ orderFourQuantity }
+                                    onChange={ orderFourQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-four" 
+                                    name="small-quantity-order-four"
+                                    value={ orderFourSmallQuantity }
+                                    onChange={ orderFourSmallQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-four-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderThreePrice == "") && (
-                    <div>
-                        <p>
-                            Order #5 :
-                        </p>
-                        <div id="div-order-five" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-five-item'
-                                name="order-five-item"
-                                value={ orderFiveItem }
-                                onChange={ orderFiveItemChanged }
-                                >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #5 :
+                            </p>
 
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-five" 
-                                name="quantity-order-five"
-                                value={ orderFiveQuantity }
-                                onChange={ orderFiveQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-five" 
-                                name="small-quantity-order-five"
-                                value={ orderFiveSmallQuantity }
-                                onChange={ orderFiveSmallQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={".25"}> .25 </option>
-                                    <option value={".5"}> .5 </option>
-                                    <option value={".75"}> .75  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-five-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                            <div id="div-order-five" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-five-item'
+                                    name="order-five-item"
+                                    value={ orderFiveItem }
+                                    onChange={ orderFiveItemChanged }
                                     >
-                                    
-                                </p>
-                            </div>
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-five" 
+                                    name="quantity-order-five"
+                                    value={ orderFiveQuantity }
+                                    onChange={ orderFiveQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-five" 
+                                    name="small-quantity-order-five"
+                                    value={ orderFiveSmallQuantity }
+                                    onChange={ orderFiveSmallQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-five-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderFourPrice == "") && (
-                    <div>
-                        <p>
-                            Order #6 :
-                        </p>
-                        <div id="div-order-six" className="flex gap-[10px] mx-[20px] my-[20px]">
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #6 :
+                            </p>
                             
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-six-item'
-                                name="order-six-item"
-                                value={ orderSixItem }
-                                onChange={ orderSixItemChanged }
-                                >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-six" 
-                                name="quantity-order-six"
-                                value={ orderSixQuantity }
-                                onChange={ orderSixQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-six" 
-                                name="small-quantity-order-six"
-                                value={ orderSixSmallQuantity }
-                                onChange={ orderSixSmallQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={".25"}> .25 </option>
-                                    <option value={".5"}> .5 </option>
-                                    <option value={".75"}> .75  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-six-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                            <div id="div-order-six" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-six-item'
+                                    name="order-six-item"
+                                    value={ orderSixItem }
+                                    onChange={ orderSixItemChanged }
                                     >
-                                    
-                                </p>
-                            </div>
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-six" 
+                                    name="quantity-order-six"
+                                    value={ orderSixQuantity }
+                                    onChange={ orderSixQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-six" 
+                                    name="small-quantity-order-six"
+                                    value={ orderSixSmallQuantity }
+                                    onChange={ orderSixSmallQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-six-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderFivePrice == "") && (
-                    <div>
-                        <p>
-                            Order #7 :
-                        </p>
-                        <div id="div-order-seven" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-seven-item'
-                                name="order-seven-item"
-                                value={ orderSevenItem }
-                                onChange={ orderSevenItemChanged }
-                                >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #7 :
+                            </p>
 
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-seven" 
-                                name="quantity-order-seven"
-                                value={ orderSevenQuantity }
-                                onChange={ orderSevenQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-seven" 
-                                name="small-quantity-order-seven"
-                                value={ orderSevenSmallQuantity }
-                                onChange={ orderSevenSmallQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={".25"}> .25 </option>
-                                    <option value={".5"}> .5 </option>
-                                    <option value={".75"}> .75  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-seven-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                            <div id="div-order-seven" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-seven-item'
+                                    name="order-seven-item"
+                                    value={ orderSevenItem }
+                                    onChange={ orderSevenItemChanged }
                                     >
-                                    
-                                </p>
-                            </div>
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-seven" 
+                                    name="quantity-order-seven"
+                                    value={ orderSevenQuantity }
+                                    onChange={ orderSevenQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-seven" 
+                                    name="small-quantity-order-seven"
+                                    value={ orderSevenSmallQuantity }
+                                    onChange={ orderSevenSmallQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-seven-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderSixPrice == "") && (
-                    <div>
-                        <p>
-                            Order #8 :
-                        </p>
-                        <div id="div-order-eight" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-eight-item'
-                                name="order-eight-item"
-                                value={ orderEightItem }
-                                onChange={ orderEightItemChanged }
-                                >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #8 :
+                            </p>
 
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-eight" 
-                                name="quantity-order-eight"
-                                value={ orderEightQuantity }
-                                onChange={ orderEightQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-eight" 
-                                name="small-quantity-order-eight"
-                                value={ orderEightSmallQuantity }
-                                onChange={ orderEightSmallQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={".25"}> .25 </option>
-                                    <option value={".5"}> .5 </option>
-                                    <option value={".75"}> .75  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-eight-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                            <div id="div-order-eight" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-eight-item'
+                                    name="order-eight-item"
+                                    value={ orderEightItem }
+                                    onChange={ orderEightItemChanged }
                                     >
-                                    
-                                </p>
-                            </div>
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-eight" 
+                                    name="quantity-order-eight"
+                                    value={ orderEightQuantity }
+                                    onChange={ orderEightQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-eight" 
+                                    name="small-quantity-order-eight"
+                                    value={ orderEightSmallQuantity }
+                                    onChange={ orderEightSmallQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-eight-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderSevenPrice == "") && (
-                    <div>
-                        <p>
-                            Order #9 :
-                        </p>
-                        <div id="div-order-nine" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-nine-item'
-                                name="order-nine-item"
-                                value={ orderNineItem }
-                                onChange={ orderNineItemChanged }
-                                >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #9 :
+                            </p>
 
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-nine" 
-                                name="quantity-order-nine"
-                                value={ orderNineQuantity }
-                                onChange={ orderNineQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-nine" 
-                                name="small-quantity-order-nine"
-                                value={ orderNineSmallQuantity }
-                                onChange={ orderNineSmallQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={".25"}> .25 </option>
-                                    <option value={".5"}> .5 </option>
-                                    <option value={".75"}> .75  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-nine-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                            <div id="div-order-nine" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-nine-item'
+                                    name="order-nine-item"
+                                    value={ orderNineItem }
+                                    onChange={ orderNineItemChanged }
                                     >
-                                    
-                                </p>
-                            </div>
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-nine" 
+                                    name="quantity-order-nine"
+                                    value={ orderNineQuantity }
+                                    onChange={ orderNineQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-nine" 
+                                    name="small-quantity-order-nine"
+                                    value={ orderNineSmallQuantity }
+                                    onChange={ orderNineSmallQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-nine-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
 
                     { (!orderEightPrice == "") && (
-                    <div>
-                        <p>
-                            Order #10 :
-                        </p>
-                        <div id="div-order-ten" className="flex gap-[10px] mx-[20px] my-[20px]">
-                            
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded min-w-[250px]"
-                                id='order-ten-item'
-                                name="order-ten-item"
-                                value={ orderTenItem }
-                                onChange={ orderTenItemChanged }
-                                >
-                                <option value="Choose Your Order"> Choose Your Order </option>
-                                <option value="burger"> burger </option>
-                                <option value="loadedFries"> loadedFries </option>
-                                <option value="shawaya"> shawaya </option>
-                                <option value="mandhi"> mandhi </option>
-                                <option value="pepsi1l"> pepsi1l </option>
-                            </select>
+                        <div className='mb-[20px]'>
+                            <p>
+                                Order #10 :
+                            </p>
 
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="quantity-order-ten" 
-                                name="quantity-order-ten"
-                                value={ orderTenQuantity }
-                                onChange={ orderTenQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={"1"}> 1 </option>
-                                    <option value={"2"}> 2 </option>
-                                    <option value={"3"}> 3 </option>
-                                    <option value={"4"}> 4 </option>
-                                    <option value={"5"}> 5 </option>
-                                    <option value={"6"}> 6 </option>
-                                    <option value={"7"}> 7 </option>
-                                    <option value={"8"}> 8 </option>
-                                    <option value={"9"}> 9 </option>
-                                    <option value={"10"}> 10 </option>
-                            </select>
-
-                            <select
-                                className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
-                                id="small-quantity-order-ten" 
-                                name="small-quantity-order-ten"
-                                value={ orderTenSmallQuantity }
-                                onChange={ orderTenSmallQuantityChanged }
-                                >
-                                    <option value={"0"}> 0 </option>
-                                    <option value={".25"}> .25 </option>
-                                    <option value={".5"}> .5 </option>
-                                    <option value={".75"}> .75  </option>
-                            </select>
-
-                            <div className="border border-black px-[5px] py-[2px] rounded">
-                                <p 
-                                    id="order-ten-price-box"
-                                    className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                            <div id="div-order-ten" className="flex flex-wrap md:justify-center max-md:w-[300px] gap-[10px] md:mx-[20px] my-[10px] md:my-[20px]">
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded md:min-w-[250px]"
+                                    id='order-ten-item'
+                                    name="order-ten-item"
+                                    value={ orderTenItem }
+                                    onChange={ orderTenItemChanged }
                                     >
-                                    
-                                </p>
-                            </div>
+                                    <option value="Choose Your Order"> Choose Your Order </option>
+                                    <option value="burger"> burger </option>
+                                    <option value="loadedFries"> loadedFries </option>
+                                    <option value="shawaya"> shawaya </option>
+                                    <option value="mandhi"> mandhi </option>
+                                    <option value="pepsi1l"> pepsi1l </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="quantity-order-ten" 
+                                    name="quantity-order-ten"
+                                    value={ orderTenQuantity }
+                                    onChange={ orderTenQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={"1"}> 1 </option>
+                                        <option value={"2"}> 2 </option>
+                                        <option value={"3"}> 3 </option>
+                                        <option value={"4"}> 4 </option>
+                                        <option value={"5"}> 5 </option>
+                                        <option value={"6"}> 6 </option>
+                                        <option value={"7"}> 7 </option>
+                                        <option value={"8"}> 8 </option>
+                                        <option value={"9"}> 9 </option>
+                                        <option value={"10"}> 10 </option>
+                                </select>
+
+                                <select
+                                    className="border border-black px-[5px] py-[2px] rounded max-w-[150px]"
+                                    id="small-quantity-order-ten" 
+                                    name="small-quantity-order-ten"
+                                    value={ orderTenSmallQuantity }
+                                    onChange={ orderTenSmallQuantityChanged }
+                                    >
+                                        <option value={"0"}> 0 </option>
+                                        <option value={".25"}> .25 </option>
+                                        <option value={".5"}> .5 </option>
+                                        <option value={".75"}> .75  </option>
+                                </select>
+
+                                <div className="border border-black px-[5px] py-[2px] rounded">
+                                    <p 
+                                        id="order-ten-price-box"
+                                        className="totalPrice min-w-[50px] px-[5px] p-[2px] "
+                                        >
+                                        
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     )}
                 </div>
 
-                <div 
-                    id="payment"
-                    className="mx-[20px]"
-                >
+                <div id="payment">
                     <select 
-                        name="payment" 
+                        name="payment-option" 
                         id="payment-option"
                         className="border border-black px-[5px] py-[2.5px] rounded-[5px] "
                     >
@@ -2163,7 +2174,7 @@ export default function OrderTaking({ addOrderSubmit }) {
                 <div className="flex justify-center">
                     <button 
                         id='confirm-order'
-                        className="rounded border border-black px-[7.5px] py-[2.5px] hover:bg-red-600 hover:text-yellow-100"
+                        className="rounded border border-black px-[7.5px] py-[2.5px] hover:bg-red-600 hover:text-yellow-100 mt-[15px]"
                     >
                         Confirm Order
                     </button>
